@@ -4,8 +4,8 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
-Title ""
-Date ""
+Title "switching_board"
+Date "2021-07-02"
 Rev ""
 Comp ""
 Comment1 ""
@@ -14,14 +14,537 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L Device:Battery BT?
+L Device:Battery BT1
 U 1 1 60DEE4D6
-P 1450 3750
-F 0 "BT?" H 1558 3796 50  0000 L CNN
-F 1 "Battery" H 1558 3705 50  0000 L CNN
-F 2 "" V 1450 3810 50  0001 C CNN
-F 3 "~" V 1450 3810 50  0001 C CNN
-	1    1450 3750
+P 1050 6850
+F 0 "BT1" H 1158 6896 50  0001 L CNN
+F 1 "Battery(24v)" H 1158 6805 50  0000 L CNN
+F 2 "" V 1050 6910 50  0001 C CNN
+F 3 "~" V 1050 6910 50  0001 C CNN
+	1    1050 6850
 	1    0    0    -1  
 $EndComp
+$Comp
+L Switch:SW_Push SW1
+U 1 1 60DF35EB
+P 1400 5900
+F 0 "SW1" H 1400 6185 50  0001 C CNN
+F 1 "emergency_switch" H 1400 5850 50  0000 C CNN
+F 2 "" H 1400 6100 50  0001 C CNN
+F 3 "~" H 1400 6100 50  0001 C CNN
+	1    1400 5900
+	1    0    0    -1  
+$EndComp
+Text Notes 10050 1400 0    50   ~ 0
+absolute maximum ratings\nVds : 30 (V)\nVgs : 20 (V)\nId : 74 (A)\n
+Text Notes 10050 1900 0    50   ~ 0
+R(1) param\nQt : 50 (nC)\nt : 2500 (nsec)\ni = Qt/t = 0.02 (A)\n
+$Comp
+L Device:R R2
+U 1 1 60DF608C
+P 1700 5650
+F 0 "R2" V 1493 5650 50  0001 C CNN
+F 1 "R(3) : 4/(i * FET_num)" H 2300 5650 50  0000 C CNN
+F 2 "" V 1630 5650 50  0001 C CNN
+F 3 "~" H 1700 5650 50  0001 C CNN
+	1    1700 5650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1050 7050 1050 7500
+$Comp
+L power:GND #PWR0101
+U 1 1 60DF9A13
+P 1050 7500
+F 0 "#PWR0101" H 1050 7250 50  0001 C CNN
+F 1 "GND" H 1055 7327 50  0000 C CNN
+F 2 "" H 1050 7500 50  0001 C CNN
+F 3 "" H 1050 7500 50  0001 C CNN
+	1    1050 7500
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VDD #PWR0102
+U 1 1 60E04358
+P 1050 5400
+F 0 "#PWR0102" H 1050 5250 50  0001 C CNN
+F 1 "VDD" H 1067 5573 50  0000 C CNN
+F 2 "" H 1050 5400 50  0001 C CNN
+F 3 "" H 1050 5400 50  0001 C CNN
+	1    1050 5400
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VDD #PWR0103
+U 1 1 60E04882
+P 2000 800
+F 0 "#PWR0103" H 2000 650 50  0001 C CNN
+F 1 "VDD" H 2017 973 50  0000 C CNN
+F 2 "" H 2000 800 50  0001 C CNN
+F 3 "" H 2000 800 50  0001 C CNN
+	1    2000 800 
+	1    0    0    -1  
+$EndComp
+Connection ~ 2000 2100
+Wire Wire Line
+	2100 2100 2000 2100
+Wire Wire Line
+	2000 1700 2000 2100
+$Comp
+L Connector:Conn_01x02_Male J1
+U 1 1 60E006FB
+P 2200 1700
+F 0 "J1" H 2172 1582 50  0001 R CNN
+F 1 "Output_conn" H 2350 1750 50  0000 R CNN
+F 2 "" H 2200 1700 50  0001 C CNN
+F 3 "~" H 2200 1700 50  0001 C CNN
+	1    2200 1700
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	2000 2800 2000 2900
+Connection ~ 2000 2800
+Wire Wire Line
+	1700 2800 2000 2800
+Wire Wire Line
+	1700 2700 1700 2800
+Wire Wire Line
+	2000 2500 2000 2800
+$Comp
+L power:GND #PWR0104
+U 1 1 60DFA5EE
+P 2000 2900
+F 0 "#PWR0104" H 2000 2650 50  0001 C CNN
+F 1 "GND" H 2005 2727 50  0000 C CNN
+F 2 "" H 2000 2900 50  0001 C CNN
+F 3 "" H 2000 2900 50  0001 C CNN
+	1    2000 2900
+	1    0    0    -1  
+$EndComp
+Connection ~ 1700 2300
+Wire Wire Line
+	1700 2400 1700 2300
+Wire Wire Line
+	1600 2300 1700 2300
+$Comp
+L Device:R R3
+U 1 1 60DF4A10
+P 1700 2550
+F 0 "R3" H 1550 2600 50  0001 L CNN
+F 1 "R(2) : R(1) * 10" H 1000 2400 50  0000 L CNN
+F 2 "" V 1630 2550 50  0001 C CNN
+F 3 "~" H 1700 2550 50  0001 C CNN
+	1    1700 2550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R1
+U 1 1 60DF172D
+P 1450 2300
+F 0 "R1" V 1243 2300 50  0001 C CNN
+F 1 "R(1) : 20 (V) / i = 1k" V 1350 2250 50  0000 C CNN
+F 2 "" V 1380 2300 50  0001 C CNN
+F 3 "~" H 1450 2300 50  0001 C CNN
+	1    1450 2300
+	0    1    1    0   
+$EndComp
+Text Notes 10050 1000 0    50   ~ 0
+n-mosfet (name : IRL8113)\n1-gate\n2-drain\n3-source\n4-drain(backplate)
+$Comp
+L Device:Q_NMOS_GDSD Q1
+U 1 1 60DEFF01
+P 1900 2300
+F 0 "Q1" H 2188 2346 50  0001 L CNN
+F 1 "n-mosfet" H 2100 2300 50  0000 L CNN
+F 2 "" H 2100 2400 50  0001 C CNN
+F 3 "~" H 1900 2300 50  0001 C CNN
+	1    1900 2300
+	1    0    0    -1  
+$EndComp
+Text GLabel 1950 5400 2    50   Output ~ 0
+switch_signal
+Text Notes 1800 5900 0    50   ~ 0
+voltage step-down register\n from 24 (V) to 20 (V)\n
+$Comp
+L power:PWR_FLAG #FLG01
+U 1 1 60E13F73
+P 750 5400
+F 0 "#FLG01" H 750 5475 50  0001 C CNN
+F 1 "PWR_FLAG" H 750 5573 50  0000 C CNN
+F 2 "" H 750 5400 50  0001 C CNN
+F 3 "~" H 750 5400 50  0001 C CNN
+	1    750  5400
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:PWR_FLAG #FLG02
+U 1 1 60E14FFF
+P 750 7500
+F 0 "#FLG02" H 750 7575 50  0001 C CNN
+F 1 "PWR_FLAG" H 750 7673 50  0000 C CNN
+F 2 "" H 750 7500 50  0001 C CNN
+F 3 "~" H 750 7500 50  0001 C CNN
+	1    750  7500
+	-1   0    0    1   
+$EndComp
+Connection ~ 1050 5400
+Wire Wire Line
+	750  7500 1050 7500
+Connection ~ 1050 7500
+Wire Wire Line
+	750  5400 1050 5400
+Wire Wire Line
+	1050 5400 1050 5900
+Wire Wire Line
+	1200 5900 1050 5900
+Connection ~ 1050 5900
+Wire Wire Line
+	1050 5900 1050 6650
+Wire Wire Line
+	1600 5900 1700 5900
+Wire Wire Line
+	1700 5900 1700 5800
+Wire Wire Line
+	1700 5500 1700 5400
+Wire Wire Line
+	1700 5400 1950 5400
+$Comp
+L Device:Fuse F?
+U 1 1 60E274AD
+P 2000 1100
+F 0 "F?" H 2060 1146 50  0001 L CNN
+F 1 "Fuse" H 2060 1100 50  0000 L CNN
+F 2 "" V 1930 1100 50  0001 C CNN
+F 3 "~" H 2000 1100 50  0001 C CNN
+	1    2000 1100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2000 800  2000 950 
+Wire Wire Line
+	2000 1250 2000 1600
+Text GLabel 1200 2300 0    50   Input ~ 0
+switch_signal
+Wire Wire Line
+	1200 2300 1300 2300
+Text Notes 1850 2650 0    50   ~ 0
+Carrent param \nVgs : 20 (V)\n
+$Comp
+L power:VDD #PWR?
+U 1 1 60E36F57
+P 3900 800
+F 0 "#PWR?" H 3900 650 50  0001 C CNN
+F 1 "VDD" H 3917 973 50  0000 C CNN
+F 2 "" H 3900 800 50  0001 C CNN
+F 3 "" H 3900 800 50  0001 C CNN
+	1    3900 800 
+	1    0    0    -1  
+$EndComp
+Connection ~ 3900 2100
+Wire Wire Line
+	4000 2100 3900 2100
+Wire Wire Line
+	3900 1700 3900 2100
+$Comp
+L Connector:Conn_01x02_Male J?
+U 1 1 60E36F60
+P 4100 1700
+F 0 "J?" H 4072 1582 50  0001 R CNN
+F 1 "Output_conn" H 4250 1750 50  0000 R CNN
+F 2 "" H 4100 1700 50  0001 C CNN
+F 3 "~" H 4100 1700 50  0001 C CNN
+	1    4100 1700
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	3900 2800 3900 2900
+Connection ~ 3900 2800
+Wire Wire Line
+	3600 2800 3900 2800
+Wire Wire Line
+	3600 2700 3600 2800
+Wire Wire Line
+	3900 2500 3900 2800
+$Comp
+L power:GND #PWR?
+U 1 1 60E36F6B
+P 3900 2900
+F 0 "#PWR?" H 3900 2650 50  0001 C CNN
+F 1 "GND" H 3905 2727 50  0000 C CNN
+F 2 "" H 3900 2900 50  0001 C CNN
+F 3 "" H 3900 2900 50  0001 C CNN
+	1    3900 2900
+	1    0    0    -1  
+$EndComp
+Connection ~ 3600 2300
+Wire Wire Line
+	3600 2400 3600 2300
+Wire Wire Line
+	3500 2300 3600 2300
+$Comp
+L Device:R R?
+U 1 1 60E36F74
+P 3600 2550
+F 0 "R?" H 3450 2600 50  0001 L CNN
+F 1 "R(2) : R(1) * 10" H 2900 2400 50  0000 L CNN
+F 2 "" V 3530 2550 50  0001 C CNN
+F 3 "~" H 3600 2550 50  0001 C CNN
+	1    3600 2550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 60E36F7A
+P 3350 2300
+F 0 "R?" V 3143 2300 50  0001 C CNN
+F 1 "R(1) : 20 (V) / i = 1k" V 3250 2250 50  0000 C CNN
+F 2 "" V 3280 2300 50  0001 C CNN
+F 3 "~" H 3350 2300 50  0001 C CNN
+	1    3350 2300
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:Q_NMOS_GDSD Q?
+U 1 1 60E36F80
+P 3800 2300
+F 0 "Q?" H 4088 2346 50  0001 L CNN
+F 1 "n-mosfet" H 4000 2300 50  0000 L CNN
+F 2 "" H 4000 2400 50  0001 C CNN
+F 3 "~" H 3800 2300 50  0001 C CNN
+	1    3800 2300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Fuse F?
+U 1 1 60E36F86
+P 3900 1100
+F 0 "F?" H 3960 1146 50  0001 L CNN
+F 1 "Fuse" H 3960 1100 50  0000 L CNN
+F 2 "" V 3830 1100 50  0001 C CNN
+F 3 "~" H 3900 1100 50  0001 C CNN
+	1    3900 1100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3900 800  3900 950 
+Wire Wire Line
+	3900 1250 3900 1600
+Text GLabel 3100 2300 0    50   Input ~ 0
+switch_signal
+Wire Wire Line
+	3100 2300 3200 2300
+Text Notes 3750 2650 0    50   ~ 0
+Carrent param \nVgs : 20 (V)\n
+$Comp
+L power:VDD #PWR?
+U 1 1 60E39740
+P 5800 800
+F 0 "#PWR?" H 5800 650 50  0001 C CNN
+F 1 "VDD" H 5817 973 50  0000 C CNN
+F 2 "" H 5800 800 50  0001 C CNN
+F 3 "" H 5800 800 50  0001 C CNN
+	1    5800 800 
+	1    0    0    -1  
+$EndComp
+Connection ~ 5800 2100
+Wire Wire Line
+	5900 2100 5800 2100
+Wire Wire Line
+	5800 1700 5800 2100
+$Comp
+L Connector:Conn_01x02_Male J?
+U 1 1 60E39749
+P 6000 1700
+F 0 "J?" H 5972 1582 50  0001 R CNN
+F 1 "Output_conn" H 6150 1750 50  0000 R CNN
+F 2 "" H 6000 1700 50  0001 C CNN
+F 3 "~" H 6000 1700 50  0001 C CNN
+	1    6000 1700
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	5800 2800 5800 2900
+Connection ~ 5800 2800
+Wire Wire Line
+	5500 2800 5800 2800
+Wire Wire Line
+	5500 2700 5500 2800
+Wire Wire Line
+	5800 2500 5800 2800
+$Comp
+L power:GND #PWR?
+U 1 1 60E39754
+P 5800 2900
+F 0 "#PWR?" H 5800 2650 50  0001 C CNN
+F 1 "GND" H 5805 2727 50  0000 C CNN
+F 2 "" H 5800 2900 50  0001 C CNN
+F 3 "" H 5800 2900 50  0001 C CNN
+	1    5800 2900
+	1    0    0    -1  
+$EndComp
+Connection ~ 5500 2300
+Wire Wire Line
+	5500 2400 5500 2300
+Wire Wire Line
+	5400 2300 5500 2300
+$Comp
+L Device:R R?
+U 1 1 60E3975D
+P 5500 2550
+F 0 "R?" H 5350 2600 50  0001 L CNN
+F 1 "R(2) : R(1) * 10" H 4800 2400 50  0000 L CNN
+F 2 "" V 5430 2550 50  0001 C CNN
+F 3 "~" H 5500 2550 50  0001 C CNN
+	1    5500 2550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 60E39763
+P 5250 2300
+F 0 "R?" V 5043 2300 50  0001 C CNN
+F 1 "R(1) : 20 (V) / i = 1k" V 5150 2250 50  0000 C CNN
+F 2 "" V 5180 2300 50  0001 C CNN
+F 3 "~" H 5250 2300 50  0001 C CNN
+	1    5250 2300
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:Q_NMOS_GDSD Q?
+U 1 1 60E39769
+P 5700 2300
+F 0 "Q?" H 5988 2346 50  0001 L CNN
+F 1 "n-mosfet" H 5900 2300 50  0000 L CNN
+F 2 "" H 5900 2400 50  0001 C CNN
+F 3 "~" H 5700 2300 50  0001 C CNN
+	1    5700 2300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Fuse F?
+U 1 1 60E3976F
+P 5800 1100
+F 0 "F?" H 5860 1146 50  0001 L CNN
+F 1 "Fuse" H 5860 1100 50  0000 L CNN
+F 2 "" V 5730 1100 50  0001 C CNN
+F 3 "~" H 5800 1100 50  0001 C CNN
+	1    5800 1100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5800 800  5800 950 
+Wire Wire Line
+	5800 1250 5800 1600
+Text GLabel 5000 2300 0    50   Input ~ 0
+switch_signal
+Wire Wire Line
+	5000 2300 5100 2300
+Text Notes 5650 2650 0    50   ~ 0
+Carrent param \nVgs : 20 (V)\n
+$Comp
+L power:VDD #PWR?
+U 1 1 60E8EA21
+P 7700 850
+F 0 "#PWR?" H 7700 700 50  0001 C CNN
+F 1 "VDD" H 7717 1023 50  0000 C CNN
+F 2 "" H 7700 850 50  0001 C CNN
+F 3 "" H 7700 850 50  0001 C CNN
+	1    7700 850 
+	1    0    0    -1  
+$EndComp
+Connection ~ 7700 2150
+Wire Wire Line
+	7800 2150 7700 2150
+Wire Wire Line
+	7700 1750 7700 2150
+$Comp
+L Connector:Conn_01x02_Male J?
+U 1 1 60E8EA2A
+P 7900 1750
+F 0 "J?" H 7872 1632 50  0001 R CNN
+F 1 "Output_conn" H 8050 1800 50  0000 R CNN
+F 2 "" H 7900 1750 50  0001 C CNN
+F 3 "~" H 7900 1750 50  0001 C CNN
+	1    7900 1750
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	7700 2850 7700 2950
+Connection ~ 7700 2850
+Wire Wire Line
+	7400 2850 7700 2850
+Wire Wire Line
+	7400 2750 7400 2850
+Wire Wire Line
+	7700 2550 7700 2850
+$Comp
+L power:GND #PWR?
+U 1 1 60E8EA35
+P 7700 2950
+F 0 "#PWR?" H 7700 2700 50  0001 C CNN
+F 1 "GND" H 7705 2777 50  0000 C CNN
+F 2 "" H 7700 2950 50  0001 C CNN
+F 3 "" H 7700 2950 50  0001 C CNN
+	1    7700 2950
+	1    0    0    -1  
+$EndComp
+Connection ~ 7400 2350
+Wire Wire Line
+	7400 2450 7400 2350
+Wire Wire Line
+	7300 2350 7400 2350
+$Comp
+L Device:R R?
+U 1 1 60E8EA3E
+P 7400 2600
+F 0 "R?" H 7250 2650 50  0001 L CNN
+F 1 "R(2) : R(1) * 10" H 6700 2450 50  0000 L CNN
+F 2 "" V 7330 2600 50  0001 C CNN
+F 3 "~" H 7400 2600 50  0001 C CNN
+	1    7400 2600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 60E8EA44
+P 7150 2350
+F 0 "R?" V 6943 2350 50  0001 C CNN
+F 1 "R(1) : 20 (V) / i = 1k" V 7050 2300 50  0000 C CNN
+F 2 "" V 7080 2350 50  0001 C CNN
+F 3 "~" H 7150 2350 50  0001 C CNN
+	1    7150 2350
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:Q_NMOS_GDSD Q?
+U 1 1 60E8EA4A
+P 7600 2350
+F 0 "Q?" H 7888 2396 50  0001 L CNN
+F 1 "n-mosfet" H 7800 2350 50  0000 L CNN
+F 2 "" H 7800 2450 50  0001 C CNN
+F 3 "~" H 7600 2350 50  0001 C CNN
+	1    7600 2350
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Fuse F?
+U 1 1 60E8EA50
+P 7700 1150
+F 0 "F?" H 7760 1196 50  0001 L CNN
+F 1 "Fuse" H 7760 1150 50  0000 L CNN
+F 2 "" V 7630 1150 50  0001 C CNN
+F 3 "~" H 7700 1150 50  0001 C CNN
+	1    7700 1150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7700 850  7700 1000
+Wire Wire Line
+	7700 1300 7700 1650
+Text GLabel 6900 2350 0    50   Input ~ 0
+switch_signal
+Wire Wire Line
+	6900 2350 7000 2350
+Text Notes 7550 2700 0    50   ~ 0
+Carrent param \nVgs : 20 (V)\n
 $EndSCHEMATC
