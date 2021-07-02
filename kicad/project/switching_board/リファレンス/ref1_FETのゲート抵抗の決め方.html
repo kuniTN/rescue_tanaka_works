@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<!-- saved from url=(0030)https://ana-dig.com/fet_gate1/ -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+      
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script src="./ref1_FETのゲート抵抗の決め方_files/osd.js.ダウンロード"></script><script src="./ref1_FETのゲート抵抗の決め方_files/f.txt"></script><script type="text/javascript" async="" src="./ref1_FETのゲート抵抗の決め方_files/recaptcha__ja.js.ダウンロード" crossorigin="anonymous" integrity="sha384-f9wkZSQD1/jO6NhtZ6kA4cwrJE4Bs7De1ehceNuESK+PfwxK1Qq2X1frTru3S4Of"></script><script src="./ref1_FETのゲート抵抗の決め方_files/f(1).txt" id="google_shimpl"></script><script type="text/javascript" async="" src="./ref1_FETのゲート抵抗の決め方_files/analytics.js.ダウンロード"></script><script async="" src="./ref1_FETのゲート抵抗の決め方_files/js"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-187504605-1');
+</script>
+<!-- /Global site tag (gtag.js) - Google Analytics -->
+
+      
+  <!-- preconnect dns-prefetch -->
+<link rel="preconnect dns-prefetch" href="https://www.googletagmanager.com/">
+<link rel="preconnect dns-prefetch" href="https://www.google-analytics.com/">
+<link rel="preconnect dns-prefetch" href="https://ajax.googleapis.com/">
+<link rel="preconnect dns-prefetch" href="https://cdnjs.cloudflare.com/">
+<link rel="preconnect dns-prefetch" href="https://pagead2.googlesyndication.com/">
+<link rel="preconnect dns-prefetch" href="https://googleads.g.doubleclick.net/">
+<link rel="preconnect dns-prefetch" href="https://tpc.googlesyndication.com/">
+<link rel="preconnect dns-prefetch" href="https://ad.doubleclick.net/">
+<link rel="preconnect dns-prefetch" href="https://www.gstatic.com/">
+<link rel="preconnect dns-prefetch" href="https://cse.google.com/">
+<link rel="preconnect dns-prefetch" href="https://fonts.gstatic.com/">
+<link rel="preconnect dns-prefetch" href="https://fonts.googleapis.com/">
+<link rel="preconnect dns-prefetch" href="https://cms.quantserve.com/">
+<link rel="preconnect dns-prefetch" href="https://secure.gravatar.com/">
+<link rel="preconnect dns-prefetch" href="https://cdn.syndication.twimg.com/">
+<link rel="preconnect dns-prefetch" href="https://cdn.jsdelivr.net/">
+<link rel="preconnect dns-prefetch" href="https://images-fe.ssl-images-amazon.com/">
+<link rel="preconnect dns-prefetch" href="https://completion.amazon.com/">
+<link rel="preconnect dns-prefetch" href="https://m.media-amazon.com/">
+<link rel="preconnect dns-prefetch" href="https://i.moshimo.com/">
+<link rel="preconnect dns-prefetch" href="https://aml.valuecommerce.com/">
+<link rel="preconnect dns-prefetch" href="https://dalc.valuecommerce.com/">
+<link rel="preconnect dns-prefetch" href="https://dalb.valuecommerce.com/">
+<title>FETのゲート抵抗の決め方  |  アナデジ太郎の回路設計</title>
+<meta name="robots" content="max-image-preview:large">
+
+<!-- OGP -->
+<meta property="og:type" content="article">
+<meta property="og:description" content="【この記事で分かること】ＭＯＳＦＥＴにゲート抵抗がついている理由と、ゲート抵抗値の求め方について説明します。">
+<meta property="og:title" content="FETのゲート抵抗の決め方">
+<meta property="og:url" content="https://ana-dig.com/fet_gate1/">
+<meta property="og:image" content="https://ana-dig.com/wp-content/uploads/2021/02/7c2c84b2c8df7035f51b97bd18faab8f.png">
+<meta property="og:site_name" content="アナデジ太郎の回路設計">
+<meta property="og:locale" content="ja_JP">
+<meta property="article:published_time" content="2021-02-28T15:51:19+09:00">
+<meta property="article:modified_time" content="2021-03-27T16:14:46+09:00">
+<meta property="article:section" content="回路設計">
+<!-- /OGP -->
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:description" content="【この記事で分かること】ＭＯＳＦＥＴにゲート抵抗がついている理由と、ゲート抵抗値の求め方について説明します。">
+<meta property="twitter:title" content="FETのゲート抵抗の決め方">
+<meta property="twitter:url" content="https://ana-dig.com/fet_gate1/">
+<meta name="twitter:image" content="https://ana-dig.com/wp-content/uploads/2021/02/7c2c84b2c8df7035f51b97bd18faab8f.png">
+<meta name="twitter:domain" content="ana-dig.com">
+<!-- /Twitter Card -->
+<link rel="dns-prefetch" href="https://ajax.googleapis.com/">
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com/">
+<link rel="dns-prefetch" href="https://www.google.com/">
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="アナデジ太郎の回路設計 » フィード" href="https://ana-dig.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="アナデジ太郎の回路設計 » コメントフィード" href="https://ana-dig.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="アナデジ太郎の回路設計 » FETのゲート抵抗の決め方 のコメントのフィード" href="https://ana-dig.com/fet_gate1/feed/">
+<link rel="stylesheet" id="cocoon-style-css" href="./ref1_FETのゲート抵抗の決め方_files/style.css" media="all">
+<link rel="stylesheet" id="cocoon-keyframes-css" href="./ref1_FETのゲート抵抗の決め方_files/keyframes.css" media="all">
+<link rel="stylesheet" id="font-awesome-style-css" href="./ref1_FETのゲート抵抗の決め方_files/font-awesome.min.css" media="all">
+<link rel="stylesheet" id="icomoon-style-css" href="./ref1_FETのゲート抵抗の決め方_files/style(1).css" media="all">
+<link rel="stylesheet" id="baguettebox-style-css" href="./ref1_FETのゲート抵抗の決め方_files/baguetteBox.min.css" media="all">
+<link rel="stylesheet" id="cocoon-skin-style-css" href="./ref1_FETのゲート抵抗の決め方_files/style(2).css" media="all">
+<style id="cocoon-skin-style-inline-css">
+.header{background-image:url(https://ana-dig.com/wp-content/uploads/2020/12/board-564808_640.jpg)}.main{width:860px}.sidebar{width:376px}@media screen and (max-width:1280px){.wrap{width:auto}.main,.sidebar,.sidebar-left .main,.sidebar-left .sidebar{margin:0 .5%}.main{width:67.4%}.sidebar{padding:1.5%;width:30%}.entry-card-thumb{width:38%}.entry-card-content{margin-left:40%}}body::after{content:url(https://ana-dig.com/wp-content/themes/cocoon-master/lib/analytics/access.php?post_id=2624&post_type=post);visibility:hidden;position:absolute;bottom:0;right:0;width:1px;height:1px;overflow:hidden;display:inline!important}.toc-checkbox{display:none}.toc-content{visibility:hidden;height:0;opacity:.2;transition:all .5s ease-out}.toc-checkbox:checked~.toc-content{visibility:visible;padding-top:.6em;height:100%;opacity:1}.toc-title::after{content:'[開く]';margin-left:.5em;cursor:pointer;font-size:.8em}.toc-title:hover::after{text-decoration:underline}.toc-checkbox:checked+.toc-title::after{content:'[閉じる]'}.eye-catch-wrap{justify-content:center}#respond{display:none}.entry-content>*,.demo .entry-content p{line-height:1.8}.article p,.demo .entry-content p,.article dl,.article ul,.article ol,.article blockquote,.article pre,.article table,.article .author-box,.article .blogcard-wrap,.article .login-user-only,.article .information-box,.article .question-box,.article .alert-box,.article .information,.article .question,.article .alert,.article .memo-box,.article .comment-box,.article .common-icon-box,.article .blank-box,.article .button-block,.article .micro-bottom,.article .caption-box,.article .tab-caption-box,.article .label-box,.article .toggle-wrap,.article .wp-block-image,.booklink-box,.article .kaerebalink-box,.article .tomarebalink-box,.article .product-item-box,.article .speech-wrap,.article .toc,.article .column-wrap,.article .new-entry-cards,.article .popular-entry-cards,.article .navi-entry-cards,.article .box-menus,.article .ranking-item,.article .wp-block-categories,.article .wp-block-archives,.article .wp-block-archives-dropdown,.article .wp-block-calendar,.article .rss-entry-cards,.article .ad-area,.article .wp-block-gallery,.article .wp-block-audio,.article .wp-block-cover,.article .wp-block-file,.article .wp-block-media-text,.article .wp-block-video,.article .wp-block-buttons,.article .wp-block-columns,.article .wp-block-separator,.article .components-placeholder,.article .wp-block-search,.article .wp-block-social-links,.article .timeline-box,.article .blogcard-type,.article .btn-wrap,.article .btn-wrap a,.article .block-box,.article .wp-block-embed,.article .wp-block-group,.article .wp-block-table,.article .scrollable-table,.article .wp-block-separator,[data-type="core/freeform"]{margin-bottom:1.8em}.article h2,.article h3,.article h4,.article h5,.article h6{margin-bottom:18px}@media screen and (max-width:480px){.page-body,.menu-content{font-size:16px}.article h2,.article h3,.article h4,.article h5,.article h6{margin-bottom:16px}}@media screen and (max-width:781px){.wp-block-column{margin-bottom:1.8em}}@media screen and (max-width:599px){.column-wrap>div{margin-bottom:1.8em}}.article h2,.article h3,.article h4,.article h5,.article h6{margin-top:2.4em}.article .micro-top{margin-bottom:.36em}.article .micro-bottom{margin-top:-1.62em}.article .micro-balloon{margin-bottom:.9em}.article .micro-bottom.micro-balloon{margin-top:-1.26em}.blank-box.bb-key-color{border-color:#19448e}.iic-key-color li::before{color:#19448e}.blank-box.bb-tab.bb-key-color::before{background-color:#19448e}.tb-key-color .toggle-button{border:1px solid #19448e;background:#19448e;color:#fff}.tb-key-color .toggle-button::before{color:#ccc}.tb-key-color .toggle-checkbox:checked~.toggle-content{border-color:#19448e}.cb-key-color.caption-box{border-color:#19448e}.cb-key-color .caption-box-label{background-color:#19448e;color:#fff}.tcb-key-color .tab-caption-box-label{background-color:#19448e;color:#fff}.tcb-key-color .tab-caption-box-content{border-color:#19448e}.lb-key-color .label-box-content{border-color:#19448e}.mc-key-color{background-color:#19448e;color:#fff;border:0}.mc-key-color.micro-bottom::after{border-bottom-color:#19448e;border-top-color:transparent}.mc-key-color::before{border-top-color:transparent;border-bottom-color:transparent}.mc-key-color::after{border-top-color:#19448e}.btn-key-color,.btn-wrap.btn-wrap-key-color>a{background-color:#19448e}.has-text-color.has-key-color-color{color:#19448e}.has-background.has-key-color-background-color{background-color:#19448e}.article.page-body,body#tinymce.wp-editor{background-color:#fff}.article.page-body,.editor-post-title__block .editor-post-title__input,body#tinymce.wp-editor{color:#333}.body .has-key-color-background-color{background-color:#19448e}.body .has-key-color-color{color:#19448e}.body .has-key-color-border-color{border-color:#19448e}.btn-wrap.has-key-color-background-color>a{background-color:#19448e}.btn-wrap.has-key-color-color>a{color:#19448e}.btn-wrap.has-key-color-border-color>a{border-color:#19448e}.bb-tab.has-key-color-border-color .bb-label{background-color:#19448e}.toggle-wrap.has-key-color-border-color .toggle-button{background-color:#19448e}.toggle-wrap.has-key-color-border-color .toggle-button,.toggle-wrap.has-key-color-border-color .toggle-content{border-color:#19448e}.iconlist-box.has-key-color-icon-color li::before{color:#19448e}.micro-balloon.has-key-color-background-color{background-color:#19448e;border-color:transparent}.micro-balloon.has-key-color-background-color.micro-bottom::after{border-bottom-color:#19448e;border-top-color:transparent}.micro-balloon.has-key-color-background-color::before{border-top-color:transparent;border-bottom-color:transparent}.micro-balloon.has-key-color-background-color::after{border-top-color:#19448e}.micro-balloon.has-border-color.has-key-color-border-color{border-color:#19448e}.micro-balloon.micro-top.has-key-color-border-color::before{border-top-color:#19448e}.micro-balloon.micro-bottom.has-key-color-border-color::before{border-bottom-color:#19448e}.caption-box.has-key-color-border-color .box-label{background-color:#19448e}.tab-caption-box.has-key-color-border-color .box-label{background-color:#19448e}.tab-caption-box.has-key-color-border-color .box-content{border-color:#19448e}.tab-caption-box.has-key-color-background-color .box-content{background-color:#19448e}.label-box.has-key-color-border-color .box-content{border-color:#19448e}.label-box.has-key-color-background-color .box-content{background-color:#19448e}.sbp-l .speech-balloon.has-key-color-border-color::before{border-right-color:#19448e}.sbp-r .speech-balloon.has-key-color-border-color::before{border-left-color:#19448e}.sbp-l .speech-balloon.has-key-color-background-color::after{border-right-color:#19448e}.sbp-r .speech-balloon.has-key-color-background-color::after{border-left-color:#19448e}.sbs-line.sbp-r .speech-balloon.has-key-color-background-color{background-color:#19448e}.sbs-line.sbp-r .speech-balloon.has-key-color-border-color{border-color:#19448e}.speech-wrap.sbs-think .speech-balloon.has-key-color-border-color::before,.speech-wrap.sbs-think .speech-balloon.has-key-color-border-color::after{border-color:#19448e}.sbs-think .speech-balloon.has-key-color-background-color::before,.sbs-think .speech-balloon.has-key-color-background-color::after{background-color:#19448e}.timeline-box.has-key-color-point-color .timeline-item::before{background-color:#19448e}.body .has-red-background-color{background-color:#e60033}.body .has-red-color{color:#e60033}.body .has-red-border-color{border-color:#e60033}.btn-wrap.has-red-background-color>a{background-color:#e60033}.btn-wrap.has-red-color>a{color:#e60033}.btn-wrap.has-red-border-color>a{border-color:#e60033}.bb-tab.has-red-border-color .bb-label{background-color:#e60033}.toggle-wrap.has-red-border-color .toggle-button{background-color:#e60033}.toggle-wrap.has-red-border-color .toggle-button,.toggle-wrap.has-red-border-color .toggle-content{border-color:#e60033}.iconlist-box.has-red-icon-color li::before{color:#e60033}.micro-balloon.has-red-background-color{background-color:#e60033;border-color:transparent}.micro-balloon.has-red-background-color.micro-bottom::after{border-bottom-color:#e60033;border-top-color:transparent}.micro-balloon.has-red-background-color::before{border-top-color:transparent;border-bottom-color:transparent}.micro-balloon.has-red-background-color::after{border-top-color:#e60033}.micro-balloon.has-border-color.has-red-border-color{border-color:#e60033}.micro-balloon.micro-top.has-red-border-color::before{border-top-color:#e60033}.micro-balloon.micro-bottom.has-red-border-color::before{border-bottom-color:#e60033}.caption-box.has-red-border-color .box-label{background-color:#e60033}.tab-caption-box.has-red-border-color .box-label{background-color:#e60033}.tab-caption-box.has-red-border-color .box-content{border-color:#e60033}.tab-caption-box.has-red-background-color .box-content{background-color:#e60033}.label-box.has-red-border-color .box-content{border-color:#e60033}.label-box.has-red-background-color .box-content{background-color:#e60033}.sbp-l .speech-balloon.has-red-border-color::before{border-right-color:#e60033}.sbp-r .speech-balloon.has-red-border-color::before{border-left-color:#e60033}.sbp-l .speech-balloon.has-red-background-color::after{border-right-color:#e60033}.sbp-r .speech-balloon.has-red-background-color::after{border-left-color:#e60033}.sbs-line.sbp-r .speech-balloon.has-red-background-color{background-color:#e60033}.sbs-line.sbp-r .speech-balloon.has-red-border-color{border-color:#e60033}.speech-wrap.sbs-think .speech-balloon.has-red-border-color::before,.speech-wrap.sbs-think .speech-balloon.has-red-border-color::after{border-color:#e60033}.sbs-think .speech-balloon.has-red-background-color::before,.sbs-think .speech-balloon.has-red-background-color::after{background-color:#e60033}.timeline-box.has-red-point-color .timeline-item::before{background-color:#e60033}.body .has-pink-background-color{background-color:#e95295}.body .has-pink-color{color:#e95295}.body .has-pink-border-color{border-color:#e95295}.btn-wrap.has-pink-background-color>a{background-color:#e95295}.btn-wrap.has-pink-color>a{color:#e95295}.btn-wrap.has-pink-border-color>a{border-color:#e95295}.bb-tab.has-pink-border-color .bb-label{background-color:#e95295}.toggle-wrap.has-pink-border-color .toggle-button{background-color:#e95295}.toggle-wrap.has-pink-border-color .toggle-button,.toggle-wrap.has-pink-border-color .toggle-content{border-color:#e95295}.iconlist-box.has-pink-icon-color li::before{color:#e95295}.micro-balloon.has-pink-background-color{background-color:#e95295;border-color:transparent}.micro-balloon.has-pink-background-color.micro-bottom::after{border-bottom-color:#e95295;border-top-color:transparent}.micro-balloon.has-pink-background-color::before{border-top-color:transparent;border-bottom-color:transparent}.micro-balloon.has-pink-background-color::after{border-top-color:#e95295}.micro-balloon.has-border-color.has-pink-border-color{border-color:#e95295}.micro-balloon.micro-top.has-pink-border-color::before{border-top-color:#e95295}.micro-balloon.micro-bottom.has-pink-border-color::before{border-bottom-color:#e95295}.caption-box.has-pink-border-color .box-label{background-color:#e95295}.tab-caption-box.has-pink-border-color .box-label{background-color:#e95295}.tab-caption-box.has-pink-border-color .box-content{border-color:#e95295}.tab-caption-box.has-pink-background-color .box-content{background-color:#e95295}.label-box.has-pink-border-color .box-content{border-color:#e95295}.label-box.has-pink-background-color .box-content{background-color:#e95295}.sbp-l .speech-balloon.has-pink-border-color::before{border-right-color:#e95295}.sbp-r .speech-balloon.has-pink-border-color::before{border-left-color:#e95295}.sbp-l .speech-balloon.has-pink-background-color::after{border-right-color:#e95295}.sbp-r .speech-balloon.has-pink-background-color::after{border-left-color:#e95295}.sbs-line.sbp-r .speech-balloon.has-pink-background-color{background-color:#e95295}.sbs-line.sbp-r .speech-balloon.has-pink-border-color{border-color:#e95295}.speech-wrap.sbs-think .speech-balloon.has-pink-border-color::before,.speech-wrap.sbs-think .speech-balloon.has-pink-border-color::after{border-color:#e95295}.sbs-think .speech-balloon.has-pink-background-color::before,.sbs-think .speech-balloon.has-pink-background-color::after{background-color:#e95295}.timeline-box.has-pink-point-color .timeline-item::before{background-color:#e95295}.body .has-purple-background-color{background-color:#884898}.body .has-purple-color{color:#884898}.body .has-purple-border-color{border-color:#884898}.btn-wrap.has-purple-background-color>a{background-color:#884898}.btn-wrap.has-purple-color>a{color:#884898}.btn-wrap.has-purple-border-color>a{border-color:#884898}.bb-tab.has-purple-border-color .bb-label{background-color:#884898}.toggle-wrap.has-purple-border-color .toggle-button{background-color:#884898}.toggle-wrap.has-purple-border-color .toggle-button,.toggle-wrap.has-purple-border-color .toggle-content{border-color:#884898}.iconlist-box.has-purple-icon-color li::before{color:#884898}.micro-balloon.has-purple-background-color{background-color:#884898;border-color:transparent}.micro-balloon.has-purple-background-color.micro-bottom::after{border-bottom-color:#884898;border-top-color:transparent}.micro-balloon.has-purple-background-color::before{border-top-color:transparent;border-bottom-color:transparent}.micro-balloon.has-purple-background-color::after{border-top-color:#884898}.micro-balloon.has-border-color.has-purple-border-color{border-color:#884898}.micro-balloon.micro-top.has-purple-border-color::before{border-top-color:#884898}.micro-balloon.micro-bottom.has-purple-border-color::before{border-bottom-color:#884898}.caption-box.has-purple-border-color .box-label{background-color:#884898}.tab-caption-box.has-purple-border-color .box-label{background-color:#884898}.tab-caption-box.has-purple-border-color .box-content{border-color:#884898}.tab-caption-box.has-purple-background-color .box-content{background-color:#884898}.label-box.has-purple-border-color .box-content{border-color:#884898}.label-box.has-purple-background-color .box-content{background-color:#884898}.sbp-l .speech-balloon.has-purple-border-color::before{border-right-color:#884898}.sbp-r .speech-balloon.has-purple-border-color::before{border-left-color:#884898}.sbp-l .speech-balloon.has-purple-background-color::after{border-right-color:#884898}.sbp-r .speech-balloon.has-purple-background-color::after{border-left-color:#884898}.sbs-line.sbp-r .speech-balloon.has-purple-background-color{background-color:#884898}.sbs-line.sbp-r .speech-balloon.has-purple-border-color{border-color:#884898}.speech-wrap.sbs-think .speech-balloon.has-purple-border-color::before,.speech-wrap.sbs-think .speech-balloon.has-purple-border-color::after{border-color:#884898}.sbs-think .speech-balloon.has-purple-background-color::before,.sbs-think .speech-balloon.has-purple-background-color::after{background-color:#884898}.timeline-box.has-purple-point-color .timeline-item::before{background-color:#884898}.body .has-deep-background-color{background-color:#55295b}.body .has-deep-color{color:#55295b}.body .has-deep-border-color{border-color:#55295b}.btn-wrap.has-deep-background-color>a{background-color:#55295b}.btn-wrap.has-deep-color>a{color:#55295b}.btn-wrap.has-deep-border-color>a{border-color:#55295b}.bb-tab.has-deep-border-color .bb-label{background-color:#55295b}.toggle-wrap.has-deep-border-color .toggle-button{background-color:#55295b}.toggle-wrap.has-deep-border-color .toggle-button,.toggle-wrap.has-deep-border-color .toggle-content{border-color:#55295b}.iconlist-box.has-deep-icon-color li::before{color:#55295b}.micro-balloon.has-deep-background-color{background-color:#55295b;border-color:transparent}.micro-balloon.has-deep-background-color.micro-bottom::after{border-bottom-color:#55295b;border-top-color:transparent}.micro-balloon.has-deep-background-color::before{border-top-color:transparent;border-bottom-color:transparent}.micro-balloon.has-deep-background-color::after{border-top-color:#55295b}.micro-balloon.has-border-color.has-deep-border-color{border-color:#55295b}.micro-balloon.micro-top.has-deep-border-color::before{border-top-color:#55295b}.micro-balloon.micro-bottom.has-deep-border-color::before{border-bottom-color:#55295b}.caption-box.has-deep-border-color .box-label{background-color:#55295b}.tab-caption-box.has-deep-border-color .box-label{background-color:#55295b}.tab-caption-box.has-deep-border-color .box-content{border-color:#55295b}.tab-caption-box.has-deep-background-color .box-content{background-color:#55295b}.label-box.has-deep-border-color .box-content{border-color:#55295b}.label-box.has-deep-background-color .box-content{background-color:#55295b}.sbp-l .speech-balloon.has-deep-border-color::before{border-right-color:#55295b}.sbp-r .speech-balloon.has-deep-border-color::before{border-left-color:#55295b}.sbp-l .speech-balloon.has-deep-background-color::after{border-right-color:#55295b}.sbp-r .speech-balloon.has-deep-background-color::after{border-left-color:#55295b}.sbs-line.sbp-r .speech-balloon.has-deep-background-color{background-color:#55295b}.sbs-line.sbp-r .speech-balloon.has-deep-border-color{border-color:#55295b}.speech-wrap.sbs-think .speech-balloon.has-deep-border-color::before,.speech-wrap.sbs-think .speech-balloon.has-deep-border-color::after{border-color:#55295b}.sbs-think .speech-balloon.has-deep-background-color::before,.sbs-think .speech-balloon.has-deep-background-color::after{background-color:#55295b}.timeline-box.has-deep-point-color .timeline-item::before{background-color:#55295b}.body .has-indigo-background-color{background-color:#1e50a2}.body .has-indigo-color{color:#1e50a2}.body .has-indigo-border-color{border-color:#1e50a2}.btn-wrap.has-indigo-background-color>a{background-color:#1e50a2}.btn-wrap.has-indigo-color>a{color:#1e50a2}.btn-wrap.has-indigo-border-color>a{border-color:#1e50a2}.bb-tab.has-indigo-border-color .bb-label{background-color:#1e50a2}.toggle-wrap.has-indigo-border-color .toggle-button{background-color:#1e50a2}.toggle-wrap.has-indigo-border-color .toggle-button,.toggle-wrap.has-indigo-border-color .toggle-content{border-color:#1e50a2}.iconlist-box.has-indigo-icon-color li::before{color:#1e50a2}.micro-balloon.has-indigo-background-color{background-color:#1e50a2;border-color:transparent}.micro-balloon.has-indigo-background-color.micro-bottom::after{border-bottom-color:#1e50a2;border-top-color:transparent}.micro-balloon.has-indigo-background-color::before{border-top-color:transparent;border-bottom-color:transparent}.micro-balloon.has-indigo-background-color::after{border-top-color:#1e50a2}.micro-balloon.has-border-color.has-indigo-border-color{border-color:#1e50a2}.micro-balloon.micro-top.has-indigo-border-color::before{border-top-color:#1e50a2}.micro-balloon.micro-bottom.has-indigo-border-color::before{border-bottom-color:#1e50a2}.caption-box.has-indigo-border-color .box-label{background-color:#1e50a2}.tab-caption-box.has-indigo-border-color .box-label{background-color:#1e50a2}.tab-caption-box.has-indigo-border-color .box-content{border-color:#1e50a2}.tab-caption-box.has-indigo-background-color .box-content{background-color:#1e50a2}.label-box.has-indigo-border-color .box-content{border-color:#1e50a2}.label-box.has-indigo-background-color .box-content{background-color:#1e50a2}.sbp-l .speech-balloon.has-indigo-border-color::before{border-right-color:#1e50a2}.sbp-r .speech-balloon.has-indigo-border-color::before{border-left-color:#1e50a2}.sbp-l .speech-balloon.has-indigo-background-color::after{border-right-color:#1e50a2}.sbp-r .speech-balloon.has-indigo-background-color::after{border-left-color:#1e50a2}.sbs-line.sbp-r .speech-balloon.has-indigo-background-color{background-color:#1e50a2}.sbs-line.sbp-r .speech-balloon.has-indigo-border-color{border-color:#1e50a2}.speech-wrap.sbs-think .speech-balloon.has-indigo-border-color::before,.speech-wrap.sbs-think .speech-balloon.has-indigo-border-color::after{border-color:#1e50a2}.sbs-think .speech-balloon.has-indigo-background-color::before,.sbs-think .speech-balloon.has-indigo-background-color::after{background-color:#1e50a2}.timeline-box.has-indigo-point-color .timeline-item::before{background-color:#1e50a2}.body .has-blue-background-color{background-color:#0095d9}.body .has-blue-color{color:#0095d9}.body .has-blue-border-color{border-color:#0095d9}.btn-wrap.has-blue-background-color>a{background-color:#0095d9}.btn-wrap.has-blue-color>a{color:#0095d9}.btn-wrap.has-blue-border-color>a{border-color:#0095d9}.bb-tab.has-blue-border-color .bb-label{background-color:#0095d9}.toggle-wrap.has-blue-border-color .toggle-button{background-color:#0095d9}.toggle-wrap.has-blue-border-color .toggle-button,.toggle-wrap.has-blue-border-color .toggle-content{border-color:#0095d9}.iconlist-box.has-blue-icon-color li::before{color:#0095d9}.micro-balloon.has-blue-background-color{background-color:#0095d9;border-color:transparent}.micro-balloon.has-blue-background-color.micro-bottom::after{border-bottom-color:#0095d9;border-top-color:transparent}.micro-balloon.has-blue-background-color::before{border-top-color:transparent;border-bottom-color:transparent}.micro-balloon.has-blue-background-color::after{border-top-color:#0095d9}.micro-balloon.has-border-color.has-blue-border-color{border-color:#0095d9}.micro-balloon.micro-top.has-blue-border-color::before{border-top-color:#0095d9}.micro-balloon.micro-bottom.has-blue-border-color::before{border-bottom-color:#0095d9}.caption-box.has-blue-border-color .box-label{background-color:#0095d9}.tab-caption-box.has-blue-border-color .box-label{background-color:#0095d9}.tab-caption-box.has-blue-border-color .box-content{border-color:#0095d9}.tab-caption-box.has-blue-background-color .box-content{background-color:#0095d9}.label-box.has-blue-border-color .box-content{border-color:#0095d9}.label-box.has-blue-background-color .box-content{background-color:#0095d9}.sbp-l .speech-balloon.has-blue-border-color::before{border-right-color:#0095d9}.sbp-r .speech-balloon.has-blue-border-color::before{border-left-color:#0095d9}.sbp-l .speech-balloon.has-blue-background-color::after{border-right-color:#0095d9}.sbp-r .speech-balloon.has-blue-background-color::after{border-left-color:#0095d9}.sbs-line.sbp-r .speech-balloon.has-blue-background-color{background-color:#0095d9}.sbs-line.sbp-r .speech-balloon.has-blue-border-color{border-color:#0095d9}.speech-wrap.sbs-think .speech-balloon.has-blue-border-color::before,.speech-wrap.sbs-think .speech-balloon.has-blue-border-color::after{border-color:#0095d9}.sbs-think .speech-balloon.has-blue-background-color::before,.sbs-think .speech-balloon.has-blue-background-color::after{background-color:#0095d9}.timeline-box.has-blue-point-color .timeline-item::before{background-color:#0095d9}.body .has-light-blue-background-color{background-color:#2ca9e1}.body .has-light-blue-color{color:#2ca9e1}.body .has-light-blue-border-color{border-color:#2ca9e1}.btn-wrap.has-light-blue-background-color>a{background-color:#2ca9e1}.btn-wrap.has-light-blue-color>a{color:#2ca9e1}.btn-wrap.has-light-blue-border-color>a{border-color:#2ca9e1}.bb-tab.has-light-blue-border-color .bb-label{background-color:#2ca9e1}.toggle-wrap.has-light-blue-border-color .toggle-button{background-color:#2ca9e1}.toggle-wrap.has-light-blue-border-color .toggle-button,.toggle-wrap.has-light-blue-border-color .toggle-content{border-color:#2ca9e1}.iconlist-box.has-light-blue-icon-color li::before{color:#2ca9e1}.micro-balloon.has-light-blue-background-color{background-color:#2ca9e1;border-color:transparent}.micro-balloon.has-light-blue-background-color.micro-bottom::after{border-bottom-color:#2ca9e1;border-top-color:transparent}.micro-balloon.has-light-blue-background-color::before{border-top-color:transparent;border-bottom-color:transparent}.micro-balloon.has-light-blue-background-color::after{border-top-color:#2ca9e1}.micro-balloon.has-border-color.has-light-blue-border-color{border-color:#2ca9e1}.micro-balloon.micro-top.has-light-blue-border-color::before{border-top-color:#2ca9e1}.micro-balloon.micro-bottom.has-light-blue-border-color::before{border-bottom-color:#2ca9e1}.caption-box.has-light-blue-border-color .box-label{background-color:#2ca9e1}.tab-caption-box.has-light-blue-border-color .box-label{background-color:#2ca9e1}.tab-caption-box.has-light-blue-border-color .box-content{border-color:#2ca9e1}.tab-caption-box.has-light-blue-background-color .box-content{background-color:#2ca9e1}.label-box.has-light-blue-border-color .box-content{border-color:#2ca9e1}.label-box.has-light-blue-background-color .box-content{background-color:#2ca9e1}.sbp-l .speech-balloon.has-light-blue-border-color::before{border-right-color:#2ca9e1}.sbp-r .speech-balloon.has-light-blue-border-color::before{border-left-color:#2ca9e1}.sbp-l .speech-balloon.has-light-blue-background-color::after{border-right-color:#2ca9e1}.sbp-r .speech-balloon.has-light-blue-background-color::after{border-left-color:#2ca9e1}.sbs-line.sbp-r .speech-balloon.has-light-blue-background-color{background-color:#2ca9e1}.sbs-line.sbp-r .speech-balloon.has-light-blue-border-color{border-color:#2ca9e1}.speech-wrap.sbs-think .speech-balloon.has-light-blue-border-color::before,.speech-wrap.sbs-think .speech-balloon.has-light-blue-border-color::after{border-color:#2ca9e1}.sbs-think .speech-balloon.has-light-blue-background-color::before,.sbs-think .speech-balloon.has-light-blue-background-color::after{background-color:#2ca9e1}.timeline-box.has-light-blue-point-color .timeline-item::before{background-color:#2ca9e1}.body .has-cyan-background-color{background-color:#00a3af}.body .has-cyan-color{color:#00a3af}.body .has-cyan-border-color{border-color:#00a3af}.btn-wrap.has-cyan-background-color>a{background-color:#00a3af}.btn-wrap.has-cyan-color>a{color:#00a3af}.btn-wrap.has-cyan-border-color>a{border-color:#00a3af}.bb-tab.has-cyan-border-color .bb-label{background-color:#00a3af}.toggle-wrap.has-cyan-border-color .toggle-button{background-color:#00a3af}.toggle-wrap.has-cyan-border-color .toggle-button,.toggle-wrap.has-cyan-border-color .toggle-content{border-color:#00a3af}.iconlist-box.has-cyan-icon-color li::before{color:#00a3af}.micro-balloon.has-cyan-background-color{background-color:#00a3af;border-color:transparent}.micro-balloon.has-cyan-background-color.micro-bottom::after{border-bottom-color:#00a3af;border-top-color:transparent}.micro-balloon.has-cyan-background-color::before{border-top-color:transparent;border-bottom-color:transparent}.micro-balloon.has-cyan-background-color::after{border-top-color:#00a3af}.micro-balloon.has-border-color.has-cyan-border-color{border-color:#00a3af}.micro-balloon.micro-top.has-cyan-border-color::before{border-top-color:#00a3af}.micro-balloon.micro-bottom.has-cyan-border-color::before{border-bottom-color:#00a3af}.caption-box.has-cyan-border-color .box-label{background-color:#00a3af}.tab-caption-box.has-cyan-border-color .box-label{background-color:#00a3af}.tab-caption-box.has-cyan-border-color .box-content{border-color:#00a3af}.tab-caption-box.has-cyan-background-color .box-content{background-color:#00a3af}.label-box.has-cyan-border-color .box-content{border-color:#00a3af}.label-box.has-cyan-background-color .box-content{background-color:#00a3af}.sbp-l .speech-balloon.has-cyan-border-color::before{border-right-color:#00a3af}.sbp-r .speech-balloon.has-cyan-border-color::before{border-left-color:#00a3af}.sbp-l .speech-balloon.has-cyan-background-color::after{border-right-color:#00a3af}.sbp-r .speech-balloon.has-cyan-background-color::after{border-left-color:#00a3af}.sbs-line.sbp-r .speech-balloon.has-cyan-background-color{background-color:#00a3af}.sbs-line.sbp-r .speech-balloon.has-cyan-border-color{border-color:#00a3af}.speech-wrap.sbs-think .speech-balloon.has-cyan-border-color::before,.speech-wrap.sbs-think .speech-balloon.has-cyan-border-color::after{border-color:#00a3af}.sbs-think .speech-balloon.has-cyan-background-color::before,.sbs-think .speech-balloon.has-cyan-background-color::after{background-color:#00a3af}.timeline-box.has-cyan-point-color .timeline-item::before{background-color:#00a3af}.body .has-teal-background-color{background-color:#007b43}.body .has-teal-color{color:#007b43}.body .has-teal-border-color{border-color:#007b43}.btn-wrap.has-teal-background-color>a{background-color:#007b43}.btn-wrap.has-teal-color>a{color:#007b43}.btn-wrap.has-teal-border-color>a{border-color:#007b43}.bb-tab.has-teal-border-color .bb-label{background-color:#007b43}.toggle-wrap.has-teal-border-color .toggle-button{background-color:#007b43}.toggle-wrap.has-teal-border-color .toggle-button,.toggle-wrap.has-teal-border-color .toggle-content{border-color:#007b43}.iconlist-box.has-teal-icon-color li::before{color:#007b43}.micro-balloon.has-teal-background-color{background-color:#007b43;border-color:transparent}.micro-balloon.has-teal-background-color.micro-bottom::after{border-bottom-color:#007b43;border-top-color:transparent}.micro-balloon.has-teal-background-color::before{border-top-color:transparent;border-bottom-color:transparent}.micro-balloon.has-teal-background-color::after{border-top-color:#007b43}.micro-balloon.has-border-color.has-teal-border-color{border-color:#007b43}.micro-balloon.micro-top.has-teal-border-color::before{border-top-color:#007b43}.micro-balloon.micro-bottom.has-teal-border-color::before{border-bottom-color:#007b43}.caption-box.has-teal-border-color .box-label{background-color:#007b43}.tab-caption-box.has-teal-border-color .box-label{background-color:#007b43}.tab-caption-box.has-teal-border-color .box-content{border-color:#007b43}.tab-caption-box.has-teal-background-color .box-content{background-color:#007b43}.label-box.has-teal-border-color .box-content{border-color:#007b43}.label-box.has-teal-background-color .box-content{background-color:#007b43}.sbp-l .speech-balloon.has-teal-border-color::before{border-right-color:#007b43}.sbp-r .speech-balloon.has-teal-border-color::before{border-left-color:#007b43}.sbp-l .speech-balloon.has-teal-background-color::after{border-right-color:#007b43}.sbp-r .speech-balloon.has-teal-background-color::after{border-left-color:#007b43}.sbs-line.sbp-r .speech-balloon.has-teal-background-color{background-color:#007b43}.sbs-line.sbp-r .speech-balloon.has-teal-border-color{border-color:#007b43}.speech-wrap.sbs-think .speech-balloon.has-teal-border-color::before,.speech-wrap.sbs-think .speech-balloon.has-teal-border-color::after{border-color:#007b43}.sbs-think .speech-balloon.has-teal-background-color::before,.sbs-think .speech-balloon.has-teal-background-color::after{background-color:#007b43}.timeline-box.has-teal-point-color .timeline-item::before{background-color:#007b43}.body .has-green-background-color{background-color:#3eb370}.body .has-green-color{color:#3eb370}.body .has-green-border-color{border-color:#3eb370}.btn-wrap.has-green-background-color>a{background-color:#3eb370}.btn-wrap.has-green-color>a{color:#3eb370}.btn-wrap.has-green-border-color>a{border-color:#3eb370}.bb-tab.has-green-border-color .bb-label{background-color:#3eb370}.toggle-wrap.has-green-border-color .toggle-button{background-color:#3eb370}.toggle-wrap.has-green-border-color .toggle-button,.toggle-wrap.has-green-border-color .toggle-content{border-color:#3eb370}.iconlist-box.has-green-icon-color li::before{color:#3eb370}.micro-balloon.has-green-background-color{background-color:#3eb370;border-color:transparent}.micro-balloon.has-green-background-color.micro-bottom::after{border-bottom-color:#3eb370;border-top-color:transparent}.micro-balloon.has-green-background-color::before{border-top-color:transparent;border-bottom-color:transparent}.micro-balloon.has-green-background-color::after{border-top-color:#3eb370}.micro-balloon.has-border-color.has-green-border-color{border-color:#3eb370}.micro-balloon.micro-top.has-green-border-color::before{border-top-color:#3eb370}.micro-balloon.micro-bottom.has-green-border-color::before{border-bottom-color:#3eb370}.caption-box.has-green-border-color .box-label{background-color:#3eb370}.tab-caption-box.has-green-border-color .box-label{background-color:#3eb370}.tab-caption-box.has-green-border-color .box-content{border-color:#3eb370}.tab-caption-box.has-green-background-color .box-content{background-color:#3eb370}.label-box.has-green-border-color .box-content{border-color:#3eb370}.label-box.has-green-background-color .box-content{background-color:#3eb370}.sbp-l .speech-balloon.has-green-border-color::before{border-right-color:#3eb370}.sbp-r .speech-balloon.has-green-border-color::before{border-left-color:#3eb370}.sbp-l .speech-balloon.has-green-background-color::after{border-right-color:#3eb370}.sbp-r .speech-balloon.has-green-background-color::after{border-left-color:#3eb370}.sbs-line.sbp-r .speech-balloon.has-green-background-color{background-color:#3eb370}.sbs-line.sbp-r .speech-balloon.has-green-border-color{border-color:#3eb370}.speech-wrap.sbs-think .speech-balloon.has-green-border-color::before,.speech-wrap.sbs-think .speech-balloon.has-green-border-color::after{border-color:#3eb370}.sbs-think .speech-balloon.has-green-background-color::before,.sbs-think .speech-balloon.has-green-background-color::after{background-color:#3eb370}.timeline-box.has-green-point-color .timeline-item::before{background-color:#3eb370}.body .has-light-green-background-color{background-color:#8bc34a}.body .has-light-green-color{color:#8bc34a}.body .has-light-green-border-color{border-color:#8bc34a}.btn-wrap.has-light-green-background-color>a{background-color:#8bc34a}.btn-wrap.has-light-green-color>a{color:#8bc34a}.btn-wrap.has-light-green-border-color>a{border-color:#8bc34a}.bb-tab.has-light-green-border-color .bb-label{background-color:#8bc34a}.toggle-wrap.has-light-green-border-color .toggle-button{background-color:#8bc34a}.toggle-wrap.has-light-green-border-color .toggle-button,.toggle-wrap.has-light-green-border-color .toggle-content{border-color:#8bc34a}.iconlist-box.has-light-green-icon-color li::before{color:#8bc34a}.micro-balloon.has-light-green-background-color{background-color:#8bc34a;border-color:transparent}.micro-balloon.has-light-green-background-color.micro-bottom::after{border-bottom-color:#8bc34a;border-top-color:transparent}.micro-balloon.has-light-green-background-color::before{border-top-color:transparent;border-bottom-color:transparent}.micro-balloon.has-light-green-background-color::after{border-top-color:#8bc34a}.micro-balloon.has-border-color.has-light-green-border-color{border-color:#8bc34a}.micro-balloon.micro-top.has-light-green-border-color::before{border-top-color:#8bc34a}.micro-balloon.micro-bottom.has-light-green-border-color::before{border-bottom-color:#8bc34a}.caption-box.has-light-green-border-color .box-label{background-color:#8bc34a}.tab-caption-box.has-light-green-border-color .box-label{background-color:#8bc34a}.tab-caption-box.has-light-green-border-color .box-content{border-color:#8bc34a}.tab-caption-box.has-light-green-background-color .box-content{background-color:#8bc34a}.label-box.has-light-green-border-color .box-content{border-color:#8bc34a}.label-box.has-light-green-background-color .box-content{background-color:#8bc34a}.sbp-l .speech-balloon.has-light-green-border-color::before{border-right-color:#8bc34a}.sbp-r .speech-balloon.has-light-green-border-color::before{border-left-color:#8bc34a}.sbp-l .speech-balloon.has-light-green-background-color::after{border-right-color:#8bc34a}.sbp-r .speech-balloon.has-light-green-background-color::after{border-left-color:#8bc34a}.sbs-line.sbp-r .speech-balloon.has-light-green-background-color{background-color:#8bc34a}.sbs-line.sbp-r .speech-balloon.has-light-green-border-color{border-color:#8bc34a}.speech-wrap.sbs-think .speech-balloon.has-light-green-border-color::before,.speech-wrap.sbs-think .speech-balloon.has-light-green-border-color::after{border-color:#8bc34a}.sbs-think .speech-balloon.has-light-green-background-color::before,.sbs-think .speech-balloon.has-light-green-background-color::after{background-color:#8bc34a}.timeline-box.has-light-green-point-color .timeline-item::before{background-color:#8bc34a}.body .has-lime-background-color{background-color:#c3d825}.body .has-lime-color{color:#c3d825}.body .has-lime-border-color{border-color:#c3d825}.btn-wrap.has-lime-background-color>a{background-color:#c3d825}.btn-wrap.has-lime-color>a{color:#c3d825}.btn-wrap.has-lime-border-color>a{border-color:#c3d825}.bb-tab.has-lime-border-color .bb-label{background-color:#c3d825}.toggle-wrap.has-lime-border-color .toggle-button{background-color:#c3d825}.toggle-wrap.has-lime-border-color .toggle-button,.toggle-wrap.has-lime-border-color .toggle-content{border-color:#c3d825}.iconlist-box.has-lime-icon-color li::before{color:#c3d825}.micro-balloon.has-lime-background-color{background-color:#c3d825;border-color:transparent}.micro-balloon.has-lime-background-color.micro-bottom::after{border-bottom-color:#c3d825;border-top-color:transparent}.micro-balloon.has-lime-background-color::before{border-top-color:transparent;border-bottom-color:transparent}.micro-balloon.has-lime-background-color::after{border-top-color:#c3d825}.micro-balloon.has-border-color.has-lime-border-color{border-color:#c3d825}.micro-balloon.micro-top.has-lime-border-color::before{border-top-color:#c3d825}.micro-balloon.micro-bottom.has-lime-border-color::before{border-bottom-color:#c3d825}.caption-box.has-lime-border-color .box-label{background-color:#c3d825}.tab-caption-box.has-lime-border-color .box-label{background-color:#c3d825}.tab-caption-box.has-lime-border-color .box-content{border-color:#c3d825}.tab-caption-box.has-lime-background-color .box-content{background-color:#c3d825}.label-box.has-lime-border-color .box-content{border-color:#c3d825}.label-box.has-lime-background-color .box-content{background-color:#c3d825}.sbp-l .speech-balloon.has-lime-border-color::before{border-right-color:#c3d825}.sbp-r .speech-balloon.has-lime-border-color::before{border-left-color:#c3d825}.sbp-l .speech-balloon.has-lime-background-color::after{border-right-color:#c3d825}.sbp-r .speech-balloon.has-lime-background-color::after{border-left-color:#c3d825}.sbs-line.sbp-r .speech-balloon.has-lime-background-color{background-color:#c3d825}.sbs-line.sbp-r .speech-balloon.has-lime-border-color{border-color:#c3d825}.speech-wrap.sbs-think .speech-balloon.has-lime-border-color::before,.speech-wrap.sbs-think .speech-balloon.has-lime-border-color::after{border-color:#c3d825}.sbs-think .speech-balloon.has-lime-background-color::before,.sbs-think .speech-balloon.has-lime-background-color::after{background-color:#c3d825}.timeline-box.has-lime-point-color .timeline-item::before{background-color:#c3d825}.body .has-yellow-background-color{background-color:#ffd900}.body .has-yellow-color{color:#ffd900}.body .has-yellow-border-color{border-color:#ffd900}.btn-wrap.has-yellow-background-color>a{background-color:#ffd900}.btn-wrap.has-yellow-color>a{color:#ffd900}.btn-wrap.has-yellow-border-color>a{border-color:#ffd900}.bb-tab.has-yellow-border-color .bb-label{background-color:#ffd900}.toggle-wrap.has-yellow-border-color .toggle-button{background-color:#ffd900}.toggle-wrap.has-yellow-border-color .toggle-button,.toggle-wrap.has-yellow-border-color .toggle-content{border-color:#ffd900}.iconlist-box.has-yellow-icon-color li::before{color:#ffd900}.micro-balloon.has-yellow-background-color{background-color:#ffd900;border-color:transparent}.micro-balloon.has-yellow-background-color.micro-bottom::after{border-bottom-color:#ffd900;border-top-color:transparent}.micro-balloon.has-yellow-background-color::before{border-top-color:transparent;border-bottom-color:transparent}.micro-balloon.has-yellow-background-color::after{border-top-color:#ffd900}.micro-balloon.has-border-color.has-yellow-border-color{border-color:#ffd900}.micro-balloon.micro-top.has-yellow-border-color::before{border-top-color:#ffd900}.micro-balloon.micro-bottom.has-yellow-border-color::before{border-bottom-color:#ffd900}.caption-box.has-yellow-border-color .box-label{background-color:#ffd900}.tab-caption-box.has-yellow-border-color .box-label{background-color:#ffd900}.tab-caption-box.has-yellow-border-color .box-content{border-color:#ffd900}.tab-caption-box.has-yellow-background-color .box-content{background-color:#ffd900}.label-box.has-yellow-border-color .box-content{border-color:#ffd900}.label-box.has-yellow-background-color .box-content{background-color:#ffd900}.sbp-l .speech-balloon.has-yellow-border-color::before{border-right-color:#ffd900}.sbp-r .speech-balloon.has-yellow-border-color::before{border-left-color:#ffd900}.sbp-l .speech-balloon.has-yellow-background-color::after{border-right-color:#ffd900}.sbp-r .speech-balloon.has-yellow-background-color::after{border-left-color:#ffd900}.sbs-line.sbp-r .speech-balloon.has-yellow-background-color{background-color:#ffd900}.sbs-line.sbp-r .speech-balloon.has-yellow-border-color{border-color:#ffd900}.speech-wrap.sbs-think .speech-balloon.has-yellow-border-color::before,.speech-wrap.sbs-think .speech-balloon.has-yellow-border-color::after{border-color:#ffd900}.sbs-think .speech-balloon.has-yellow-background-color::before,.sbs-think .speech-balloon.has-yellow-background-color::after{background-color:#ffd900}.timeline-box.has-yellow-point-color .timeline-item::before{background-color:#ffd900}.body .has-amber-background-color{background-color:#ffc107}.body .has-amber-color{color:#ffc107}.body .has-amber-border-color{border-color:#ffc107}.btn-wrap.has-amber-background-color>a{background-color:#ffc107}.btn-wrap.has-amber-color>a{color:#ffc107}.btn-wrap.has-amber-border-color>a{border-color:#ffc107}.bb-tab.has-amber-border-color .bb-label{background-color:#ffc107}.toggle-wrap.has-amber-border-color .toggle-button{background-color:#ffc107}.toggle-wrap.has-amber-border-color .toggle-button,.toggle-wrap.has-amber-border-color .toggle-content{border-color:#ffc107}.iconlist-box.has-amber-icon-color li::before{color:#ffc107}.micro-balloon.has-amber-background-color{background-color:#ffc107;border-color:transparent}.micro-balloon.has-amber-background-color.micro-bottom::after{border-bottom-color:#ffc107;border-top-color:transparent}.micro-balloon.has-amber-background-color::before{border-top-color:transparent;border-bottom-color:transparent}.micro-balloon.has-amber-background-color::after{border-top-color:#ffc107}.micro-balloon.has-border-color.has-amber-border-color{border-color:#ffc107}.micro-balloon.micro-top.has-amber-border-color::before{border-top-color:#ffc107}.micro-balloon.micro-bottom.has-amber-border-color::before{border-bottom-color:#ffc107}.caption-box.has-amber-border-color .box-label{background-color:#ffc107}.tab-caption-box.has-amber-border-color .box-label{background-color:#ffc107}.tab-caption-box.has-amber-border-color .box-content{border-color:#ffc107}.tab-caption-box.has-amber-background-color .box-content{background-color:#ffc107}.label-box.has-amber-border-color .box-content{border-color:#ffc107}.label-box.has-amber-background-color .box-content{background-color:#ffc107}.sbp-l .speech-balloon.has-amber-border-color::before{border-right-color:#ffc107}.sbp-r .speech-balloon.has-amber-border-color::before{border-left-color:#ffc107}.sbp-l .speech-balloon.has-amber-background-color::after{border-right-color:#ffc107}.sbp-r .speech-balloon.has-amber-background-color::after{border-left-color:#ffc107}.sbs-line.sbp-r .speech-balloon.has-amber-background-color{background-color:#ffc107}.sbs-line.sbp-r .speech-balloon.has-amber-border-color{border-color:#ffc107}.speech-wrap.sbs-think .speech-balloon.has-amber-border-color::before,.speech-wrap.sbs-think .speech-balloon.has-amber-border-color::after{border-color:#ffc107}.sbs-think .speech-balloon.has-amber-background-color::before,.sbs-think .speech-balloon.has-amber-background-color::after{background-color:#ffc107}.timeline-box.has-amber-point-color .timeline-item::before{background-color:#ffc107}.body .has-orange-background-color{background-color:#f39800}.body .has-orange-color{color:#f39800}.body .has-orange-border-color{border-color:#f39800}.btn-wrap.has-orange-background-color>a{background-color:#f39800}.btn-wrap.has-orange-color>a{color:#f39800}.btn-wrap.has-orange-border-color>a{border-color:#f39800}.bb-tab.has-orange-border-color .bb-label{background-color:#f39800}.toggle-wrap.has-orange-border-color .toggle-button{background-color:#f39800}.toggle-wrap.has-orange-border-color .toggle-button,.toggle-wrap.has-orange-border-color .toggle-content{border-color:#f39800}.iconlist-box.has-orange-icon-color li::before{color:#f39800}.micro-balloon.has-orange-background-color{background-color:#f39800;border-color:transparent}.micro-balloon.has-orange-background-color.micro-bottom::after{border-bottom-color:#f39800;border-top-color:transparent}.micro-balloon.has-orange-background-color::before{border-top-color:transparent;border-bottom-color:transparent}.micro-balloon.has-orange-background-color::after{border-top-color:#f39800}.micro-balloon.has-border-color.has-orange-border-color{border-color:#f39800}.micro-balloon.micro-top.has-orange-border-color::before{border-top-color:#f39800}.micro-balloon.micro-bottom.has-orange-border-color::before{border-bottom-color:#f39800}.caption-box.has-orange-border-color .box-label{background-color:#f39800}.tab-caption-box.has-orange-border-color .box-label{background-color:#f39800}.tab-caption-box.has-orange-border-color .box-content{border-color:#f39800}.tab-caption-box.has-orange-background-color .box-content{background-color:#f39800}.label-box.has-orange-border-color .box-content{border-color:#f39800}.label-box.has-orange-background-color .box-content{background-color:#f39800}.sbp-l .speech-balloon.has-orange-border-color::before{border-right-color:#f39800}.sbp-r .speech-balloon.has-orange-border-color::before{border-left-color:#f39800}.sbp-l .speech-balloon.has-orange-background-color::after{border-right-color:#f39800}.sbp-r .speech-balloon.has-orange-background-color::after{border-left-color:#f39800}.sbs-line.sbp-r .speech-balloon.has-orange-background-color{background-color:#f39800}.sbs-line.sbp-r .speech-balloon.has-orange-border-color{border-color:#f39800}.speech-wrap.sbs-think .speech-balloon.has-orange-border-color::before,.speech-wrap.sbs-think .speech-balloon.has-orange-border-color::after{border-color:#f39800}.sbs-think .speech-balloon.has-orange-background-color::before,.sbs-think .speech-balloon.has-orange-background-color::after{background-color:#f39800}.timeline-box.has-orange-point-color .timeline-item::before{background-color:#f39800}.body .has-deep-orange-background-color{background-color:#ea5506}.body .has-deep-orange-color{color:#ea5506}.body .has-deep-orange-border-color{border-color:#ea5506}.btn-wrap.has-deep-orange-background-color>a{background-color:#ea5506}.btn-wrap.has-deep-orange-color>a{color:#ea5506}.btn-wrap.has-deep-orange-border-color>a{border-color:#ea5506}.bb-tab.has-deep-orange-border-color .bb-label{background-color:#ea5506}.toggle-wrap.has-deep-orange-border-color .toggle-button{background-color:#ea5506}.toggle-wrap.has-deep-orange-border-color .toggle-button,.toggle-wrap.has-deep-orange-border-color .toggle-content{border-color:#ea5506}.iconlist-box.has-deep-orange-icon-color li::before{color:#ea5506}.micro-balloon.has-deep-orange-background-color{background-color:#ea5506;border-color:transparent}.micro-balloon.has-deep-orange-background-color.micro-bottom::after{border-bottom-color:#ea5506;border-top-color:transparent}.micro-balloon.has-deep-orange-background-color::before{border-top-color:transparent;border-bottom-color:transparent}.micro-balloon.has-deep-orange-background-color::after{border-top-color:#ea5506}.micro-balloon.has-border-color.has-deep-orange-border-color{border-color:#ea5506}.micro-balloon.micro-top.has-deep-orange-border-color::before{border-top-color:#ea5506}.micro-balloon.micro-bottom.has-deep-orange-border-color::before{border-bottom-color:#ea5506}.caption-box.has-deep-orange-border-color .box-label{background-color:#ea5506}.tab-caption-box.has-deep-orange-border-color .box-label{background-color:#ea5506}.tab-caption-box.has-deep-orange-border-color .box-content{border-color:#ea5506}.tab-caption-box.has-deep-orange-background-color .box-content{background-color:#ea5506}.label-box.has-deep-orange-border-color .box-content{border-color:#ea5506}.label-box.has-deep-orange-background-color .box-content{background-color:#ea5506}.sbp-l .speech-balloon.has-deep-orange-border-color::before{border-right-color:#ea5506}.sbp-r .speech-balloon.has-deep-orange-border-color::before{border-left-color:#ea5506}.sbp-l .speech-balloon.has-deep-orange-background-color::after{border-right-color:#ea5506}.sbp-r .speech-balloon.has-deep-orange-background-color::after{border-left-color:#ea5506}.sbs-line.sbp-r .speech-balloon.has-deep-orange-background-color{background-color:#ea5506}.sbs-line.sbp-r .speech-balloon.has-deep-orange-border-color{border-color:#ea5506}.speech-wrap.sbs-think .speech-balloon.has-deep-orange-border-color::before,.speech-wrap.sbs-think .speech-balloon.has-deep-orange-border-color::after{border-color:#ea5506}.sbs-think .speech-balloon.has-deep-orange-background-color::before,.sbs-think .speech-balloon.has-deep-orange-background-color::after{background-color:#ea5506}.timeline-box.has-deep-orange-point-color .timeline-item::before{background-color:#ea5506}.body .has-brown-background-color{background-color:#954e2a}.body .has-brown-color{color:#954e2a}.body .has-brown-border-color{border-color:#954e2a}.btn-wrap.has-brown-background-color>a{background-color:#954e2a}.btn-wrap.has-brown-color>a{color:#954e2a}.btn-wrap.has-brown-border-color>a{border-color:#954e2a}.bb-tab.has-brown-border-color .bb-label{background-color:#954e2a}.toggle-wrap.has-brown-border-color .toggle-button{background-color:#954e2a}.toggle-wrap.has-brown-border-color .toggle-button,.toggle-wrap.has-brown-border-color .toggle-content{border-color:#954e2a}.iconlist-box.has-brown-icon-color li::before{color:#954e2a}.micro-balloon.has-brown-background-color{background-color:#954e2a;border-color:transparent}.micro-balloon.has-brown-background-color.micro-bottom::after{border-bottom-color:#954e2a;border-top-color:transparent}.micro-balloon.has-brown-background-color::before{border-top-color:transparent;border-bottom-color:transparent}.micro-balloon.has-brown-background-color::after{border-top-color:#954e2a}.micro-balloon.has-border-color.has-brown-border-color{border-color:#954e2a}.micro-balloon.micro-top.has-brown-border-color::before{border-top-color:#954e2a}.micro-balloon.micro-bottom.has-brown-border-color::before{border-bottom-color:#954e2a}.caption-box.has-brown-border-color .box-label{background-color:#954e2a}.tab-caption-box.has-brown-border-color .box-label{background-color:#954e2a}.tab-caption-box.has-brown-border-color .box-content{border-color:#954e2a}.tab-caption-box.has-brown-background-color .box-content{background-color:#954e2a}.label-box.has-brown-border-color .box-content{border-color:#954e2a}.label-box.has-brown-background-color .box-content{background-color:#954e2a}.sbp-l .speech-balloon.has-brown-border-color::before{border-right-color:#954e2a}.sbp-r .speech-balloon.has-brown-border-color::before{border-left-color:#954e2a}.sbp-l .speech-balloon.has-brown-background-color::after{border-right-color:#954e2a}.sbp-r .speech-balloon.has-brown-background-color::after{border-left-color:#954e2a}.sbs-line.sbp-r .speech-balloon.has-brown-background-color{background-color:#954e2a}.sbs-line.sbp-r .speech-balloon.has-brown-border-color{border-color:#954e2a}.speech-wrap.sbs-think .speech-balloon.has-brown-border-color::before,.speech-wrap.sbs-think .speech-balloon.has-brown-border-color::after{border-color:#954e2a}.sbs-think .speech-balloon.has-brown-background-color::before,.sbs-think .speech-balloon.has-brown-background-color::after{background-color:#954e2a}.timeline-box.has-brown-point-color .timeline-item::before{background-color:#954e2a}.body .has-grey-background-color{background-color:#949495}.body .has-grey-color{color:#949495}.body .has-grey-border-color{border-color:#949495}.btn-wrap.has-grey-background-color>a{background-color:#949495}.btn-wrap.has-grey-color>a{color:#949495}.btn-wrap.has-grey-border-color>a{border-color:#949495}.bb-tab.has-grey-border-color .bb-label{background-color:#949495}.toggle-wrap.has-grey-border-color .toggle-button{background-color:#949495}.toggle-wrap.has-grey-border-color .toggle-button,.toggle-wrap.has-grey-border-color .toggle-content{border-color:#949495}.iconlist-box.has-grey-icon-color li::before{color:#949495}.micro-balloon.has-grey-background-color{background-color:#949495;border-color:transparent}.micro-balloon.has-grey-background-color.micro-bottom::after{border-bottom-color:#949495;border-top-color:transparent}.micro-balloon.has-grey-background-color::before{border-top-color:transparent;border-bottom-color:transparent}.micro-balloon.has-grey-background-color::after{border-top-color:#949495}.micro-balloon.has-border-color.has-grey-border-color{border-color:#949495}.micro-balloon.micro-top.has-grey-border-color::before{border-top-color:#949495}.micro-balloon.micro-bottom.has-grey-border-color::before{border-bottom-color:#949495}.caption-box.has-grey-border-color .box-label{background-color:#949495}.tab-caption-box.has-grey-border-color .box-label{background-color:#949495}.tab-caption-box.has-grey-border-color .box-content{border-color:#949495}.tab-caption-box.has-grey-background-color .box-content{background-color:#949495}.label-box.has-grey-border-color .box-content{border-color:#949495}.label-box.has-grey-background-color .box-content{background-color:#949495}.sbp-l .speech-balloon.has-grey-border-color::before{border-right-color:#949495}.sbp-r .speech-balloon.has-grey-border-color::before{border-left-color:#949495}.sbp-l .speech-balloon.has-grey-background-color::after{border-right-color:#949495}.sbp-r .speech-balloon.has-grey-background-color::after{border-left-color:#949495}.sbs-line.sbp-r .speech-balloon.has-grey-background-color{background-color:#949495}.sbs-line.sbp-r .speech-balloon.has-grey-border-color{border-color:#949495}.speech-wrap.sbs-think .speech-balloon.has-grey-border-color::before,.speech-wrap.sbs-think .speech-balloon.has-grey-border-color::after{border-color:#949495}.sbs-think .speech-balloon.has-grey-background-color::before,.sbs-think .speech-balloon.has-grey-background-color::after{background-color:#949495}.timeline-box.has-grey-point-color .timeline-item::before{background-color:#949495}.body .has-black-background-color{background-color:#333}.body .has-black-color{color:#333}.body .has-black-border-color{border-color:#333}.btn-wrap.has-black-background-color>a{background-color:#333}.btn-wrap.has-black-color>a{color:#333}.btn-wrap.has-black-border-color>a{border-color:#333}.bb-tab.has-black-border-color .bb-label{background-color:#333}.toggle-wrap.has-black-border-color .toggle-button{background-color:#333}.toggle-wrap.has-black-border-color .toggle-button,.toggle-wrap.has-black-border-color .toggle-content{border-color:#333}.iconlist-box.has-black-icon-color li::before{color:#333}.micro-balloon.has-black-background-color{background-color:#333;border-color:transparent}.micro-balloon.has-black-background-color.micro-bottom::after{border-bottom-color:#333;border-top-color:transparent}.micro-balloon.has-black-background-color::before{border-top-color:transparent;border-bottom-color:transparent}.micro-balloon.has-black-background-color::after{border-top-color:#333}.micro-balloon.has-border-color.has-black-border-color{border-color:#333}.micro-balloon.micro-top.has-black-border-color::before{border-top-color:#333}.micro-balloon.micro-bottom.has-black-border-color::before{border-bottom-color:#333}.caption-box.has-black-border-color .box-label{background-color:#333}.tab-caption-box.has-black-border-color .box-label{background-color:#333}.tab-caption-box.has-black-border-color .box-content{border-color:#333}.tab-caption-box.has-black-background-color .box-content{background-color:#333}.label-box.has-black-border-color .box-content{border-color:#333}.label-box.has-black-background-color .box-content{background-color:#333}.sbp-l .speech-balloon.has-black-border-color::before{border-right-color:#333}.sbp-r .speech-balloon.has-black-border-color::before{border-left-color:#333}.sbp-l .speech-balloon.has-black-background-color::after{border-right-color:#333}.sbp-r .speech-balloon.has-black-background-color::after{border-left-color:#333}.sbs-line.sbp-r .speech-balloon.has-black-background-color{background-color:#333}.sbs-line.sbp-r .speech-balloon.has-black-border-color{border-color:#333}.speech-wrap.sbs-think .speech-balloon.has-black-border-color::before,.speech-wrap.sbs-think .speech-balloon.has-black-border-color::after{border-color:#333}.sbs-think .speech-balloon.has-black-background-color::before,.sbs-think .speech-balloon.has-black-background-color::after{background-color:#333}.timeline-box.has-black-point-color .timeline-item::before{background-color:#333}.body .has-white-background-color{background-color:#fff}.body .has-white-color{color:#fff}.body .has-white-border-color{border-color:#fff}.btn-wrap.has-white-background-color>a{background-color:#fff}.btn-wrap.has-white-color>a{color:#fff}.btn-wrap.has-white-border-color>a{border-color:#fff}.bb-tab.has-white-border-color .bb-label{background-color:#fff}.toggle-wrap.has-white-border-color .toggle-button{background-color:#fff}.toggle-wrap.has-white-border-color .toggle-button,.toggle-wrap.has-white-border-color .toggle-content{border-color:#fff}.iconlist-box.has-white-icon-color li::before{color:#fff}.micro-balloon.has-white-background-color{background-color:#fff;border-color:transparent}.micro-balloon.has-white-background-color.micro-bottom::after{border-bottom-color:#fff;border-top-color:transparent}.micro-balloon.has-white-background-color::before{border-top-color:transparent;border-bottom-color:transparent}.micro-balloon.has-white-background-color::after{border-top-color:#fff}.micro-balloon.has-border-color.has-white-border-color{border-color:#fff}.micro-balloon.micro-top.has-white-border-color::before{border-top-color:#fff}.micro-balloon.micro-bottom.has-white-border-color::before{border-bottom-color:#fff}.caption-box.has-white-border-color .box-label{background-color:#fff}.tab-caption-box.has-white-border-color .box-label{background-color:#fff}.tab-caption-box.has-white-border-color .box-content{border-color:#fff}.tab-caption-box.has-white-background-color .box-content{background-color:#fff}.label-box.has-white-border-color .box-content{border-color:#fff}.label-box.has-white-background-color .box-content{background-color:#fff}.sbp-l .speech-balloon.has-white-border-color::before{border-right-color:#fff}.sbp-r .speech-balloon.has-white-border-color::before{border-left-color:#fff}.sbp-l .speech-balloon.has-white-background-color::after{border-right-color:#fff}.sbp-r .speech-balloon.has-white-background-color::after{border-left-color:#fff}.sbs-line.sbp-r .speech-balloon.has-white-background-color{background-color:#fff}.sbs-line.sbp-r .speech-balloon.has-white-border-color{border-color:#fff}.speech-wrap.sbs-think .speech-balloon.has-white-border-color::before,.speech-wrap.sbs-think .speech-balloon.has-white-border-color::after{border-color:#fff}.sbs-think .speech-balloon.has-white-background-color::before,.sbs-think .speech-balloon.has-white-background-color::after{background-color:#fff}.timeline-box.has-white-point-color .timeline-item::before{background-color:#fff}.body .has-watery-blue-background-color{background-color:#f3fafe}.body .has-watery-blue-color{color:#f3fafe}.body .has-watery-blue-border-color{border-color:#f3fafe}.btn-wrap.has-watery-blue-background-color>a{background-color:#f3fafe}.btn-wrap.has-watery-blue-color>a{color:#f3fafe}.btn-wrap.has-watery-blue-border-color>a{border-color:#f3fafe}.bb-tab.has-watery-blue-border-color .bb-label{background-color:#f3fafe}.toggle-wrap.has-watery-blue-border-color .toggle-button{background-color:#f3fafe}.toggle-wrap.has-watery-blue-border-color .toggle-button,.toggle-wrap.has-watery-blue-border-color .toggle-content{border-color:#f3fafe}.iconlist-box.has-watery-blue-icon-color li::before{color:#f3fafe}.micro-balloon.has-watery-blue-background-color{background-color:#f3fafe;border-color:transparent}.micro-balloon.has-watery-blue-background-color.micro-bottom::after{border-bottom-color:#f3fafe;border-top-color:transparent}.micro-balloon.has-watery-blue-background-color::before{border-top-color:transparent;border-bottom-color:transparent}.micro-balloon.has-watery-blue-background-color::after{border-top-color:#f3fafe}.micro-balloon.has-border-color.has-watery-blue-border-color{border-color:#f3fafe}.micro-balloon.micro-top.has-watery-blue-border-color::before{border-top-color:#f3fafe}.micro-balloon.micro-bottom.has-watery-blue-border-color::before{border-bottom-color:#f3fafe}.caption-box.has-watery-blue-border-color .box-label{background-color:#f3fafe}.tab-caption-box.has-watery-blue-border-color .box-label{background-color:#f3fafe}.tab-caption-box.has-watery-blue-border-color .box-content{border-color:#f3fafe}.tab-caption-box.has-watery-blue-background-color .box-content{background-color:#f3fafe}.label-box.has-watery-blue-border-color .box-content{border-color:#f3fafe}.label-box.has-watery-blue-background-color .box-content{background-color:#f3fafe}.sbp-l .speech-balloon.has-watery-blue-border-color::before{border-right-color:#f3fafe}.sbp-r .speech-balloon.has-watery-blue-border-color::before{border-left-color:#f3fafe}.sbp-l .speech-balloon.has-watery-blue-background-color::after{border-right-color:#f3fafe}.sbp-r .speech-balloon.has-watery-blue-background-color::after{border-left-color:#f3fafe}.sbs-line.sbp-r .speech-balloon.has-watery-blue-background-color{background-color:#f3fafe}.sbs-line.sbp-r .speech-balloon.has-watery-blue-border-color{border-color:#f3fafe}.speech-wrap.sbs-think .speech-balloon.has-watery-blue-border-color::before,.speech-wrap.sbs-think .speech-balloon.has-watery-blue-border-color::after{border-color:#f3fafe}.sbs-think .speech-balloon.has-watery-blue-background-color::before,.sbs-think .speech-balloon.has-watery-blue-background-color::after{background-color:#f3fafe}.timeline-box.has-watery-blue-point-color .timeline-item::before{background-color:#f3fafe}.body .has-watery-yellow-background-color{background-color:#fff7cc}.body .has-watery-yellow-color{color:#fff7cc}.body .has-watery-yellow-border-color{border-color:#fff7cc}.btn-wrap.has-watery-yellow-background-color>a{background-color:#fff7cc}.btn-wrap.has-watery-yellow-color>a{color:#fff7cc}.btn-wrap.has-watery-yellow-border-color>a{border-color:#fff7cc}.bb-tab.has-watery-yellow-border-color .bb-label{background-color:#fff7cc}.toggle-wrap.has-watery-yellow-border-color .toggle-button{background-color:#fff7cc}.toggle-wrap.has-watery-yellow-border-color .toggle-button,.toggle-wrap.has-watery-yellow-border-color .toggle-content{border-color:#fff7cc}.iconlist-box.has-watery-yellow-icon-color li::before{color:#fff7cc}.micro-balloon.has-watery-yellow-background-color{background-color:#fff7cc;border-color:transparent}.micro-balloon.has-watery-yellow-background-color.micro-bottom::after{border-bottom-color:#fff7cc;border-top-color:transparent}.micro-balloon.has-watery-yellow-background-color::before{border-top-color:transparent;border-bottom-color:transparent}.micro-balloon.has-watery-yellow-background-color::after{border-top-color:#fff7cc}.micro-balloon.has-border-color.has-watery-yellow-border-color{border-color:#fff7cc}.micro-balloon.micro-top.has-watery-yellow-border-color::before{border-top-color:#fff7cc}.micro-balloon.micro-bottom.has-watery-yellow-border-color::before{border-bottom-color:#fff7cc}.caption-box.has-watery-yellow-border-color .box-label{background-color:#fff7cc}.tab-caption-box.has-watery-yellow-border-color .box-label{background-color:#fff7cc}.tab-caption-box.has-watery-yellow-border-color .box-content{border-color:#fff7cc}.tab-caption-box.has-watery-yellow-background-color .box-content{background-color:#fff7cc}.label-box.has-watery-yellow-border-color .box-content{border-color:#fff7cc}.label-box.has-watery-yellow-background-color .box-content{background-color:#fff7cc}.sbp-l .speech-balloon.has-watery-yellow-border-color::before{border-right-color:#fff7cc}.sbp-r .speech-balloon.has-watery-yellow-border-color::before{border-left-color:#fff7cc}.sbp-l .speech-balloon.has-watery-yellow-background-color::after{border-right-color:#fff7cc}.sbp-r .speech-balloon.has-watery-yellow-background-color::after{border-left-color:#fff7cc}.sbs-line.sbp-r .speech-balloon.has-watery-yellow-background-color{background-color:#fff7cc}.sbs-line.sbp-r .speech-balloon.has-watery-yellow-border-color{border-color:#fff7cc}.speech-wrap.sbs-think .speech-balloon.has-watery-yellow-border-color::before,.speech-wrap.sbs-think .speech-balloon.has-watery-yellow-border-color::after{border-color:#fff7cc}.sbs-think .speech-balloon.has-watery-yellow-background-color::before,.sbs-think .speech-balloon.has-watery-yellow-background-color::after{background-color:#fff7cc}.timeline-box.has-watery-yellow-point-color .timeline-item::before{background-color:#fff7cc}.body .has-watery-red-background-color{background-color:#fdf2f2}.body .has-watery-red-color{color:#fdf2f2}.body .has-watery-red-border-color{border-color:#fdf2f2}.btn-wrap.has-watery-red-background-color>a{background-color:#fdf2f2}.btn-wrap.has-watery-red-color>a{color:#fdf2f2}.btn-wrap.has-watery-red-border-color>a{border-color:#fdf2f2}.bb-tab.has-watery-red-border-color .bb-label{background-color:#fdf2f2}.toggle-wrap.has-watery-red-border-color .toggle-button{background-color:#fdf2f2}.toggle-wrap.has-watery-red-border-color .toggle-button,.toggle-wrap.has-watery-red-border-color .toggle-content{border-color:#fdf2f2}.iconlist-box.has-watery-red-icon-color li::before{color:#fdf2f2}.micro-balloon.has-watery-red-background-color{background-color:#fdf2f2;border-color:transparent}.micro-balloon.has-watery-red-background-color.micro-bottom::after{border-bottom-color:#fdf2f2;border-top-color:transparent}.micro-balloon.has-watery-red-background-color::before{border-top-color:transparent;border-bottom-color:transparent}.micro-balloon.has-watery-red-background-color::after{border-top-color:#fdf2f2}.micro-balloon.has-border-color.has-watery-red-border-color{border-color:#fdf2f2}.micro-balloon.micro-top.has-watery-red-border-color::before{border-top-color:#fdf2f2}.micro-balloon.micro-bottom.has-watery-red-border-color::before{border-bottom-color:#fdf2f2}.caption-box.has-watery-red-border-color .box-label{background-color:#fdf2f2}.tab-caption-box.has-watery-red-border-color .box-label{background-color:#fdf2f2}.tab-caption-box.has-watery-red-border-color .box-content{border-color:#fdf2f2}.tab-caption-box.has-watery-red-background-color .box-content{background-color:#fdf2f2}.label-box.has-watery-red-border-color .box-content{border-color:#fdf2f2}.label-box.has-watery-red-background-color .box-content{background-color:#fdf2f2}.sbp-l .speech-balloon.has-watery-red-border-color::before{border-right-color:#fdf2f2}.sbp-r .speech-balloon.has-watery-red-border-color::before{border-left-color:#fdf2f2}.sbp-l .speech-balloon.has-watery-red-background-color::after{border-right-color:#fdf2f2}.sbp-r .speech-balloon.has-watery-red-background-color::after{border-left-color:#fdf2f2}.sbs-line.sbp-r .speech-balloon.has-watery-red-background-color{background-color:#fdf2f2}.sbs-line.sbp-r .speech-balloon.has-watery-red-border-color{border-color:#fdf2f2}.speech-wrap.sbs-think .speech-balloon.has-watery-red-border-color::before,.speech-wrap.sbs-think .speech-balloon.has-watery-red-border-color::after{border-color:#fdf2f2}.sbs-think .speech-balloon.has-watery-red-background-color::before,.sbs-think .speech-balloon.has-watery-red-background-color::after{background-color:#fdf2f2}.timeline-box.has-watery-red-point-color .timeline-item::before{background-color:#fdf2f2}.body .has-watery-green-background-color{background-color:#ebf8f4}.body .has-watery-green-color{color:#ebf8f4}.body .has-watery-green-border-color{border-color:#ebf8f4}.btn-wrap.has-watery-green-background-color>a{background-color:#ebf8f4}.btn-wrap.has-watery-green-color>a{color:#ebf8f4}.btn-wrap.has-watery-green-border-color>a{border-color:#ebf8f4}.bb-tab.has-watery-green-border-color .bb-label{background-color:#ebf8f4}.toggle-wrap.has-watery-green-border-color .toggle-button{background-color:#ebf8f4}.toggle-wrap.has-watery-green-border-color .toggle-button,.toggle-wrap.has-watery-green-border-color .toggle-content{border-color:#ebf8f4}.iconlist-box.has-watery-green-icon-color li::before{color:#ebf8f4}.micro-balloon.has-watery-green-background-color{background-color:#ebf8f4;border-color:transparent}.micro-balloon.has-watery-green-background-color.micro-bottom::after{border-bottom-color:#ebf8f4;border-top-color:transparent}.micro-balloon.has-watery-green-background-color::before{border-top-color:transparent;border-bottom-color:transparent}.micro-balloon.has-watery-green-background-color::after{border-top-color:#ebf8f4}.micro-balloon.has-border-color.has-watery-green-border-color{border-color:#ebf8f4}.micro-balloon.micro-top.has-watery-green-border-color::before{border-top-color:#ebf8f4}.micro-balloon.micro-bottom.has-watery-green-border-color::before{border-bottom-color:#ebf8f4}.caption-box.has-watery-green-border-color .box-label{background-color:#ebf8f4}.tab-caption-box.has-watery-green-border-color .box-label{background-color:#ebf8f4}.tab-caption-box.has-watery-green-border-color .box-content{border-color:#ebf8f4}.tab-caption-box.has-watery-green-background-color .box-content{background-color:#ebf8f4}.label-box.has-watery-green-border-color .box-content{border-color:#ebf8f4}.label-box.has-watery-green-background-color .box-content{background-color:#ebf8f4}.sbp-l .speech-balloon.has-watery-green-border-color::before{border-right-color:#ebf8f4}.sbp-r .speech-balloon.has-watery-green-border-color::before{border-left-color:#ebf8f4}.sbp-l .speech-balloon.has-watery-green-background-color::after{border-right-color:#ebf8f4}.sbp-r .speech-balloon.has-watery-green-background-color::after{border-left-color:#ebf8f4}.sbs-line.sbp-r .speech-balloon.has-watery-green-background-color{background-color:#ebf8f4}.sbs-line.sbp-r .speech-balloon.has-watery-green-border-color{border-color:#ebf8f4}.speech-wrap.sbs-think .speech-balloon.has-watery-green-border-color::before,.speech-wrap.sbs-think .speech-balloon.has-watery-green-border-color::after{border-color:#ebf8f4}.sbs-think .speech-balloon.has-watery-green-background-color::before,.sbs-think .speech-balloon.has-watery-green-background-color::after{background-color:#ebf8f4}.timeline-box.has-watery-green-point-color .timeline-item::before{background-color:#ebf8f4}.body .has-ex-a-background-color{background-color:#fff}.body .has-ex-a-color{color:#fff}.body .has-ex-a-border-color{border-color:#fff}.btn-wrap.has-ex-a-background-color>a{background-color:#fff}.btn-wrap.has-ex-a-color>a{color:#fff}.btn-wrap.has-ex-a-border-color>a{border-color:#fff}.bb-tab.has-ex-a-border-color .bb-label{background-color:#fff}.toggle-wrap.has-ex-a-border-color .toggle-button{background-color:#fff}.toggle-wrap.has-ex-a-border-color .toggle-button,.toggle-wrap.has-ex-a-border-color .toggle-content{border-color:#fff}.iconlist-box.has-ex-a-icon-color li::before{color:#fff}.micro-balloon.has-ex-a-background-color{background-color:#fff;border-color:transparent}.micro-balloon.has-ex-a-background-color.micro-bottom::after{border-bottom-color:#fff;border-top-color:transparent}.micro-balloon.has-ex-a-background-color::before{border-top-color:transparent;border-bottom-color:transparent}.micro-balloon.has-ex-a-background-color::after{border-top-color:#fff}.micro-balloon.has-border-color.has-ex-a-border-color{border-color:#fff}.micro-balloon.micro-top.has-ex-a-border-color::before{border-top-color:#fff}.micro-balloon.micro-bottom.has-ex-a-border-color::before{border-bottom-color:#fff}.caption-box.has-ex-a-border-color .box-label{background-color:#fff}.tab-caption-box.has-ex-a-border-color .box-label{background-color:#fff}.tab-caption-box.has-ex-a-border-color .box-content{border-color:#fff}.tab-caption-box.has-ex-a-background-color .box-content{background-color:#fff}.label-box.has-ex-a-border-color .box-content{border-color:#fff}.label-box.has-ex-a-background-color .box-content{background-color:#fff}.sbp-l .speech-balloon.has-ex-a-border-color::before{border-right-color:#fff}.sbp-r .speech-balloon.has-ex-a-border-color::before{border-left-color:#fff}.sbp-l .speech-balloon.has-ex-a-background-color::after{border-right-color:#fff}.sbp-r .speech-balloon.has-ex-a-background-color::after{border-left-color:#fff}.sbs-line.sbp-r .speech-balloon.has-ex-a-background-color{background-color:#fff}.sbs-line.sbp-r .speech-balloon.has-ex-a-border-color{border-color:#fff}.speech-wrap.sbs-think .speech-balloon.has-ex-a-border-color::before,.speech-wrap.sbs-think .speech-balloon.has-ex-a-border-color::after{border-color:#fff}.sbs-think .speech-balloon.has-ex-a-background-color::before,.sbs-think .speech-balloon.has-ex-a-background-color::after{background-color:#fff}.timeline-box.has-ex-a-point-color .timeline-item::before{background-color:#fff}.body .has-ex-b-background-color{background-color:#fff}.body .has-ex-b-color{color:#fff}.body .has-ex-b-border-color{border-color:#fff}.btn-wrap.has-ex-b-background-color>a{background-color:#fff}.btn-wrap.has-ex-b-color>a{color:#fff}.btn-wrap.has-ex-b-border-color>a{border-color:#fff}.bb-tab.has-ex-b-border-color .bb-label{background-color:#fff}.toggle-wrap.has-ex-b-border-color .toggle-button{background-color:#fff}.toggle-wrap.has-ex-b-border-color .toggle-button,.toggle-wrap.has-ex-b-border-color .toggle-content{border-color:#fff}.iconlist-box.has-ex-b-icon-color li::before{color:#fff}.micro-balloon.has-ex-b-background-color{background-color:#fff;border-color:transparent}.micro-balloon.has-ex-b-background-color.micro-bottom::after{border-bottom-color:#fff;border-top-color:transparent}.micro-balloon.has-ex-b-background-color::before{border-top-color:transparent;border-bottom-color:transparent}.micro-balloon.has-ex-b-background-color::after{border-top-color:#fff}.micro-balloon.has-border-color.has-ex-b-border-color{border-color:#fff}.micro-balloon.micro-top.has-ex-b-border-color::before{border-top-color:#fff}.micro-balloon.micro-bottom.has-ex-b-border-color::before{border-bottom-color:#fff}.caption-box.has-ex-b-border-color .box-label{background-color:#fff}.tab-caption-box.has-ex-b-border-color .box-label{background-color:#fff}.tab-caption-box.has-ex-b-border-color .box-content{border-color:#fff}.tab-caption-box.has-ex-b-background-color .box-content{background-color:#fff}.label-box.has-ex-b-border-color .box-content{border-color:#fff}.label-box.has-ex-b-background-color .box-content{background-color:#fff}.sbp-l .speech-balloon.has-ex-b-border-color::before{border-right-color:#fff}.sbp-r .speech-balloon.has-ex-b-border-color::before{border-left-color:#fff}.sbp-l .speech-balloon.has-ex-b-background-color::after{border-right-color:#fff}.sbp-r .speech-balloon.has-ex-b-background-color::after{border-left-color:#fff}.sbs-line.sbp-r .speech-balloon.has-ex-b-background-color{background-color:#fff}.sbs-line.sbp-r .speech-balloon.has-ex-b-border-color{border-color:#fff}.speech-wrap.sbs-think .speech-balloon.has-ex-b-border-color::before,.speech-wrap.sbs-think .speech-balloon.has-ex-b-border-color::after{border-color:#fff}.sbs-think .speech-balloon.has-ex-b-background-color::before,.sbs-think .speech-balloon.has-ex-b-background-color::after{background-color:#fff}.timeline-box.has-ex-b-point-color .timeline-item::before{background-color:#fff}.body .has-ex-c-background-color{background-color:#fff}.body .has-ex-c-color{color:#fff}.body .has-ex-c-border-color{border-color:#fff}.btn-wrap.has-ex-c-background-color>a{background-color:#fff}.btn-wrap.has-ex-c-color>a{color:#fff}.btn-wrap.has-ex-c-border-color>a{border-color:#fff}.bb-tab.has-ex-c-border-color .bb-label{background-color:#fff}.toggle-wrap.has-ex-c-border-color .toggle-button{background-color:#fff}.toggle-wrap.has-ex-c-border-color .toggle-button,.toggle-wrap.has-ex-c-border-color .toggle-content{border-color:#fff}.iconlist-box.has-ex-c-icon-color li::before{color:#fff}.micro-balloon.has-ex-c-background-color{background-color:#fff;border-color:transparent}.micro-balloon.has-ex-c-background-color.micro-bottom::after{border-bottom-color:#fff;border-top-color:transparent}.micro-balloon.has-ex-c-background-color::before{border-top-color:transparent;border-bottom-color:transparent}.micro-balloon.has-ex-c-background-color::after{border-top-color:#fff}.micro-balloon.has-border-color.has-ex-c-border-color{border-color:#fff}.micro-balloon.micro-top.has-ex-c-border-color::before{border-top-color:#fff}.micro-balloon.micro-bottom.has-ex-c-border-color::before{border-bottom-color:#fff}.caption-box.has-ex-c-border-color .box-label{background-color:#fff}.tab-caption-box.has-ex-c-border-color .box-label{background-color:#fff}.tab-caption-box.has-ex-c-border-color .box-content{border-color:#fff}.tab-caption-box.has-ex-c-background-color .box-content{background-color:#fff}.label-box.has-ex-c-border-color .box-content{border-color:#fff}.label-box.has-ex-c-background-color .box-content{background-color:#fff}.sbp-l .speech-balloon.has-ex-c-border-color::before{border-right-color:#fff}.sbp-r .speech-balloon.has-ex-c-border-color::before{border-left-color:#fff}.sbp-l .speech-balloon.has-ex-c-background-color::after{border-right-color:#fff}.sbp-r .speech-balloon.has-ex-c-background-color::after{border-left-color:#fff}.sbs-line.sbp-r .speech-balloon.has-ex-c-background-color{background-color:#fff}.sbs-line.sbp-r .speech-balloon.has-ex-c-border-color{border-color:#fff}.speech-wrap.sbs-think .speech-balloon.has-ex-c-border-color::before,.speech-wrap.sbs-think .speech-balloon.has-ex-c-border-color::after{border-color:#fff}.sbs-think .speech-balloon.has-ex-c-background-color::before,.sbs-think .speech-balloon.has-ex-c-background-color::after{background-color:#fff}.timeline-box.has-ex-c-point-color .timeline-item::before{background-color:#fff}.body .has-ex-d-background-color{background-color:#fff}.body .has-ex-d-color{color:#fff}.body .has-ex-d-border-color{border-color:#fff}.btn-wrap.has-ex-d-background-color>a{background-color:#fff}.btn-wrap.has-ex-d-color>a{color:#fff}.btn-wrap.has-ex-d-border-color>a{border-color:#fff}.bb-tab.has-ex-d-border-color .bb-label{background-color:#fff}.toggle-wrap.has-ex-d-border-color .toggle-button{background-color:#fff}.toggle-wrap.has-ex-d-border-color .toggle-button,.toggle-wrap.has-ex-d-border-color .toggle-content{border-color:#fff}.iconlist-box.has-ex-d-icon-color li::before{color:#fff}.micro-balloon.has-ex-d-background-color{background-color:#fff;border-color:transparent}.micro-balloon.has-ex-d-background-color.micro-bottom::after{border-bottom-color:#fff;border-top-color:transparent}.micro-balloon.has-ex-d-background-color::before{border-top-color:transparent;border-bottom-color:transparent}.micro-balloon.has-ex-d-background-color::after{border-top-color:#fff}.micro-balloon.has-border-color.has-ex-d-border-color{border-color:#fff}.micro-balloon.micro-top.has-ex-d-border-color::before{border-top-color:#fff}.micro-balloon.micro-bottom.has-ex-d-border-color::before{border-bottom-color:#fff}.caption-box.has-ex-d-border-color .box-label{background-color:#fff}.tab-caption-box.has-ex-d-border-color .box-label{background-color:#fff}.tab-caption-box.has-ex-d-border-color .box-content{border-color:#fff}.tab-caption-box.has-ex-d-background-color .box-content{background-color:#fff}.label-box.has-ex-d-border-color .box-content{border-color:#fff}.label-box.has-ex-d-background-color .box-content{background-color:#fff}.sbp-l .speech-balloon.has-ex-d-border-color::before{border-right-color:#fff}.sbp-r .speech-balloon.has-ex-d-border-color::before{border-left-color:#fff}.sbp-l .speech-balloon.has-ex-d-background-color::after{border-right-color:#fff}.sbp-r .speech-balloon.has-ex-d-background-color::after{border-left-color:#fff}.sbs-line.sbp-r .speech-balloon.has-ex-d-background-color{background-color:#fff}.sbs-line.sbp-r .speech-balloon.has-ex-d-border-color{border-color:#fff}.speech-wrap.sbs-think .speech-balloon.has-ex-d-border-color::before,.speech-wrap.sbs-think .speech-balloon.has-ex-d-border-color::after{border-color:#fff}.sbs-think .speech-balloon.has-ex-d-background-color::before,.sbs-think .speech-balloon.has-ex-d-background-color::after{background-color:#fff}.timeline-box.has-ex-d-point-color .timeline-item::before{background-color:#fff}.body .has-ex-e-background-color{background-color:#fff}.body .has-ex-e-color{color:#fff}.body .has-ex-e-border-color{border-color:#fff}.btn-wrap.has-ex-e-background-color>a{background-color:#fff}.btn-wrap.has-ex-e-color>a{color:#fff}.btn-wrap.has-ex-e-border-color>a{border-color:#fff}.bb-tab.has-ex-e-border-color .bb-label{background-color:#fff}.toggle-wrap.has-ex-e-border-color .toggle-button{background-color:#fff}.toggle-wrap.has-ex-e-border-color .toggle-button,.toggle-wrap.has-ex-e-border-color .toggle-content{border-color:#fff}.iconlist-box.has-ex-e-icon-color li::before{color:#fff}.micro-balloon.has-ex-e-background-color{background-color:#fff;border-color:transparent}.micro-balloon.has-ex-e-background-color.micro-bottom::after{border-bottom-color:#fff;border-top-color:transparent}.micro-balloon.has-ex-e-background-color::before{border-top-color:transparent;border-bottom-color:transparent}.micro-balloon.has-ex-e-background-color::after{border-top-color:#fff}.micro-balloon.has-border-color.has-ex-e-border-color{border-color:#fff}.micro-balloon.micro-top.has-ex-e-border-color::before{border-top-color:#fff}.micro-balloon.micro-bottom.has-ex-e-border-color::before{border-bottom-color:#fff}.caption-box.has-ex-e-border-color .box-label{background-color:#fff}.tab-caption-box.has-ex-e-border-color .box-label{background-color:#fff}.tab-caption-box.has-ex-e-border-color .box-content{border-color:#fff}.tab-caption-box.has-ex-e-background-color .box-content{background-color:#fff}.label-box.has-ex-e-border-color .box-content{border-color:#fff}.label-box.has-ex-e-background-color .box-content{background-color:#fff}.sbp-l .speech-balloon.has-ex-e-border-color::before{border-right-color:#fff}.sbp-r .speech-balloon.has-ex-e-border-color::before{border-left-color:#fff}.sbp-l .speech-balloon.has-ex-e-background-color::after{border-right-color:#fff}.sbp-r .speech-balloon.has-ex-e-background-color::after{border-left-color:#fff}.sbs-line.sbp-r .speech-balloon.has-ex-e-background-color{background-color:#fff}.sbs-line.sbp-r .speech-balloon.has-ex-e-border-color{border-color:#fff}.speech-wrap.sbs-think .speech-balloon.has-ex-e-border-color::before,.speech-wrap.sbs-think .speech-balloon.has-ex-e-border-color::after{border-color:#fff}.sbs-think .speech-balloon.has-ex-e-background-color::before,.sbs-think .speech-balloon.has-ex-e-background-color::after{background-color:#fff}.timeline-box.has-ex-e-point-color .timeline-item::before{background-color:#fff}.body .has-ex-f-background-color{background-color:#fff}.body .has-ex-f-color{color:#fff}.body .has-ex-f-border-color{border-color:#fff}.btn-wrap.has-ex-f-background-color>a{background-color:#fff}.btn-wrap.has-ex-f-color>a{color:#fff}.btn-wrap.has-ex-f-border-color>a{border-color:#fff}.bb-tab.has-ex-f-border-color .bb-label{background-color:#fff}.toggle-wrap.has-ex-f-border-color .toggle-button{background-color:#fff}.toggle-wrap.has-ex-f-border-color .toggle-button,.toggle-wrap.has-ex-f-border-color .toggle-content{border-color:#fff}.iconlist-box.has-ex-f-icon-color li::before{color:#fff}.micro-balloon.has-ex-f-background-color{background-color:#fff;border-color:transparent}.micro-balloon.has-ex-f-background-color.micro-bottom::after{border-bottom-color:#fff;border-top-color:transparent}.micro-balloon.has-ex-f-background-color::before{border-top-color:transparent;border-bottom-color:transparent}.micro-balloon.has-ex-f-background-color::after{border-top-color:#fff}.micro-balloon.has-border-color.has-ex-f-border-color{border-color:#fff}.micro-balloon.micro-top.has-ex-f-border-color::before{border-top-color:#fff}.micro-balloon.micro-bottom.has-ex-f-border-color::before{border-bottom-color:#fff}.caption-box.has-ex-f-border-color .box-label{background-color:#fff}.tab-caption-box.has-ex-f-border-color .box-label{background-color:#fff}.tab-caption-box.has-ex-f-border-color .box-content{border-color:#fff}.tab-caption-box.has-ex-f-background-color .box-content{background-color:#fff}.label-box.has-ex-f-border-color .box-content{border-color:#fff}.label-box.has-ex-f-background-color .box-content{background-color:#fff}.sbp-l .speech-balloon.has-ex-f-border-color::before{border-right-color:#fff}.sbp-r .speech-balloon.has-ex-f-border-color::before{border-left-color:#fff}.sbp-l .speech-balloon.has-ex-f-background-color::after{border-right-color:#fff}.sbp-r .speech-balloon.has-ex-f-background-color::after{border-left-color:#fff}.sbs-line.sbp-r .speech-balloon.has-ex-f-background-color{background-color:#fff}.sbs-line.sbp-r .speech-balloon.has-ex-f-border-color{border-color:#fff}.speech-wrap.sbs-think .speech-balloon.has-ex-f-border-color::before,.speech-wrap.sbs-think .speech-balloon.has-ex-f-border-color::after{border-color:#fff}.sbs-think .speech-balloon.has-ex-f-background-color::before,.sbs-think .speech-balloon.has-ex-f-background-color::after{background-color:#fff}.timeline-box.has-ex-f-point-color .timeline-item::before{background-color:#fff}.body .btn-wrap{background-color:transparent;color:#333;border-color:transparent;font-size:16px}.toggle-wrap.has-border-color .toggle-button{color:#fff}.btn-wrap.has-small-font-size>a{font-size:13px}.btn-wrap.has-medium-font-size>a{font-size:20px}.btn-wrap.has-large-font-size>a{font-size:36px}.btn-wrap.has-huge-font-size>a,.btn-wrap.has-larger-font-size>a{font-size:42px}.box-menu:hover{box-shadow:inset 2px 2px 0 0 #f6a068,2px 2px 0 0 #f6a068,2px 0 0 0 #f6a068,0 2px 0 0 #f6a068}.box-menu-icon{color:#f6a068}
+</style>
+<link rel="stylesheet" id="wp-block-library-css" href="./ref1_FETのゲート抵抗の決め方_files/style.min.css" media="all">
+<link rel="stylesheet" id="contact-form-7-css" href="./ref1_FETのゲート抵抗の決め方_files/styles.css" media="all">
+<script src="./ref1_FETのゲート抵抗の決め方_files/jquery.min.js.ダウンロード" id="jquery-core-js"></script>
+<script src="./ref1_FETのゲート抵抗の決め方_files/jquery-migrate.min.js.ダウンロード" id="jquery-migrate-js"></script>
+<link rel="shortlink" href="https://ana-dig.com/?p=2624">
+<link rel="apple-touch-icon" sizes="180x180" href="https://ana-dig.com/wp-content/uploads/fbrfg/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://ana-dig.com/wp-content/uploads/fbrfg/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://ana-dig.com/wp-content/uploads/fbrfg/favicon-16x16.png">
+<link rel="manifest" href="https://ana-dig.com/wp-content/uploads/fbrfg/site.webmanifest">
+<link rel="shortcut icon" href="https://ana-dig.com/wp-content/uploads/fbrfg/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="/wp-content/uploads/fbrfg/browserconfig.xml">
+<meta name="theme-color" content="#ffffff"><!-- Cocoon site icon -->
+<link rel="icon" href="https://ana-dig.com/wp-content/themes/cocoon-master/images/site-icon32x32.png" sizes="32x32">
+<link rel="icon" href="https://ana-dig.com/wp-content/themes/cocoon-master/images/site-icon192x192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="https://ana-dig.com/wp-content/themes/cocoon-master/images/site-icon180x180.png">
+<meta name="msapplication-TileImage" content="https://ana-dig.com/wp-content/themes/cocoon-master/images/site-icon270x270.png">
+<!-- Cocoon canonical -->
+<link rel="canonical" href="https://ana-dig.com/fet_gate1/">
+<!-- Cocoon meta description -->
+<meta name="description" content="【この記事で分かること】ＭＯＳＦＥＴにゲート抵抗がついている理由と、ゲート抵抗値の求め方について説明します。">
+<!-- Cocoon meta keywords -->
+<meta name="keywords" content="回路設計">
+<!-- Cocoon meta thumbnail -->
+<meta name="thumbnail" content="https://ana-dig.com/wp-content/uploads/2021/02/7c2c84b2c8df7035f51b97bd18faab8f.png">
+<!-- Cocoon JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage":{
+    "@type":"WebPage",
+    "@id":"https://ana-dig.com/fet_gate1/"
+  },
+  "headline": "FETのゲート抵抗の決め方",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://ana-dig.com/wp-content/uploads/2021/02/7c2c84b2c8df7035f51b97bd18faab8f.png",
+    "width": 696,
+    "height": 638
+  },
+  "datePublished": "2021-02-28T15:51:19+09:00",
+  "dateModified": "2021-03-27T16:14:46+09:00",
+  "author": {
+    "@type": "Person",
+    "name": "アナデジ太郎"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "アナデジ太郎の回路設計",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://ana-dig.com/wp-content/themes/cocoon-master/images/no-amp-logo.png",
+      "width": 206,
+      "height": 60
+    }
+  },
+  "description": "【この記事で分かること】ＭＯＳＦＥＴにゲート抵抗がついている理由と、ゲート抵抗値の求め方について説明します。…"
+}
+</script>
+
+<!-- Preload -->
+<link rel="preload" as="font" type="font/woff" href="https://ana-dig.com/wp-content/themes/cocoon-master/webfonts/icomoon/fonts/icomoon.woff?3o5bkh" crossorigin="">
+<link rel="preload" as="font" type="font/ttf" href="https://ana-dig.com/wp-content/themes/cocoon-master/webfonts/icomoon/fonts/icomoon.ttf?3o5bkh" crossorigin="">
+<link rel="preload" as="font" type="font/woff2" href="https://ana-dig.com/wp-content/themes/cocoon-master/webfonts/fontawesome/fonts/fontawesome-webfont.woff2?v=4.7.0" crossorigin="">
+
+
+
+
+
+<meta http-equiv="origin-trial" content="A+b/H0b8RPXNaJgaNFpO0YOFuGK6myDQXlwnJB3SwzvNMfcndat4DZYMrP4ClJIzYWo3/yP2S+8FTZ/lpqbPAAEAAABueyJvcmlnaW4iOiJodHRwczovL2ltYXNkay5nb29nbGVhcGlzLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzVGhpcmRQYXJ0eSI6dHJ1ZX0="><meta http-equiv="origin-trial" content="A9ZgbRtm4pU3oZiuNzOsKcC8ppFSZdcjP2qYcdQrFKVzkmiWH1kdYY1Mi9x7G8+PS8HV9Ha9Cz0gaMdKsiVZIgMAAAB7eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AxL6oBxcpn5rQDPKSAs+d0oxNyJYq2/4esBUh3Yx5z8QfcLu+AU8iFCXYRcr/CEEfDnkxxLTsvXPJFQBxHfvkgMAAACBeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A9KPtG5kl3oLTk21xqynDPGQ5t18bSOpwt0w6kGa6dEWbuwjpffmdUpR3W+faZDubGT+KIk2do0BX2ca16x8qAcAAACBeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AookgM0K6zABiuRTZwpn+R95G2CKmUH/2+zf2kS/QpMlVZ6HTI6QekeLkrJyxeIi62p2ejcQTF464pkdlx0Nwg0AAABmeyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGUuY29tOjQ0MyIsImZlYXR1cmUiOiJUcnVzdFRva2VucyIsImV4cGlyeSI6MTYzNDA4MzE5OSwiaXNTdWJkb21haW4iOnRydWV9"><meta http-equiv="origin-trial" content="A3HucHUo1oW9s+9kIKz8mLkbcmdaj5lxt3eiIMp1Nh49dkkBlg1Fhg4Fd/r0vL69mRRA36YutI9P/lJUfL8csQoAAACFeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjI2MjIwNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A0OysezhLoCRYomumeYlubLurZTCmsjTb087OvtCy95jNM65cfEsbajrJnhaGwiTxhz38ZZbm+UhUwQuXfVPTg0AAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjI2MjIwNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="AxoOxdZQmIoA1WeAPDixRAeWDdgs7ZtVFfH2y19ziTgD1iaHE5ZGz2UdSjubkWvob9C5PrjUfkWi4ZSLgWk3Xg8AAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjI2MjIwNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A7+rMYR5onPnACrz+niKSeFdH3xw1IyHo2AZSHmxrofRk9w4HcQPMYcpBUKu6OQ6zsdxf4m/vqa6tG6Na4OLpAQAAAB4eyJvcmlnaW4iOiJodHRwczovL2ltYXNkay5nb29nbGVhcGlzLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjI2MjIwNzk5LCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AwfG8hAcHnPa/kJ1Co0EvG/K0F9l1s2JZGiDLt2mhC3QI5Fh4qmsmSwrWObZFbRC9ieDaSLU6lHRxhGUF/i9sgoAAACBeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiSW50ZXJlc3RDb2hvcnRBUEkiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AwQ7dCmHkvR6FuOFxAuNnktYSQrGbL4dF+eBkrwNLALc69Wr//PnO1yzns3pjUoCaYbKHtVcnng2hU+8OUm0PAYAAACHeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiSW50ZXJlc3RDb2hvcnRBUEkiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AysVDPGQTLD/Scn78x4mLwB1tMfje5jwUpAAzGRpWsr1NzoN7MTFhT3ClmImi2svDZA7V6nWGIV8YTPsSRTe0wYAAACHeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiSW50ZXJlc3RDb2hvcnRBUEkiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A+b/H0b8RPXNaJgaNFpO0YOFuGK6myDQXlwnJB3SwzvNMfcndat4DZYMrP4ClJIzYWo3/yP2S+8FTZ/lpqbPAAEAAABueyJvcmlnaW4iOiJodHRwczovL2ltYXNkay5nb29nbGVhcGlzLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzVGhpcmRQYXJ0eSI6dHJ1ZX0="><meta http-equiv="origin-trial" content="A9ZgbRtm4pU3oZiuNzOsKcC8ppFSZdcjP2qYcdQrFKVzkmiWH1kdYY1Mi9x7G8+PS8HV9Ha9Cz0gaMdKsiVZIgMAAAB7eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AxL6oBxcpn5rQDPKSAs+d0oxNyJYq2/4esBUh3Yx5z8QfcLu+AU8iFCXYRcr/CEEfDnkxxLTsvXPJFQBxHfvkgMAAACBeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A9KPtG5kl3oLTk21xqynDPGQ5t18bSOpwt0w6kGa6dEWbuwjpffmdUpR3W+faZDubGT+KIk2do0BX2ca16x8qAcAAACBeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AookgM0K6zABiuRTZwpn+R95G2CKmUH/2+zf2kS/QpMlVZ6HTI6QekeLkrJyxeIi62p2ejcQTF464pkdlx0Nwg0AAABmeyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGUuY29tOjQ0MyIsImZlYXR1cmUiOiJUcnVzdFRva2VucyIsImV4cGlyeSI6MTYzNDA4MzE5OSwiaXNTdWJkb21haW4iOnRydWV9"><meta http-equiv="origin-trial" content="A3HucHUo1oW9s+9kIKz8mLkbcmdaj5lxt3eiIMp1Nh49dkkBlg1Fhg4Fd/r0vL69mRRA36YutI9P/lJUfL8csQoAAACFeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjI2MjIwNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A0OysezhLoCRYomumeYlubLurZTCmsjTb087OvtCy95jNM65cfEsbajrJnhaGwiTxhz38ZZbm+UhUwQuXfVPTg0AAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjI2MjIwNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="AxoOxdZQmIoA1WeAPDixRAeWDdgs7ZtVFfH2y19ziTgD1iaHE5ZGz2UdSjubkWvob9C5PrjUfkWi4ZSLgWk3Xg8AAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjI2MjIwNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A7+rMYR5onPnACrz+niKSeFdH3xw1IyHo2AZSHmxrofRk9w4HcQPMYcpBUKu6OQ6zsdxf4m/vqa6tG6Na4OLpAQAAAB4eyJvcmlnaW4iOiJodHRwczovL2ltYXNkay5nb29nbGVhcGlzLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjI2MjIwNzk5LCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AwfG8hAcHnPa/kJ1Co0EvG/K0F9l1s2JZGiDLt2mhC3QI5Fh4qmsmSwrWObZFbRC9ieDaSLU6lHRxhGUF/i9sgoAAACBeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiSW50ZXJlc3RDb2hvcnRBUEkiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AwQ7dCmHkvR6FuOFxAuNnktYSQrGbL4dF+eBkrwNLALc69Wr//PnO1yzns3pjUoCaYbKHtVcnng2hU+8OUm0PAYAAACHeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiSW50ZXJlc3RDb2hvcnRBUEkiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AysVDPGQTLD/Scn78x4mLwB1tMfje5jwUpAAzGRpWsr1NzoN7MTFhT3ClmImi2svDZA7V6nWGIV8YTPsSRTe0wYAAACHeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiSW50ZXJlc3RDb2hvcnRBUEkiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A+b/H0b8RPXNaJgaNFpO0YOFuGK6myDQXlwnJB3SwzvNMfcndat4DZYMrP4ClJIzYWo3/yP2S+8FTZ/lpqbPAAEAAABueyJvcmlnaW4iOiJodHRwczovL2ltYXNkay5nb29nbGVhcGlzLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzVGhpcmRQYXJ0eSI6dHJ1ZX0="><meta http-equiv="origin-trial" content="A9ZgbRtm4pU3oZiuNzOsKcC8ppFSZdcjP2qYcdQrFKVzkmiWH1kdYY1Mi9x7G8+PS8HV9Ha9Cz0gaMdKsiVZIgMAAAB7eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AxL6oBxcpn5rQDPKSAs+d0oxNyJYq2/4esBUh3Yx5z8QfcLu+AU8iFCXYRcr/CEEfDnkxxLTsvXPJFQBxHfvkgMAAACBeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A9KPtG5kl3oLTk21xqynDPGQ5t18bSOpwt0w6kGa6dEWbuwjpffmdUpR3W+faZDubGT+KIk2do0BX2ca16x8qAcAAACBeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AookgM0K6zABiuRTZwpn+R95G2CKmUH/2+zf2kS/QpMlVZ6HTI6QekeLkrJyxeIi62p2ejcQTF464pkdlx0Nwg0AAABmeyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGUuY29tOjQ0MyIsImZlYXR1cmUiOiJUcnVzdFRva2VucyIsImV4cGlyeSI6MTYzNDA4MzE5OSwiaXNTdWJkb21haW4iOnRydWV9"><meta http-equiv="origin-trial" content="A3HucHUo1oW9s+9kIKz8mLkbcmdaj5lxt3eiIMp1Nh49dkkBlg1Fhg4Fd/r0vL69mRRA36YutI9P/lJUfL8csQoAAACFeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjI2MjIwNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A0OysezhLoCRYomumeYlubLurZTCmsjTb087OvtCy95jNM65cfEsbajrJnhaGwiTxhz38ZZbm+UhUwQuXfVPTg0AAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjI2MjIwNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="AxoOxdZQmIoA1WeAPDixRAeWDdgs7ZtVFfH2y19ziTgD1iaHE5ZGz2UdSjubkWvob9C5PrjUfkWi4ZSLgWk3Xg8AAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjI2MjIwNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A7+rMYR5onPnACrz+niKSeFdH3xw1IyHo2AZSHmxrofRk9w4HcQPMYcpBUKu6OQ6zsdxf4m/vqa6tG6Na4OLpAQAAAB4eyJvcmlnaW4iOiJodHRwczovL2ltYXNkay5nb29nbGVhcGlzLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjI2MjIwNzk5LCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AwfG8hAcHnPa/kJ1Co0EvG/K0F9l1s2JZGiDLt2mhC3QI5Fh4qmsmSwrWObZFbRC9ieDaSLU6lHRxhGUF/i9sgoAAACBeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiSW50ZXJlc3RDb2hvcnRBUEkiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AwQ7dCmHkvR6FuOFxAuNnktYSQrGbL4dF+eBkrwNLALc69Wr//PnO1yzns3pjUoCaYbKHtVcnng2hU+8OUm0PAYAAACHeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiSW50ZXJlc3RDb2hvcnRBUEkiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AysVDPGQTLD/Scn78x4mLwB1tMfje5jwUpAAzGRpWsr1NzoN7MTFhT3ClmImi2svDZA7V6nWGIV8YTPsSRTe0wYAAACHeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiSW50ZXJlc3RDb2hvcnRBUEkiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><link rel="preload" href="./ref1_FETのゲート抵抗の決め方_files/f(2).txt" as="script"><script type="text/javascript" src="./ref1_FETのゲート抵抗の決め方_files/f(2).txt"></script><link rel="preload" href="./ref1_FETのゲート抵抗の決め方_files/f(3).txt" as="script"><script type="text/javascript" src="./ref1_FETのゲート抵抗の決め方_files/f(3).txt"></script></head>
+
+<body class="post-template-default single single-post postid-2624 single-format-standard body public-page page-body categoryid-1 ff-hiragino fz-18px fw-400 hlt-center-logo-wrap ect-entry-card-wrap rect-entry-card-wrap scrollable-sidebar no-scrollable-main sidebar-right mblt-footer-mobile-buttons scrollable-mobile-buttons author-admin mobile-button-fmb no-mobile-sidebar no-post-author no-sp-snippet font-awesome-4" itemscope="" itemtype="https://schema.org/WebPage" data-barba="wrapper">
+
+
+
+<div id="container" class="container cf" data-barba="container" data-barba-namespace="singular">
+
+  
+  
+
+  
+<div id="header-container" class="header-container">
+  <div id="header-container-in" class="header-container-in hlt-center-logo">
+    <header id="header" class="header cf" itemscope="" itemtype="https://schema.org/WPHeader">
+
+      <div id="header-in" class="header-in wrap cf" itemscope="" itemtype="https://schema.org/WebSite">
+
+        
+        
+        <div class="logo logo-header logo-text"><a href="https://ana-dig.com/" class="site-name site-name-text-link" itemprop="url"><span class="site-name-text" itemprop="name about">アナデジ太郎の回路設計</span></a></div>
+        
+        
+<div class="tagline" itemprop="alternativeHeadline">いまさら聞けない回路設計ガイド</div>
+
+      </div>
+
+    </header>
+
+    <!-- Navigation -->
+<nav id="navi" class="navi cf" itemscope="" itemtype="https://schema.org/SiteNavigationElement">
+  <div id="navi-in" class="navi-in wrap cf">
+    <ul id="menu-%e3%83%88%e3%83%83%e3%83%97%e3%83%a1%e3%83%8b%e3%83%a5%e3%83%bc" class="menu-top menu-header menu-pc"><li id="menu-item-18" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-has-no-description"><a href="https://ana-dig.com/"><div class="caption-wrap"><div class="item-label">ＴＯＰ</div></div></a></li>
+<li id="menu-item-14" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-no-description"><a href="https://ana-dig.com/category/circuit/"><div class="caption-wrap"><div class="item-label">回路設計</div></div></a></li>
+<li id="menu-item-15" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-no-description"><a href="https://ana-dig.com/category/bord/"><div class="caption-wrap"><div class="item-label">基板設計</div></div></a></li>
+<li id="menu-item-628" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-no-description"><a href="https://ana-dig.com/category/parts/"><div class="caption-wrap"><div class="item-label">部品選定</div></div></a></li>
+<li id="menu-item-860" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-no-description"><a href="https://ana-dig.com/category/emc/"><div class="caption-wrap"><div class="item-label">ＥＭＣ試験</div></div></a></li>
+<li id="menu-item-2304" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-no-description"><a href="https://ana-dig.com/category/reliability/"><div class="caption-wrap"><div class="item-label">信頼性評価</div></div></a></li>
+</ul>      </div><!-- /#navi-in -->
+</nav>
+<!-- /Navigation -->
+  </div><!-- /.header-container-in -->
+</div><!-- /.header-container -->
+
+  
+  
+
+  
+
+
+  
+  
+  
+  
+  
+  <div id="content" class="content cf">
+
+    <div id="content-in" class="content-in wrap">
+
+        <main id="main" class="main" itemscope="" itemtype="https://schema.org/Blog">
+
+
+
+<article id="post-2624" class="article post-2624 post type-post status-publish format-standard has-post-thumbnail hentry category-circuit-post" itemscope="itemscope" itemprop="blogPost" itemtype="https://schema.org/BlogPosting">
+  
+      
+      
+      
+      
+      <header class="article-header entry-header">
+        <h1 class="entry-title" itemprop="headline">
+          FETのゲート抵抗の決め方        </h1>
+
+        
+        
+        
+        
+        <div class="eye-catch-wrap">
+<figure class="eye-catch" itemprop="image" itemscope="" itemtype="https://schema.org/ImageObject">
+  <img width="287" height="263" src="./ref1_FETのゲート抵抗の決め方_files/7c2c84b2c8df7035f51b97bd18faab8f.png" class="attachment-287x263 size-287x263 eye-catch-image wp-post-image" alt="" loading="lazy">  <meta itemprop="url" content="https://ana-dig.com/wp-content/uploads/2021/02/7c2c84b2c8df7035f51b97bd18faab8f.png">
+  <meta itemprop="width" content="287">
+  <meta itemprop="height" content="263">
+  <span class="cat-label cat-label-1">回路設計</span></figure>
+</div>
+
+        
+
+        <div class="date-tags">
+  <span class="post-update"><span class="fa fa-history" aria-hidden="true"></span> <time class="entry-date date updated" datetime="2021-03-27T16:14:46+09:00" itemprop="dateModified">2021.03.27</time></span><span class="post-date"><span class="fa fa-clock-o" aria-hidden="true"></span> <span class="entry-date date published"><meta itemprop="datePublished" content="2021-02-28T15:51:19+09:00">2021.02.28</span></span>
+  </div>
+
+        
+        
+         
+        
+        
+      </header>
+
+      
+      <div class="entry-content cf" itemprop="mainEntityOfPage">
+      
+<p><script async="" src="./ref1_FETのゲート抵抗の決め方_files/f(4).txt"></script><br>
+<ins class="adsbygoogle" style="display: block; text-align: center; height: 186px;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-2289846798511527" data-ad-slot="7475678490" data-adsbygoogle-status="done"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:186px;margin:0;padding:0;position:relative;visibility:visible;width:741px;background-color:transparent;" tabindex="0" title="Advertisement" aria-label="Advertisement"><ins id="aswift_0_anchor" style="display:block;border:none;height:186px;margin:0;padding:0;position:relative;visibility:visible;width:741px;background-color:transparent;"><iframe id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0;width:741px;height:186px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="741" height="186" frameborder="0" src="./ref1_FETのゲート抵抗の決め方_files/ads.html" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" trusttoken="{&quot;type&quot;:&quot;send-redemption-record&quot;,&quot;issuers&quot;:[&quot;https://adservice.google.com&quot;],&quot;refreshPolicy&quot;:&quot;none&quot;,&quot;signRequestData&quot;:&quot;include&quot;,&quot;includeTimestampHeader&quot;:true,&quot;additionalSignedHeaders&quot;:[&quot;sec-time&quot;,&quot;Sec-Redemption-Record&quot;],&quot;additionalSigningData&quot;:&quot;eyJ1cmwiOiJodHRwczovL2FuYS1kaWcuY29tL2ZldF9nYXRlMS8ifQ..&quot;}" allow="conversion-measurement" data-google-container-id="a!1"></iframe></ins></ins></ins><br>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+
+
+
+
+  <div id="toc" class="toc tnt-number toc-center tnt-number border-element"><input type="checkbox" class="toc-checkbox" id="toc-checkbox-1" checked=""><label class="toc-title" for="toc-checkbox-1">目次</label>
+    <div class="toc-content">
+    <ol class="toc-list open"><li><a href="https://ana-dig.com/fet_gate1/#toc1" tabindex="0">【この記事で分かること】</a></li><li><a href="https://ana-dig.com/fet_gate1/#toc2" tabindex="0">【結論】　ＦＥＴのベース抵抗値　計算式</a></li><li><a href="https://ana-dig.com/fet_gate1/#toc3" tabindex="0">【ＦＥＴのゲート抵抗値の決め方】</a></li><li><a href="https://ana-dig.com/fet_gate1/#toc4" tabindex="0">【ＦＥＴのゲート抵抗　計算例】</a></li></ol>
+    </div>
+  </div>
+
+<h2><span id="toc1">【この記事で分かること】</span></h2>
+
+
+
+<div class="wp-block-cocoon-blocks-blank-box-1 blank-box block-box has-border-color has-red-border-color">
+<p><strong>ＭＯＳＦＥＴのゲート抵抗値の計算方法がわかる。</strong></p>
+</div>
+
+
+
+<p>ＭＯＳＦＥＴにゲート抵抗がついている理由と、ゲート抵抗値の求め方について説明します。</p>
+
+
+
+<p>　<span class="fz-12px"><span class="fz-14px">ＦＥＴは大別して、接合型(JFET)とＭＯＳ型（MOSFET)があります。<br>　本記事では、ＭＯＳＦＥＴを単に「ＦＥＴ」と呼ぶことにします。</span></span></p>
+
+
+
+<h2><span id="toc2">【結論】　ＦＥＴのベース抵抗値　計算式</span></h2>
+
+
+
+<div class="wp-block-group"><div class="wp-block-group__inner-container">
+<div class="wp-block-cocoon-blocks-column-2 column-wrap column-2 column-2-2-1-1 layout-box">
+<div class="wp-block-cocoon-blocks-column-left column-left"></div>
+
+
+
+<div class="wp-block-cocoon-blocks-column-right column-right"></div>
+</div>
+
+
+
+<div class="wp-block-cocoon-blocks-blank-box-1 blank-box block-box has-border-color has-red-border-color">
+<div class="wp-block-cocoon-blocks-column-2 column-wrap column-2 column-2-2-1-1 layout-box">
+<div class="wp-block-cocoon-blocks-column-left column-left">
+<p>ゲート抵抗Ｒ<sub>G</sub>は以下の計算で決まります。<br>　<strong>Ｒ<sub>G</sub>＝Ｖｉｎ ／ Ｉ<sub>G</sub></strong><br>ここで、<br>　Ｖin：入力電圧<br>　Ｉ<sub>G</sub>：ゲート電流<br>&nbsp; 　　　<strong>Ｉ<sub>G</sub> = Ｑg ／ ｔ</strong><br>　Ｑg：ゲート入力電荷量［nＣ］*<br>　ｔ：ゲート電圧の立上り時間［nｓ］<br>　<span class="fz-14px"><span class="fz-12px">＊はＦＥＴのデータシートに記載</span></span></p>
+</div>
+
+
+
+<div class="wp-block-cocoon-blocks-column-right column-right">
+<p> </p>
+
+
+
+<figure class="wp-block-image alignfull size-large"><img loading="lazy" width="731" height="407" src="./ref1_FETのゲート抵抗の決め方_files/c9ded76b522f870ed9e7b31522074ca7-2.png" alt="" class="wp-image-2635" srcset="https://ana-dig.com/wp-content/uploads/2021/02/c9ded76b522f870ed9e7b31522074ca7-2.png 731w, https://ana-dig.com/wp-content/uploads/2021/02/c9ded76b522f870ed9e7b31522074ca7-2-300x167.png 300w, https://ana-dig.com/wp-content/uploads/2021/02/c9ded76b522f870ed9e7b31522074ca7-2-120x68.png 120w, https://ana-dig.com/wp-content/uploads/2021/02/c9ded76b522f870ed9e7b31522074ca7-2-160x90.png 160w" sizes="(max-width: 731px) 100vw, 731px"></figure>
+</div>
+</div>
+</div>
+</div></div>
+
+
+
+<p>＊のＱgはＦＥＴのデータシートに記載されているので、<br>入力電圧Ｖinと、ゲート電圧の立上り時間ｔで求まります。</p>
+
+
+
+<p>この式になる理由について説明します。</p>
+
+
+
+<h2><span id="toc3">【ＦＥＴのゲート抵抗値の決め方】</span></h2>
+
+
+
+<p>ＦＥＴのゲート（Ｇ）－ソース（Ｓ）間はコンデンサに置き換えて考えることができます。</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large is-resized"><img loading="lazy" src="./ref1_FETのゲート抵抗の決め方_files/937b2d6fd04170dc83c808a040b2400a.png" alt="" class="wp-image-2656" width="393" height="211" srcset="https://ana-dig.com/wp-content/uploads/2021/02/937b2d6fd04170dc83c808a040b2400a.png 856w, https://ana-dig.com/wp-content/uploads/2021/02/937b2d6fd04170dc83c808a040b2400a-300x162.png 300w, https://ana-dig.com/wp-content/uploads/2021/02/937b2d6fd04170dc83c808a040b2400a-768x414.png 768w" sizes="(max-width: 393px) 100vw, 393px"></figure></div>
+
+
+
+<p>ＦＥＴをオンさせるにはＶ<sub>GS</sub>に電圧を加える必要があるので、<br>このコンデンサを充電することになります。</p>
+
+
+
+<p>このコンデンサを充電してＶ<sub>GS</sub>が決められた電圧（10Vが多い）になるのに必要な電荷量が、<br><strong>ゲート入力電荷量Qg</strong>になります。<br>QgはＦＥＴのデータシートに記載されています。</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large is-resized"><img loading="lazy" src="./ref1_FETのゲート抵抗の決め方_files/cff4a135c9699a5d97fc4bf3bb759956-1024x194.png" alt="" class="wp-image-2668" width="745" height="141" srcset="https://ana-dig.com/wp-content/uploads/2021/02/cff4a135c9699a5d97fc4bf3bb759956-1024x194.png 1024w, https://ana-dig.com/wp-content/uploads/2021/02/cff4a135c9699a5d97fc4bf3bb759956-300x57.png 300w, https://ana-dig.com/wp-content/uploads/2021/02/cff4a135c9699a5d97fc4bf3bb759956-768x146.png 768w, https://ana-dig.com/wp-content/uploads/2021/02/cff4a135c9699a5d97fc4bf3bb759956.png 1508w" sizes="(max-width: 745px) 100vw, 745px"></figure></div>
+
+
+
+<p>この例の場合、入力電圧Ｖin＝10Vにした場合は、このＱgの値25nCを使用します。<br>10Ｖでない場合は、データシートの<strong>Ｑg-V<sub>GS</sub>グラフ（ダイナミック入出力特性）</strong>を参照し、<br>使用するＶGSに相当するＱgを使用します。</p>
+
+
+
+<p>Ｖin=12Vの場合、このグラフよりＱg＝30nCとなります。</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large is-resized"><img loading="lazy" src="./ref1_FETのゲート抵抗の決め方_files/f2c9413b303feae0aa55336ebe7cc5b2.png" alt="" class="wp-image-2673" width="336" height="288" srcset="https://ana-dig.com/wp-content/uploads/2021/02/f2c9413b303feae0aa55336ebe7cc5b2.png 750w, https://ana-dig.com/wp-content/uploads/2021/02/f2c9413b303feae0aa55336ebe7cc5b2-300x257.png 300w" sizes="(max-width: 336px) 100vw, 336px"></figure></div>
+
+
+
+<p>Ｑgは<strong>ゲート電流I<sub>G</sub></strong>をt時間流して充電されると考えると<br>　　　<strong>Ｑg＝Ｉ<sub>G</sub> ｘ ｔ</strong><br>となるので、ゲート電流Ｉ<sub>Ｇ</sub>は<br>　　　<strong>Ｉ<sub>G </sub>&nbsp;= Ｑg ／ ｔ　</strong>・・・・（１）<br>となります。</p>
+
+
+
+<p><span class="fz-12px"><span class="fz-14px">　※厳密にはミラー効果により、ゲートから見た容量が変化して、Ｉ<sub>G</sub> 一定ではないのですが、<br>　　大きな影響はないので、簡略化しています</span></span>。</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large is-resized"><img loading="lazy" src="./ref1_FETのゲート抵抗の決め方_files/0c2d23aab0f83973fe822a5a956ac8af.png" alt="" class="wp-image-2720" width="260" height="237" srcset="https://ana-dig.com/wp-content/uploads/2021/02/0c2d23aab0f83973fe822a5a956ac8af.png 636w, https://ana-dig.com/wp-content/uploads/2021/02/0c2d23aab0f83973fe822a5a956ac8af-300x274.png 300w" sizes="(max-width: 260px) 100vw, 260px"></figure></div>
+
+
+
+<p><strong>ｔ</strong>はゲート電圧がVinまで達する時間、つまり<strong>立上り時間</strong>になります。<br>立上り時間ｔを決めれば、ゲート電流Ｉ<sub>G </sub>が決まります。<br>よって、<strong>ゲート抵抗Ｒ<sub>Ｇ</sub></strong>は、<br>　　　<strong>Ｒ<sub>G</sub>＝Ｖｉｎ ／ Ｉ<sub>G</sub> </strong>　　・・・・（２）<br>となります。</p>
+
+
+
+<p>以上から、ゲート電圧の立上り時間tを決めれば、ゲート抵抗Ｒ<sub>G</sub>が求まります。<br>このｔをどの程度にするかは、以下の事を考慮する必要があります。</p>
+
+
+
+<p><strong>＜立上り時間ｔが短い場合＞</strong><br>　Ｖ<sub>GS</sub>の立上りを早くなり高速化できますが、以下の問題があります。</p>
+
+
+
+<p>　<strong>・ゲート電圧に寄生振動が発生してFETが壊れる。</strong><br>　　ゲート抵抗が小さいと、コンデンサ成分とリードによるインダクタンス成分が共振を起こして<br>　　大きな振動波形が発生し、Ｖ<sub>GS</sub>の最大定格を超えたり、誤動作を起こしてＦＥＴが<br>　　破壊する恐れがあります。</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large is-resized"><img loading="lazy" src="./ref1_FETのゲート抵抗の決め方_files/f5ee4f029ecf0a422e6c1bcc03df3bab.png" alt="" class="wp-image-2705" width="198" height="165" srcset="https://ana-dig.com/wp-content/uploads/2021/02/f5ee4f029ecf0a422e6c1bcc03df3bab.png 682w, https://ana-dig.com/wp-content/uploads/2021/02/f5ee4f029ecf0a422e6c1bcc03df3bab-300x250.png 300w" sizes="(max-width: 198px) 100vw, 198px"></figure></div>
+
+
+
+<p>　<strong>・ドレイン電圧Ｖ<sub>DS</sub>の立上り／立下りが早すぎて、ノイズが大きくなる。</strong><br>　　ＶGSの立上り／立下りが急速なので、その分ＶDSも急速に変化します。<br>　　高電圧スイッチングの場合、大きなノイズが発生し、他の回路に影響を与えたり、<br>　　ＥＭＣ試験で放射ノイズが大きくなり、規制をクリアできなくなる場合があります。</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large is-resized"><img loading="lazy" src="./ref1_FETのゲート抵抗の決め方_files/fe745cbedaea0dfbb0486a7a22af43a5-1024x560.png" alt="" class="wp-image-2706" width="472" height="257" srcset="https://ana-dig.com/wp-content/uploads/2021/02/fe745cbedaea0dfbb0486a7a22af43a5-1024x560.png 1024w, https://ana-dig.com/wp-content/uploads/2021/02/fe745cbedaea0dfbb0486a7a22af43a5-300x164.png 300w, https://ana-dig.com/wp-content/uploads/2021/02/fe745cbedaea0dfbb0486a7a22af43a5-768x420.png 768w, https://ana-dig.com/wp-content/uploads/2021/02/fe745cbedaea0dfbb0486a7a22af43a5.png 1296w" sizes="(max-width: 472px) 100vw, 472px"></figure></div>
+
+
+
+<p>　<strong>・ゲート電流Ｉ<sub>G</sub> が大きすぎて、ＦＥＴ前段の制御回路が壊れる。</strong><br>　　Ｉ<sub>G</sub> が制御回路の電流供給能力（ソース電流／シンク電流）を超えると<br>　　回路が故障する場合があります。</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large is-resized"><img loading="lazy" src="./ref1_FETのゲート抵抗の決め方_files/344c49cc4950b08a0060a81df71fdb5a-1.png" alt="" class="wp-image-2710" width="306" height="220" srcset="https://ana-dig.com/wp-content/uploads/2021/02/344c49cc4950b08a0060a81df71fdb5a-1.png 603w, https://ana-dig.com/wp-content/uploads/2021/02/344c49cc4950b08a0060a81df71fdb5a-1-300x216.png 300w" sizes="(max-width: 306px) 100vw, 306px"></figure></div>
+
+
+
+<p><strong>＜立上り時間ｔが長い場合＞</strong><br>　Ｖ<sub>GS</sub>の立上りを遅くでき、上記の問題がなくなりますが、以下の問題が出てきます。</p>
+
+
+
+<p>　<strong>・スイッチングが遅くなることで損失が増大し、高熱でＦＥＴが故障する。</strong><br>　　ＦＥＴはON⇔ＯＦＦの切り替え時は損失が大きく、<br>　　この時間が長すぎると発熱でＦＥＴが壊れる場合があります。</p>
+
+
+
+<p>　<strong>・ブリッジ回路の場合、上下のＦＥＴが同時オンを起こしてショート故障する。</strong><br>　　スイッチングが遅いと本来片方だけONする動作が、<br>　　上下ともONする場合が発生（アーム短絡）して、過電流で壊れる場合があります。</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large is-resized"><img loading="lazy" src="./ref1_FETのゲート抵抗の決め方_files/22875a7615b6ebd21725966c6e50a402-1024x538.png" alt="" class="wp-image-2712" width="487" height="256" srcset="https://ana-dig.com/wp-content/uploads/2021/02/22875a7615b6ebd21725966c6e50a402-1024x538.png 1024w, https://ana-dig.com/wp-content/uploads/2021/02/22875a7615b6ebd21725966c6e50a402-300x158.png 300w, https://ana-dig.com/wp-content/uploads/2021/02/22875a7615b6ebd21725966c6e50a402-768x403.png 768w, https://ana-dig.com/wp-content/uploads/2021/02/22875a7615b6ebd21725966c6e50a402.png 1120w" sizes="(max-width: 487px) 100vw, 487px"></figure></div>
+
+
+
+<p>と言う訳で、立上り時間ｔを決めるのが難しく感じられると思いますが、<br><strong><span class="marker-under-red">一般的な回路のＲ<sub>G</sub>は数10 ～ 数100Ωの範囲で用いられている</span></strong>ので、<br>その範囲内で、まず動作させてみて調整を行うのが望ましいです。</p>
+
+
+
+<p><script async="" src="./ref1_FETのゲート抵抗の決め方_files/f(4).txt"></script><br>
+<ins class="adsbygoogle" style="display: block; text-align: center; height: 186px;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-2289846798511527" data-ad-slot="7475678490" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:186px;margin:0;padding:0;position:relative;visibility:visible;width:741px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:186px;margin:0;padding:0;position:relative;visibility:visible;width:741px;background-color:transparent;"></ins></ins></ins><br>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+
+
+
+<h2><span id="toc4">【ＦＥＴのゲート抵抗　計算例】</span></h2>
+
+
+
+<p>Ｖin＝12Vで東芝製ＦＥＴ TK12A60W を使用する場合<br>先程提示したダイナミック入出力特性グラフより、<br>　　<strong>Ｖ<sub>GS</sub>＝12V時のＱg＝30nC</strong>　となります。</p>
+
+
+
+<p>Ｖ<sub>GS</sub>の立上り時間<strong>ｔ＝1us（＝1000ns）</strong>とすると、<br>ゲート電流I<sub>G</sub>は（１）式より<br>　　<strong>Ｉ<sub>G</sub> &nbsp;= Ｑg ／ ｔ＝30 / 1000＝0.03 ( <strong>＝</strong> 30mA)</strong></p>
+
+
+
+<p>よって、ゲート抵抗Ｒ<sub><strong>G</strong></sub>は（２）式より<br>　　<strong>Ｒ<sub>G</sub>＝Ｖin／Ｉ<sub>G </sub>＝12／0.03＝400Ω　→　470Ωを選択</strong></p>
+
+
+
+<p>実際には400Ωの抵抗値は販売されてないので、抵抗値のラインアップで最も近い470Ωにします。<br>　<span class="fz-12px"><span class="fz-14px">抵抗値のラインアップ：　一般的にE12系列、E24系列があります。詳しくは「抵抗　系列」で検索してください。</span></span></p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large is-resized"><img loading="lazy" src="./ref1_FETのゲート抵抗の決め方_files/b640b6cc25c4dc8a12b63315f9f6feb7.png" alt="" class="wp-image-2715" width="255" height="234" srcset="https://ana-dig.com/wp-content/uploads/2021/02/b640b6cc25c4dc8a12b63315f9f6feb7.png 477w, https://ana-dig.com/wp-content/uploads/2021/02/b640b6cc25c4dc8a12b63315f9f6feb7-300x275.png 300w" sizes="(max-width: 255px) 100vw, 255px"></figure></div>
+
+
+
+<p>Ｒ<sub>G</sub>=470Ωの場合のゲート電流Ｉ<sub>G</sub>は(1),(2)式を変形して<br>　　<strong>Ｉ<sub>G </sub>&nbsp;= Ｖin&nbsp; / Ｒ<sub>G</sub> = 12V / 470Ω ≒ 25.5mA</strong></p>
+
+
+
+<p>立上り時間ｔは<br>　　<strong>ｔ＝Ｑg／Ｉ<sub>G</sub>＝30nC　/ 25.5mA ≒ 1.17 us</strong><br>となります。</p>
+
+
+
+<p>このゲート電流Ｉ<sub>G</sub>を流しても前段のＦＥＴ制御回路の電流供給能力に問題がなく、<br>また、ブリッジ回路で使用する場合は、この立上り時間ｔで上下ショートする恐れがない<br>十分なデットタイムをとっているならば使用することができます。<br>　<span class="fz-12px">※デットタイム：上下ＦＥＴが両方ともＯＦＦの期間。</span></p>
+
+
+
+<p><strong><span class="has-inline-color has-key-color-color">＜FETの選定方法や、トランジスタのベース抵抗の決め方等について、下記で解説しています＞</span></strong></p>
+
+
+
+<figure class="wp-block-embed is-type-wp-embed is-provider-アナデジ太郎の回路設計 wp-block-embed-アナデジ太郎の回路設計"><div class="wp-block-embed__wrapper">
+<a target="_blank" href="https://ana-dig.com/transistor_summary/" title="トランジスタ基本設計まとめサイト" class="blogcard-wrap internal-blogcard-wrap a-wrap cf"><div class="blogcard internal-blogcard ib-left cf"><div class="blogcard-label internal-blogcard-label"><span class="fa"></span></div><figure class="blogcard-thumbnail internal-blogcard-thumbnail"><img width="160" height="90" src="./ref1_FETのゲート抵抗の決め方_files/c32a8ad52fd3ea505fce8bf54b8a0f5c-160x90.png" class="blogcard-thumb-image internal-blogcard-thumb-image wp-post-image" alt="" loading="lazy" srcset="https://ana-dig.com/wp-content/uploads/2021/03/c32a8ad52fd3ea505fce8bf54b8a0f5c-160x90.png 160w, https://ana-dig.com/wp-content/uploads/2021/03/c32a8ad52fd3ea505fce8bf54b8a0f5c-120x68.png 120w" sizes="(max-width: 160px) 100vw, 160px"></figure><div class="blogcard-content internal-blogcard-content"><div class="blogcard-title internal-blogcard-title">トランジスタ基本設計まとめサイト</div><div class="blogcard-snippet internal-blogcard-snippet">【本記事で分かること】トランジスタやFETにつける抵抗値の決め方がわかる。トランジスタやFETの選び方がわかる。オープンコレクタなど、トランジスタを使った回路設計方法がわかる。</div></div><div class="blogcard-footer internal-blogcard-footer cf"><div class="blogcard-site internal-blogcard-site"><div class="blogcard-favicon internal-blogcard-favicon"><img src="./ref1_FETのゲート抵抗の決め方_files/favicons" alt="" class="blogcard-favicon-image internal-blogcard-favicon-image" width="16" height="16"></div><div class="blogcard-domain internal-blogcard-domain">ana-dig.com</div></div></div></div></a>
+</div></figure>
+
+
+
+<p><strong><span class="has-inline-color has-key-color-color">以下の記事で、電子回路工作で役立つ工具類を紹介しています。</span></strong></p>
+
+
+
+<figure class="wp-block-embed is-type-wp-embed is-provider-アナデジ太郎の回路設計 wp-block-embed-アナデジ太郎の回路設計"><div class="wp-block-embed__wrapper">
+<a target="_blank" href="https://ana-dig.com/tool/" title="基板の改造、部品交換に役立つ おすすめアイテム５点" class="blogcard-wrap internal-blogcard-wrap a-wrap cf"><div class="blogcard internal-blogcard ib-left cf"><div class="blogcard-label internal-blogcard-label"><span class="fa"></span></div><figure class="blogcard-thumbnail internal-blogcard-thumbnail"><img width="160" height="90" src="./ref1_FETのゲート抵抗の決め方_files/a11b4bb3ba448d1fa402ac3dc62cc91f-160x90.jpg" class="blogcard-thumb-image internal-blogcard-thumb-image wp-post-image" alt="" loading="lazy" srcset="https://ana-dig.com/wp-content/uploads/2021/03/a11b4bb3ba448d1fa402ac3dc62cc91f-160x90.jpg 160w, https://ana-dig.com/wp-content/uploads/2021/03/a11b4bb3ba448d1fa402ac3dc62cc91f-120x68.jpg 120w, https://ana-dig.com/wp-content/uploads/2021/03/a11b4bb3ba448d1fa402ac3dc62cc91f-320x180.jpg 320w" sizes="(max-width: 160px) 100vw, 160px"></figure><div class="blogcard-content internal-blogcard-content"><div class="blogcard-title internal-blogcard-title">基板の改造、部品交換に役立つ おすすめアイテム５点</div><div class="blogcard-snippet internal-blogcard-snippet">回路設計業務30年の経験から厳選した回路基板工作おすすめアイテムを紹介</div></div><div class="blogcard-footer internal-blogcard-footer cf"><div class="blogcard-site internal-blogcard-site"><div class="blogcard-favicon internal-blogcard-favicon"><img src="./ref1_FETのゲート抵抗の決め方_files/favicons" alt="" class="blogcard-favicon-image internal-blogcard-favicon-image" width="16" height="16"></div><div class="blogcard-domain internal-blogcard-domain">ana-dig.com</div></div></div></div></a>
+</div></figure>
+      </div>
+
+      
+      
+      <footer class="article-footer entry-footer">
+
+        
+        
+        
+        
+<div class="entry-categories-tags ctdt-one-row">
+  <div class="entry-categories"><a class="cat-link cat-link-1" href="https://ana-dig.com/category/circuit/"><span class="fa fa-folder" aria-hidden="true"></span> 回路設計</a></div>
+  </div>
+
+        <div class="ad-area no-icon ad-content-bottom ad-rectangle ad-label-visible cf" itemscope="" itemtype="https://schema.org/WPAdBlock">
+  <div class="ad-label" itemprop="name" data-nosnippet="">スポンサーリンク</div>
+  <div class="ad-wrap">
+    <div class="ad-responsive ad-usual"><!-- レスポンシブコード -->
+<ins class="adsbygoogle" style="display: block; height: 280px;" data-ad-client="ca-pub-2289846798511527" data-ad-slot="1297282955" data-ad-format="rectangle" data-adsbygoogle-status="done"><ins id="aswift_2_expand" style="display:inline-table;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:741px;background-color:transparent;"><ins id="aswift_2_anchor" style="display:block;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:741px;background-color:transparent;"></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+          </div>
+
+</div>
+
+        
+        
+        
+        <div class="sns-share ss-col-3 bc-brand-color sbc-hide ss-bottom">
+      <div class="sns-share-message">シェアする</div>
+  
+  <div class="sns-share-buttons sns-buttons">
+          <a href="https://twitter.com/intent/tweet?text=FET%E3%81%AE%E3%82%B2%E3%83%BC%E3%83%88%E6%8A%B5%E6%8A%97%E3%81%AE%E6%B1%BA%E3%82%81%E6%96%B9&amp;url=https%3A%2F%2Fana-dig.com%2Ffet_gate1%2F" class="share-button twitter-button twitter-share-button-sq" target="_blank" rel="nofollow noopener noreferrer"><span class="social-icon icon-twitter"></span><span class="button-caption">Twitter</span><span class="share-count twitter-share-count"></span></a>
+    
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fana-dig.com%2Ffet_gate1%2F&amp;t=FET%E3%81%AE%E3%82%B2%E3%83%BC%E3%83%88%E6%8A%B5%E6%8A%97%E3%81%AE%E6%B1%BA%E3%82%81%E6%96%B9" class="share-button facebook-button facebook-share-button-sq" target="_blank" rel="nofollow noopener noreferrer"><span class="social-icon icon-facebook"></span><span class="button-caption">Facebook</span><span class="share-count facebook-share-count"></span></a>
+    
+    
+    
+    
+          <a href="https://timeline.line.me/social-plugin/share?url=https%3A%2F%2Fana-dig.com%2Ffet_gate1%2F" class="share-button line-button line-share-button-sq" target="_blank" rel="nofollow noopener noreferrer"><span class="social-icon icon-line"></span><span class="button-caption">LINE</span><span class="share-count line-share-count"></span></a>
+    
+    
+    
+    
+    
+  </div><!-- /.sns-share-buttons -->
+
+</div><!-- /.sns-share -->
+
+        
+        
+        
+        
+        <div class="footer-meta">
+  <div class="author-info">
+    <span class="fa fa-pencil" aria-hidden="true"></span> <a href="https://ana-dig.com/" class="author-link">
+      <span class="post-author vcard author" itemprop="editor author creator copyrightHolder" itemscope="" itemtype="https://schema.org/Person">
+        <span class="author-name fn" itemprop="name">アナデジ太郎の回路設計</span>
+      </span>
+    </a>
+  </div>
+</div>
+
+        <!-- publisher設定 -->
+                <div class="publisher" itemprop="publisher" itemscope="" itemtype="https://schema.org/Organization">
+            <div itemprop="logo" itemscope="" itemtype="https://schema.org/ImageObject">
+              <img src="./ref1_FETのゲート抵抗の決め方_files/no-amp-logo.png" width="206" height="60" alt="">
+              <meta itemprop="url" content="https://ana-dig.com/wp-content/themes/cocoon-master/images/no-amp-logo.png">
+              <meta itemprop="width" content="206">
+              <meta itemprop="height" content="60">
+            </div>
+            <div itemprop="name">アナデジ太郎の回路設計</div>
+        </div>
+      </footer>
+
+    </article>
+
+
+<div class="under-entry-content">
+
+  
+  <aside id="related-entries" class="related-entries rect-entry-card">
+  <h2 class="related-entry-heading">
+    <span class="related-entry-main-heading main-caption">
+      関連記事    </span>
+      </h2>
+  <div class="related-list">
+                 <a href="https://ana-dig.com/photo-coupler2/" class="related-entry-card-wrap a-wrap border-element cf" title="フォトカプラに並列抵抗をつける意味と抵抗値の決め方">
+<article class="related-entry-card e-card cf">
+
+  <figure class="related-entry-card-thumb card-thumb e-card-thumb">
+        <img width="160" height="90" src="./ref1_FETのゲート抵抗の決め方_files/f6e03fd6401b090e76e7610d5168d243-160x90.png" class="related-entry-card-thumb-image card-thumb-image wp-post-image" alt="" loading="lazy" srcset="https://ana-dig.com/wp-content/uploads/2021/06/f6e03fd6401b090e76e7610d5168d243-160x90.png 160w, https://ana-dig.com/wp-content/uploads/2021/06/f6e03fd6401b090e76e7610d5168d243-120x68.png 120w, https://ana-dig.com/wp-content/uploads/2021/06/f6e03fd6401b090e76e7610d5168d243-320x180.png 320w" sizes="(max-width: 160px) 100vw, 160px">        <span class="cat-label cat-label-1">回路設計</span>  </figure><!-- /.related-entry-thumb -->
+
+  <div class="related-entry-card-content card-content e-card-content">
+    <h3 class="related-entry-card-title card-title e-card-title">
+      フォトカプラに並列抵抗をつける意味と抵抗値の決め方    </h3>
+        <div class="related-entry-card-snippet card-snippet e-card-snippet">
+      フォトカプラの入力につける並列抵抗について、その意味と抵抗値の決め方について解説します。    </div>
+          </div><!-- /.related-entry-card-content -->
+
+
+
+</article><!-- /.related-entry-card -->
+</a><!-- /.related-entry-card-wrap -->
+           <a href="https://ana-dig.com/transistor_base/" class="related-entry-card-wrap a-wrap border-element cf" title="トランジスタにベース抵抗がついている理由">
+<article class="related-entry-card e-card cf">
+
+  <figure class="related-entry-card-thumb card-thumb e-card-thumb">
+        <img width="160" height="90" src="./ref1_FETのゲート抵抗の決め方_files/transistors-218835_640_1-160x90.jpg" class="related-entry-card-thumb-image card-thumb-image wp-post-image" alt="" loading="lazy" srcset="https://ana-dig.com/wp-content/uploads/2020/11/transistors-218835_640_1-160x90.jpg 160w, https://ana-dig.com/wp-content/uploads/2020/11/transistors-218835_640_1-120x68.jpg 120w, https://ana-dig.com/wp-content/uploads/2020/11/transistors-218835_640_1-320x180.jpg 320w" sizes="(max-width: 160px) 100vw, 160px">        <span class="cat-label cat-label-1">回路設計</span>  </figure><!-- /.related-entry-thumb -->
+
+  <div class="related-entry-card-content card-content e-card-content">
+    <h3 class="related-entry-card-title card-title e-card-title">
+      トランジスタにベース抵抗がついている理由    </h3>
+        <div class="related-entry-card-snippet card-snippet e-card-snippet">
+      【本記事で分かること】バイポーラトランジスタにベース抵抗がついている理由がわかる。    </div>
+          </div><!-- /.related-entry-card-content -->
+
+
+
+</article><!-- /.related-entry-card -->
+</a><!-- /.related-entry-card-wrap -->
+           <a href="https://ana-dig.com/tool/" class="related-entry-card-wrap a-wrap border-element cf" title="基板の改造、部品交換に役立つ おすすめアイテム５点">
+<article class="related-entry-card e-card cf">
+
+  <figure class="related-entry-card-thumb card-thumb e-card-thumb">
+        <img width="160" height="90" src="./ref1_FETのゲート抵抗の決め方_files/a11b4bb3ba448d1fa402ac3dc62cc91f-160x90.jpg" class="related-entry-card-thumb-image card-thumb-image wp-post-image" alt="" loading="lazy" srcset="https://ana-dig.com/wp-content/uploads/2021/03/a11b4bb3ba448d1fa402ac3dc62cc91f-160x90.jpg 160w, https://ana-dig.com/wp-content/uploads/2021/03/a11b4bb3ba448d1fa402ac3dc62cc91f-120x68.jpg 120w, https://ana-dig.com/wp-content/uploads/2021/03/a11b4bb3ba448d1fa402ac3dc62cc91f-320x180.jpg 320w" sizes="(max-width: 160px) 100vw, 160px">        <span class="cat-label cat-label-1">回路設計</span>  </figure><!-- /.related-entry-thumb -->
+
+  <div class="related-entry-card-content card-content e-card-content">
+    <h3 class="related-entry-card-title card-title e-card-title">
+      基板の改造、部品交換に役立つ おすすめアイテム５点    </h3>
+        <div class="related-entry-card-snippet card-snippet e-card-snippet">
+      回路設計業務30年の経験から厳選した回路基板工作おすすめアイテムを紹介    </div>
+          </div><!-- /.related-entry-card-content -->
+
+
+
+</article><!-- /.related-entry-card -->
+</a><!-- /.related-entry-card-wrap -->
+           <a href="https://ana-dig.com/photo-coupler1/" class="related-entry-card-wrap a-wrap border-element cf" title="【初級者向】フォトカプラの基本的な使い方">
+<article class="related-entry-card e-card cf">
+
+  <figure class="related-entry-card-thumb card-thumb e-card-thumb">
+        <img width="160" height="90" src="./ref1_FETのゲート抵抗の決め方_files/6f0935882bbecc9cb5c09ece13def6fc-160x90.png" class="related-entry-card-thumb-image card-thumb-image wp-post-image" alt="" loading="lazy" srcset="https://ana-dig.com/wp-content/uploads/2021/06/6f0935882bbecc9cb5c09ece13def6fc-160x90.png 160w, https://ana-dig.com/wp-content/uploads/2021/06/6f0935882bbecc9cb5c09ece13def6fc-120x68.png 120w, https://ana-dig.com/wp-content/uploads/2021/06/6f0935882bbecc9cb5c09ece13def6fc-320x180.png 320w" sizes="(max-width: 160px) 100vw, 160px">        <span class="cat-label cat-label-1">回路設計</span>  </figure><!-- /.related-entry-thumb -->
+
+  <div class="related-entry-card-content card-content e-card-content">
+    <h3 class="related-entry-card-title card-title e-card-title">
+      【初級者向】フォトカプラの基本的な使い方    </h3>
+        <div class="related-entry-card-snippet card-snippet e-card-snippet">
+      【本記事でわかること】フォトカプラを使った回路の設計方法。接続する抵抗値の決め方。データーシートの見方がわかる
+    </div>
+          </div><!-- /.related-entry-card-content -->
+
+
+
+</article><!-- /.related-entry-card -->
+</a><!-- /.related-entry-card-wrap -->
+           <a href="https://ana-dig.com/transistor_base2/" class="related-entry-card-wrap a-wrap border-element cf" title="トランジスタのベース抵抗の決め方">
+<article class="related-entry-card e-card cf">
+
+  <figure class="related-entry-card-thumb card-thumb e-card-thumb">
+        <img width="160" height="90" src="./ref1_FETのゲート抵抗の決め方_files/4554bcefe811fd097a4f5d0213e81292-160x90.png" class="related-entry-card-thumb-image card-thumb-image wp-post-image" alt="" loading="lazy" srcset="https://ana-dig.com/wp-content/uploads/2021/01/4554bcefe811fd097a4f5d0213e81292-160x90.png 160w, https://ana-dig.com/wp-content/uploads/2021/01/4554bcefe811fd097a4f5d0213e81292-120x68.png 120w" sizes="(max-width: 160px) 100vw, 160px">        <span class="cat-label cat-label-1">回路設計</span>  </figure><!-- /.related-entry-thumb -->
+
+  <div class="related-entry-card-content card-content e-card-content">
+    <h3 class="related-entry-card-title card-title e-card-title">
+      トランジスタのベース抵抗の決め方    </h3>
+        <div class="related-entry-card-snippet card-snippet e-card-snippet">
+      【本記事で分かること】「ベース抵抗がある理由」でトランジスタにベース抵抗がついている理由を説明しました。ここでは、ベース抵抗値の求め方について説明します。    </div>
+          </div><!-- /.related-entry-card-content -->
+
+
+
+</article><!-- /.related-entry-card -->
+</a><!-- /.related-entry-card-wrap -->
+           <a href="https://ana-dig.com/fet_gate2/" class="related-entry-card-wrap a-wrap border-element cf" title="FETのゲート・ソース間抵抗の決め方">
+<article class="related-entry-card e-card cf">
+
+  <figure class="related-entry-card-thumb card-thumb e-card-thumb">
+        <img width="160" height="90" src="./ref1_FETのゲート抵抗の決め方_files/c3450da92b74fdd7a7d375e81061f36b-160x90.png" class="related-entry-card-thumb-image card-thumb-image wp-post-image" alt="" loading="lazy" srcset="https://ana-dig.com/wp-content/uploads/2021/03/c3450da92b74fdd7a7d375e81061f36b-160x90.png 160w, https://ana-dig.com/wp-content/uploads/2021/03/c3450da92b74fdd7a7d375e81061f36b-120x68.png 120w, https://ana-dig.com/wp-content/uploads/2021/03/c3450da92b74fdd7a7d375e81061f36b-320x180.png 320w" sizes="(max-width: 160px) 100vw, 160px">        <span class="cat-label cat-label-1">回路設計</span>  </figure><!-- /.related-entry-thumb -->
+
+  <div class="related-entry-card-content card-content e-card-content">
+    <h3 class="related-entry-card-title card-title e-card-title">
+      FETのゲート・ソース間抵抗の決め方    </h3>
+        <div class="related-entry-card-snippet card-snippet e-card-snippet">
+      【この記事で分かること】ＭＯＳＦＥＴのゲート・ソース間抵抗の決め方がわかる。ゲート・ソース間抵抗がついている理由がわかる。    </div>
+          </div><!-- /.related-entry-card-content -->
+
+
+
+</article><!-- /.related-entry-card -->
+</a><!-- /.related-entry-card-wrap -->
+    
+      </div>
+</aside>
+
+  
+  
+  <div id="pager-post-navi" class="pager-post-navi post-navi-default cf">
+<a href="https://ana-dig.com/reliability_impact-test/" title="衝撃試験の試験方法と治具作成について" class="prev-post a-wrap border-element cf">
+        <div class="fa fa-chevron-left iconfont" aria-hidden="true"></div>
+        <figure class="prev-post-thumb card-thumb"><img width="120" height="68" src="./ref1_FETのゲート抵抗の決め方_files/2b46cc2295439bf7a7452bc32cf4af23-120x68.png" class="attachment-thumb120 size-thumb120 wp-post-image" alt="" loading="lazy" srcset="https://ana-dig.com/wp-content/uploads/2021/02/2b46cc2295439bf7a7452bc32cf4af23-120x68.png 120w, https://ana-dig.com/wp-content/uploads/2021/02/2b46cc2295439bf7a7452bc32cf4af23-160x90.png 160w, https://ana-dig.com/wp-content/uploads/2021/02/2b46cc2295439bf7a7452bc32cf4af23-316x180.png 316w" sizes="(max-width: 120px) 100vw, 120px"></figure>
+        <div class="prev-post-title">衝撃試験の試験方法と治具作成について</div></a><a href="https://ana-dig.com/fet_gate2/" title="FETのゲート・ソース間抵抗の決め方" class="next-post a-wrap cf">
+        <div class="fa fa-chevron-right iconfont" aria-hidden="true"></div>
+        <figure class="next-post-thumb card-thumb">
+        <img width="120" height="68" src="./ref1_FETのゲート抵抗の決め方_files/c3450da92b74fdd7a7d375e81061f36b-120x68.png" class="attachment-thumb120 size-thumb120 wp-post-image" alt="" loading="lazy" srcset="https://ana-dig.com/wp-content/uploads/2021/03/c3450da92b74fdd7a7d375e81061f36b-120x68.png 120w, https://ana-dig.com/wp-content/uploads/2021/03/c3450da92b74fdd7a7d375e81061f36b-160x90.png 160w, https://ana-dig.com/wp-content/uploads/2021/03/c3450da92b74fdd7a7d375e81061f36b-320x180.png 320w" sizes="(max-width: 120px) 100vw, 120px"></figure>
+<div class="next-post-title">FETのゲート・ソース間抵抗の決め方</div></a></div><!-- /.pager-post-navi -->
+
+  
+
+  
+  
+</div>
+
+<div id="breadcrumb" class="breadcrumb breadcrumb-category sbp-main-bottom" itemscope="" itemtype="https://schema.org/BreadcrumbList"><div class="breadcrumb-home" itemscope="" itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span class="fa fa-home fa-fw" aria-hidden="true"></span><a href="https://ana-dig.com/" itemprop="item"><span itemprop="name" class="breadcrumb-caption">ホーム</span></a><meta itemprop="position" content="1"><span class="sp"><span class="fa fa-angle-right" aria-hidden="true"></span></span></div><div class="breadcrumb-item" itemscope="" itemtype="https://schema.org/ListItem" itemprop="itemListElement"><span class="fa fa-folder fa-fw" aria-hidden="true"></span><a href="https://ana-dig.com/category/circuit/" itemprop="item"><span itemprop="name" class="breadcrumb-caption">回路設計</span></a><meta itemprop="position" content="2"></div></div><!-- /#breadcrumb -->
+
+          </main>
+
+        <div id="sidebar" class="sidebar nwa cf" role="complementary">
+
+  <div class="ad-area no-icon ad-sidebar-top ad-auto ad-label-invisible cf" itemscope="" itemtype="https://schema.org/WPAdBlock">
+  <div class="ad-label" itemprop="name" data-nosnippet="">スポンサーリンク</div>
+  <div class="ad-wrap">
+    <div class="ad-responsive ad-usual"><!-- レスポンシブコード -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2289846798511527" data-ad-slot="1297282955" data-ad-format="auto" data-adsbygoogle-status="done"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+          </div>
+
+</div>
+
+	<aside id="author_box-2" class="widget widget-sidebar widget-sidebar-standard widget_author_box"><h3 class="widget-sidebar-title widget-title">プロフィール</h3>  <div class="author-box border-element no-icon cf">
+        <figure class="author-thumb">
+      <img alt="アナデジ太郎" src="./ref1_FETのゲート抵抗の決め方_files/f_f_object_66_s512_f_object_66_0bg.png" class="avatar avatar-200 photo" height="200" width="200">    </figure>
+    <div class="author-content">
+      <div class="author-name">
+        <a rel="author" target="_blank" href="https://ana-dig.com/author/kufuhi/" title="アナデジ太郎 の投稿">アナデジ太郎</a>      </div>
+      <div class="author-description">
+        <p>30年以上回路設計やってます。初級者向けにわかりやすい解説を目指します。</p>
+
+      </div>
+            <div class="author-follows">
+              </div>
+      
+    </div>
+  </div>
+</aside><aside id="search-2" class="widget widget-sidebar widget-sidebar-standard widget_search"><form class="search-box input-box" method="get" action="https://ana-dig.com/">
+  <input type="text" placeholder="サイト内を検索" name="s" class="search-edit" aria-label="input" value="">
+  <button type="submit" class="search-submit" aria-label="button"><span class="fa fa-search" aria-hidden="true"></span></button>
+</form>
+</aside>
+		<aside id="recent-posts-2" class="widget widget-sidebar widget-sidebar-standard widget_recent_entries">
+		<h3 class="widget-sidebar-title widget-title">最近の投稿</h3>
+		<ul>
+											<li>
+					<a href="https://ana-dig.com/opamp1/">【初級者向わかりやすく解説】オペアンプの使い方</a>
+									</li>
+											<li>
+					<a href="https://ana-dig.com/board_surface/">半田レベラー、フラックスとは？プリント基板の表面処理について</a>
+									</li>
+											<li>
+					<a href="https://ana-dig.com/photo-coupler2/">フォトカプラに並列抵抗をつける意味と抵抗値の決め方</a>
+									</li>
+											<li>
+					<a href="https://ana-dig.com/photo-coupler1/">【初級者向】フォトカプラの基本的な使い方</a>
+									</li>
+											<li>
+					<a href="https://ana-dig.com/darlington/">【初級者向】ダーリントン接続とは？使い方と注意点について　　</a>
+									</li>
+					</ul>
+
+		</aside>
+  
+    <div id="sidebar-scroll" class="sidebar-scroll">
+    <aside id="archives-2" class="widget widget-sidebar widget-sidebar-scroll widget_archive"><h3 class="widget-sidebar-scroll-title widget-title">アーカイブ</h3>
+			<ul>
+					<li><a href="https://ana-dig.com/2021/06/">2021年6月</a></li>
+	<li><a href="https://ana-dig.com/2021/05/">2021年5月</a></li>
+	<li><a href="https://ana-dig.com/2021/04/">2021年4月</a></li>
+	<li><a href="https://ana-dig.com/2021/03/">2021年3月</a></li>
+	<li><a href="https://ana-dig.com/2021/02/">2021年2月</a></li>
+	<li><a href="https://ana-dig.com/2021/01/">2021年1月</a></li>
+	<li><a href="https://ana-dig.com/2020/12/">2020年12月</a></li>
+	<li><a href="https://ana-dig.com/2020/11/">2020年11月</a></li>
+			</ul>
+
+			</aside><aside id="categories-2" class="widget widget-sidebar widget-sidebar-scroll widget_categories"><h3 class="widget-sidebar-scroll-title widget-title">カテゴリー</h3>
+			<ul>
+					<li class="cat-item cat-item-4"><a class="cf" href="https://ana-dig.com/category/reliability/" title="信頼性評価方法">信頼性評価</a>
+</li>
+	<li class="cat-item cat-item-1"><a class="cf" href="https://ana-dig.com/category/circuit/" title="実用回路の説明">回路設計</a>
+</li>
+	<li class="cat-item cat-item-7"><a class="cf" href="https://ana-dig.com/category/bord/" title="パターン設計方法">基板設計</a>
+</li>
+	<li class="cat-item cat-item-6"><a class="cf" href="https://ana-dig.com/category/parts/" title="電子部品選定方法">部品選定</a>
+</li>
+	<li class="cat-item cat-item-2"><a class="cf" href="https://ana-dig.com/category/emc/" title="EMC試験ノウハウ">ＥＭＣ試験</a>
+</li>
+			</ul>
+
+			</aside>  </div>
+  
+</div>
+
+      </div>
+
+    </div>
+
+    
+    
+    
+    <footer id="footer" class="footer footer-container nwa" itemscope="" itemtype="https://schema.org/WPFooter">
+
+      <div id="footer-in" class="footer-in wrap cf">
+
+        
+        
+        
+<div class="footer-bottom fdt-left-and-right fnm-text-width cf">
+  <div class="footer-bottom-logo">
+    <div class="logo logo-footer logo-text"><a href="https://ana-dig.com/" class="site-name site-name-text-link" itemprop="url"><span class="site-name-text" itemprop="name about">アナデジ太郎の回路設計</span></a></div>  </div>
+
+  <div class="footer-bottom-content">
+     <nav id="navi-footer" class="navi-footer">
+  <div id="navi-footer-in" class="navi-footer-in">
+    <ul id="menu-%e3%83%98%e3%83%83%e3%83%80%e3%83%bc%e3%83%a1%e3%83%8b%e3%83%a5%e3%83%bc" class="menu-footer"><li id="menu-item-43" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-43"><a href="https://ana-dig.com/menseki/">免責事項</a></li>
+<li id="menu-item-47" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-47"><a href="https://ana-dig.com/privacy/">プライバシーポリシー</a></li>
+<li id="menu-item-949" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-949"><a href="https://ana-dig.com/operator-information/">運営者情報</a></li>
+<li id="menu-item-950" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-950"><a href="https://ana-dig.com/toiawase/">お問い合わせ</a></li>
+</ul>  </div>
+</nav>
+
+    <div class="source-org copyright">© 2020 アナデジ太郎の回路設計.</div>
+  </div>
+
+</div>
+
+      </div>
+
+    </footer>
+
+    
+    
+
+    
+
+<ul class="mobile-footer-menu-buttons mobile-menu-buttons" style="bottom: 0px;">
+
+      
+  <!-- メニューボタン -->
+  <li class="navi-menu-button menu-button">
+    <input id="navi-menu-input" type="checkbox" class="display-none">
+    <label id="navi-menu-open" class="menu-open menu-button-in" for="navi-menu-input">
+      <span class="navi-menu-icon menu-icon">
+        <span class="fa fa-bars" aria-hidden="true"></span>
+      </span>
+      <span class="navi-menu-caption menu-caption">メニュー</span>
+    </label>
+    <label class="display-none" id="navi-menu-close" for="navi-menu-input"></label>
+    <div id="navi-menu-content" class="navi-menu-content menu-content">
+      <label class="navi-menu-close-button menu-close-button" for="navi-menu-input"><span class="fa fa-close" aria-hidden="true"></span></label>
+      <ul class="menu-drawer"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-18"><a href="https://ana-dig.com/">ＴＯＰ</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-14"><a href="https://ana-dig.com/category/circuit/">回路設計</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-15"><a href="https://ana-dig.com/category/bord/">基板設計</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-628"><a href="https://ana-dig.com/category/parts/">部品選定</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-860"><a href="https://ana-dig.com/category/emc/">ＥＭＣ試験</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2304"><a href="https://ana-dig.com/category/reliability/">信頼性評価</a></li>
+</ul>    </div>
+  </li>
+
+    
+<!-- ホームボタン -->
+<li class="home-menu-button menu-button">
+  <a href="https://ana-dig.com/" class="menu-button-in">
+    <span class="home-menu-icon menu-icon">
+      <span class="fa fa-home" aria-hidden="true"></span>
+    </span>
+    <span class="home-menu-caption menu-caption">ホーム</span>
+  </a>
+</li>
+
+    
+<!-- 検索ボタン -->
+  <!-- 検索ボタン -->
+  <li class="search-menu-button menu-button">
+    <input id="search-menu-input" type="checkbox" class="display-none">
+    <label id="search-menu-open" class="menu-open menu-button-in" for="search-menu-input">
+      <span class="search-menu-icon menu-icon">
+        <span class="fa fa-search" aria-hidden="true"></span>
+      </span>
+      <span class="search-menu-caption menu-caption">検索</span>
+    </label>
+    <label class="display-none" id="search-menu-close" for="search-menu-input"></label>
+    <div id="search-menu-content" class="search-menu-content">
+      <form class="search-box input-box" method="get" action="https://ana-dig.com/">
+  <input type="text" placeholder="サイト内を検索" name="s" class="search-edit" aria-label="input" value="">
+  <button type="submit" class="search-submit" aria-label="button"><span class="fa fa-search" aria-hidden="true"></span></button>
+</form>
+    </div>
+  </li>
+
+    
+<!-- トップボタン -->
+<li class="top-menu-button menu-button">
+  <a class="go-to-top-common top-menu-a menu-button-in">
+    <span class="top-menu-icon menu-icon">
+      <span class="fa fa-arrow-up" aria-hidden="true"></span>
+    </span>
+    <span class="top-menu-caption menu-caption">トップ</span>
+  </a>
+</li>
+
+    
+<!-- サイドバーボタン -->
+  <li class="sidebar-menu-button menu-button">
+    <input id="sidebar-menu-input" type="checkbox" class="display-none">
+    <label id="sidebar-menu-open" class="menu-open menu-button-in" for="sidebar-menu-input">
+      <span class="sidebar-menu-icon menu-icon">
+        <span class="fa fa-outdent" aria-hidden="true"></span>
+      </span>
+      <span class="sidebar-menu-caption menu-caption">サイドバー</span>
+    </label>
+    <label class="display-none" id="sidebar-menu-close" for="sidebar-menu-input"></label>
+    <div id="sidebar-menu-content" class="sidebar-menu-content menu-content">
+      <label class="sidebar-menu-close-button menu-close-button" for="sidebar-menu-input"><span class="fa fa-close" aria-hidden="true"></span></label>
+      <div id="slide-in-sidebar" class="sidebar nwa cf" role="complementary">
+
+  <div class="ad-area no-icon ad-sidebar-top ad-auto ad-label-invisible cf" itemscope="" itemtype="https://schema.org/WPAdBlock">
+  <div class="ad-label" itemprop="name" data-nosnippet="">スポンサーリンク</div>
+  <div class="ad-wrap">
+    <div class="ad-responsive ad-usual"><!-- レスポンシブコード -->
+
+</div>
+          </div>
+
+</div>
+
+	<aside id="slide-in-author_box-2" class="widget widget-sidebar widget-sidebar-standard widget_author_box"><h3 class="widget-sidebar-title widget-title">プロフィール</h3>  <div class="author-box border-element no-icon cf">
+        <figure class="author-thumb">
+      <img alt="アナデジ太郎" src="./ref1_FETのゲート抵抗の決め方_files/f_f_object_66_s512_f_object_66_0bg.png" class="avatar avatar-200 photo" height="200" width="200">    </figure>
+    <div class="author-content">
+      <div class="author-name">
+        <a rel="author" target="_blank" href="https://ana-dig.com/author/kufuhi/" title="アナデジ太郎 の投稿">アナデジ太郎</a>      </div>
+      <div class="author-description">
+        <p>30年以上回路設計やってます。初級者向けにわかりやすい解説を目指します。</p>
+
+      </div>
+            <div class="author-follows">
+              </div>
+      
+    </div>
+  </div>
+</aside><aside id="slide-in-search-2" class="widget widget-sidebar widget-sidebar-standard widget_search"><form class="search-box input-box" method="get" action="https://ana-dig.com/">
+  <input type="text" placeholder="サイト内を検索" name="s" class="search-edit" aria-label="input" value="">
+  <button type="submit" class="search-submit" aria-label="button"><span class="fa fa-search" aria-hidden="true"></span></button>
+</form>
+</aside>
+		<aside id="slide-in-recent-posts-2" class="widget widget-sidebar widget-sidebar-standard widget_recent_entries">
+		<h3 class="widget-sidebar-title widget-title">最近の投稿</h3>
+		<ul>
+											<li>
+					<a href="https://ana-dig.com/opamp1/">【初級者向わかりやすく解説】オペアンプの使い方</a>
+									</li>
+											<li>
+					<a href="https://ana-dig.com/board_surface/">半田レベラー、フラックスとは？プリント基板の表面処理について</a>
+									</li>
+											<li>
+					<a href="https://ana-dig.com/photo-coupler2/">フォトカプラに並列抵抗をつける意味と抵抗値の決め方</a>
+									</li>
+											<li>
+					<a href="https://ana-dig.com/photo-coupler1/">【初級者向】フォトカプラの基本的な使い方</a>
+									</li>
+											<li>
+					<a href="https://ana-dig.com/darlington/">【初級者向】ダーリントン接続とは？使い方と注意点について　　</a>
+									</li>
+					</ul>
+
+		</aside>
+  
+    <div id="slide-in-sidebar-scroll" class="sidebar-scroll">
+    <aside id="slide-in-archives-2" class="widget widget-sidebar widget-sidebar-scroll widget_archive"><h3 class="widget-sidebar-scroll-title widget-title">アーカイブ</h3>
+			<ul>
+					<li><a href="https://ana-dig.com/2021/06/">2021年6月</a></li>
+	<li><a href="https://ana-dig.com/2021/05/">2021年5月</a></li>
+	<li><a href="https://ana-dig.com/2021/04/">2021年4月</a></li>
+	<li><a href="https://ana-dig.com/2021/03/">2021年3月</a></li>
+	<li><a href="https://ana-dig.com/2021/02/">2021年2月</a></li>
+	<li><a href="https://ana-dig.com/2021/01/">2021年1月</a></li>
+	<li><a href="https://ana-dig.com/2020/12/">2020年12月</a></li>
+	<li><a href="https://ana-dig.com/2020/11/">2020年11月</a></li>
+			</ul>
+
+			</aside><aside id="slide-in-categories-2" class="widget widget-sidebar widget-sidebar-scroll widget_categories"><h3 class="widget-sidebar-scroll-title widget-title">カテゴリー</h3>
+			<ul>
+					<li class="cat-item cat-item-4"><a class="cf" href="https://ana-dig.com/category/reliability/" title="信頼性評価方法">信頼性評価</a>
+</li>
+	<li class="cat-item cat-item-1"><a class="cf" href="https://ana-dig.com/category/circuit/" title="実用回路の説明">回路設計</a>
+</li>
+	<li class="cat-item cat-item-7"><a class="cf" href="https://ana-dig.com/category/bord/" title="パターン設計方法">基板設計</a>
+</li>
+	<li class="cat-item cat-item-6"><a class="cf" href="https://ana-dig.com/category/parts/" title="電子部品選定方法">部品選定</a>
+</li>
+	<li class="cat-item cat-item-2"><a class="cf" href="https://ana-dig.com/category/emc/" title="EMC試験ノウハウ">ＥＭＣ試験</a>
+</li>
+			</ul>
+
+			</aside>  </div>
+  
+</div>
+    </div>
+  </li>
+  
+</ul>
+
+
+
+    <div id="go-to-top" class="go-to-top" style="display: block;">
+      <a class="go-to-top-button go-to-top-common go-to-top-hide go-to-top-button-icon-font"><span class="fa fa-angle-double-up"></span></a>
+  </div>
+
+    <script src="./ref1_FETのゲート抵抗の決め方_files/baguetteBox.min.js.ダウンロード" id="baguettebox-js-js"></script>
+<script id="baguettebox-js-js-after">
+(function($){baguetteBox.run(".entry-content")})(jQuery);
+</script>
+<script src="./ref1_FETのゲート抵抗の決め方_files/stickyfill.min.js.ダウンロード" id="stickyfill-js-js"></script>
+<script src="./ref1_FETのゲート抵抗の決め方_files/comment-reply.min.js.ダウンロード" id="comment-reply-js"></script>
+<script id="cocoon-js-js-extra">
+/* <![CDATA[ */
+var cocoon_localize_script_options = {"is_lazy_load_enable":null,"is_fixed_mobile_buttons_enable":"","is_google_font_lazy_load_enable":null};
+/* ]]> */
+</script>
+<script src="./ref1_FETのゲート抵抗の決め方_files/javascript.js.ダウンロード" id="cocoon-js-js"></script>
+<script src="./ref1_FETのゲート抵抗の決め方_files/wp-polyfill.min.js.ダウンロード" id="wp-polyfill-js"></script>
+<script id="wp-polyfill-js-after">
+( 'fetch' in window ) || document.write( '<script src="https://ana-dig.com/wp-includes/js/dist/vendor/wp-polyfill-fetch.min.js?ver=3.0.0&#038;fver=20210204024111"></scr' + 'ipt>' );( document.contains ) || document.write( '<script src="https://ana-dig.com/wp-includes/js/dist/vendor/wp-polyfill-node-contains.min.js?ver=3.42.0&#038;fver=20200821034102"></scr' + 'ipt>' );( window.DOMRect ) || document.write( '<script src="https://ana-dig.com/wp-includes/js/dist/vendor/wp-polyfill-dom-rect.min.js?ver=3.42.0&#038;fver=20210204024111"></scr' + 'ipt>' );( window.URL && window.URL.prototype && window.URLSearchParams ) || document.write( '<script src="https://ana-dig.com/wp-includes/js/dist/vendor/wp-polyfill-url.min.js?ver=3.6.4&#038;fver=20200821034102"></scr' + 'ipt>' );( window.FormData && window.FormData.prototype.keys ) || document.write( '<script src="https://ana-dig.com/wp-includes/js/dist/vendor/wp-polyfill-formdata.min.js?ver=3.0.12&#038;fver=20200821034102"></scr' + 'ipt>' );( Element.prototype.matches && Element.prototype.closest ) || document.write( '<script src="https://ana-dig.com/wp-includes/js/dist/vendor/wp-polyfill-element-closest.min.js?ver=2.0.2&#038;fver=20200821034102"></scr' + 'ipt>' );( 'objectFit' in document.documentElement.style ) || document.write( '<script src="https://ana-dig.com/wp-includes/js/dist/vendor/wp-polyfill-object-fit.min.js?ver=2.3.4&#038;fver=20210310115811"></scr' + 'ipt>' );
+</script>
+<script id="contact-form-7-js-extra">
+/* <![CDATA[ */
+var wpcf7 = {"api":{"root":"https:\/\/ana-dig.com\/wp-json\/","namespace":"contact-form-7\/v1"}};
+/* ]]> */
+</script>
+<script src="./ref1_FETのゲート抵抗の決め方_files/index.js.ダウンロード" id="contact-form-7-js"></script>
+<script id="google-invisible-recaptcha-js-before">
+var renderInvisibleReCaptcha = function() {
+
+    for (var i = 0; i < document.forms.length; ++i) {
+        var form = document.forms[i];
+        var holder = form.querySelector('.inv-recaptcha-holder');
+
+        if (null === holder) continue;
+		holder.innerHTML = '';
+
+         (function(frm){
+			var cf7SubmitElm = frm.querySelector('.wpcf7-submit');
+            var holderId = grecaptcha.render(holder,{
+                'sitekey': '6Lcow-IZAAAAAHoy_bWFIGy900n2rEPYHi1MP0nb', 'size': 'invisible', 'badge' : 'inline',
+                'callback' : function (recaptchaToken) {
+					if((null !== cf7SubmitElm) && (typeof jQuery != 'undefined')){jQuery(frm).submit();grecaptcha.reset(holderId);return;}
+					 HTMLFormElement.prototype.submit.call(frm);
+                },
+                'expired-callback' : function(){grecaptcha.reset(holderId);}
+            });
+
+			if(null !== cf7SubmitElm && (typeof jQuery != 'undefined') ){
+				jQuery(cf7SubmitElm).off('click').on('click', function(clickEvt){
+					clickEvt.preventDefault();
+					grecaptcha.execute(holderId);
+				});
+			}
+			else
+			{
+				frm.onsubmit = function (evt){evt.preventDefault();grecaptcha.execute(holderId);};
+			}
+
+
+        })(form);
+    }
+};
+</script>
+<script async="" defer="" src="./ref1_FETのゲート抵抗の決め方_files/api.js.ダウンロード" id="google-invisible-recaptcha-js"></script>
+
+    
+
+
+  <script async="" src="./ref1_FETのゲート抵抗の決め方_files/f(4).txt"></script>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+
+
+
+
+  </div><div role="dialog" id="baguetteBox-overlay"><div id="baguetteBox-slider"></div><button type="button" id="previous-button" aria-label="Previous" class="baguetteBox-button"><svg width="44" height="60"><polyline points="30 10 10 30 30 50" stroke="rgba(255,255,255,0.5)" stroke-width="4" stroke-linecap="butt" fill="none" stroke-linejoin="round"></polyline></svg></button><button type="button" id="next-button" aria-label="Next" class="baguetteBox-button"><svg width="44" height="60"><polyline points="14 10 34 30 14 50" stroke="rgba(255,255,255,0.5)" stroke-width="4" stroke-linecap="butt" fill="none" stroke-linejoin="round"></polyline></svg></button><button type="button" id="close-button" aria-label="Close" class="baguetteBox-button"><svg width="30" height="30"><g stroke="rgb(160,160,160)" stroke-width="4"><line x1="5" y1="5" x2="25" y2="25"></line><line x1="5" y1="25" x2="25" y2="5"></line></g></svg></button></div><!-- #container -->
+
+    
+
+
+
+<ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important;" data-ad-status="unfilled"><ins id="aswift_3_expand" style="display:inline-table;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent;" tabindex="0" title="Advertisement" aria-label="Advertisement"><ins id="aswift_3_anchor" style="display:block;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent;"><iframe id="aswift_3" name="aswift_3" style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" frameborder="0" src="./ref1_FETのゲート抵抗の決め方_files/ads(1).html" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" trusttoken="{&quot;type&quot;:&quot;send-redemption-record&quot;,&quot;issuers&quot;:[&quot;https://adservice.google.com&quot;],&quot;refreshPolicy&quot;:&quot;none&quot;,&quot;signRequestData&quot;:&quot;include&quot;,&quot;includeTimestampHeader&quot;:true,&quot;additionalSignedHeaders&quot;:[&quot;sec-time&quot;,&quot;Sec-Redemption-Record&quot;],&quot;additionalSigningData&quot;:&quot;eyJ1cmwiOiJodHRwczovL2FuYS1kaWcuY29tL2ZldF9nYXRlMS8ifQ..&quot;}" allow="conversion-measurement" data-google-container-id="a!4" data-load-complete="true"></iframe></ins></ins></ins><iframe id="google_osd_static_frame_3418214091294" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;" src="./ref1_FETのゲート抵抗の決め方_files/saved_resource.html"></iframe></body><iframe id="google_esf" name="google_esf" src="./ref1_FETのゲート抵抗の決め方_files/zrt_lookup.html" style="display: none;"></iframe></html>
