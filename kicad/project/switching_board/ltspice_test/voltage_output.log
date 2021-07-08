@@ -1,0 +1,45 @@
+Circuit: * C:\Users\tkknn\Documents\GitHub\rescue_tanaka_works\kicad\project\switching_board\ltspice_test\voltage_output.asc
+
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Gmin = 10
+Gmin = 1.07374
+Gmin = 0.115292
+Gmin = 0.0123794
+Gmin = 0.00132923
+vernier = 0.5
+Gmin = 0.000339899
+vernier = 0.666667
+vernier = 0.888888
+Gmin = 6.56245e-005
+vernier = 1
+Gmin = 7.53781e-006
+Gmin = 8.09366e-007
+Gmin = 8.6905e-008
+Gmin = 9.33136e-009
+Gmin = 1.00195e-009
+Gmin = 1.07583e-010
+Gmin = 1.15517e-011
+Gmin = 1.24035e-012
+Gmin = 1.33182e-013
+Gmin = 0
+Gmin stepping succeeded in finding the operating point.
+
+
+Date: Wed Jul 07 21:37:48 2021
+Total elapsed time: 0.424 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 28524
+traniter = 27955
+tranpoints = 7226
+accept = 5245
+rejected = 1981
+matrix size = 24
+fillins = 8
+solver = Normal
+Matrix Compiler1: 1.66 KB object code size  0.3/0.2/[0.2]
+Matrix Compiler2: 2.05 KB object code size  0.2/0.3/[0.2]
+
