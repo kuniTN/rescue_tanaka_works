@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)https://www.socfuse.com/ja/technical-info-data/3509/ -->
+<html lang="ja" prefix="og: http://ogp.me/ns#"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script type="text/javascript" async="" src="./ヒューズ選定手順_files/analytics.js.ダウンロード"></script><script type="text/javascript" async="" src="./ヒューズ選定手順_files/ga.js.ダウンロード"></script><script async="" src="./ヒューズ選定手順_files/uh.js.ダウンロード"></script><script async="" src="./ヒューズ選定手順_files/js"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-115872326-1');
+</script>
+
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+<link rel="shortcut icon" href="https://www.socfuse.com/wordpress/wp-content/themes/soc/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://www.socfuse.com/wordpress/wp-content/themes/soc/webclip.png">
+  <meta name="keywords" content="ヒューズ,EV,チップ,選定手順,UL248,DC高電圧,回路保護,保護協調,SOC">
+<title>ヒューズ選定手順をご紹介します｜SOC</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v9.0.2 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="エス・オー・シー株式会社のヒューズ選定手順のご紹介です。正しく選定されたヒューズは、電子回路に異常電流が流されたときに電流を遮断し事故を防ぐことができますが、ヒューズの選定を誤ると、不要溶断が起きたり、異常電流が流れ続け、発煙、発火などが発生する危険性があります。">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ヒューズ選定手順をご紹介します｜SOC">
+<meta property="og:description" content="エス・オー・シー株式会社のヒューズ選定手順のご紹介です。正しく選定されたヒューズは、電子回路に異常電流が流されたときに電流を遮断し事故を防ぐことができますが、ヒューズの選定を誤ると、不要溶断が起きたり、異常電流が流れ続け、発煙、発火などが発生する危険性があります。">
+<meta property="og:site_name" content="SOC">
+<meta property="og:image" content="/wordpress/wp-content/uploads/J_fuse_selection_process_image.png">
+<meta property="og:image:secure_url" content="/wordpress/wp-content/uploads/J_fuse_selection_process_image.png">
+<meta property="og:image:width" content="570">
+<meta property="og:image:height" content="380">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:description" content="エス・オー・シー株式会社のヒューズ選定手順のご紹介です。正しく選定されたヒューズは、電子回路に異常電流が流されたときに電流を遮断し事故を防ぐことができますが、ヒューズの選定を誤ると、不要溶断が起きたり、異常電流が流れ続け、発煙、発火などが発生する危険性があります。">
+<meta name="twitter:title" content="ヒューズ選定手順をご紹介します｜SOC">
+<meta name="twitter:image" content="/wordpress/wp-content/uploads/J_fuse_selection_process_image.png">
+<!-- / Yoast SEO plugin. -->
+
+<link rel="dns-prefetch" href="https://cdn.jsdelivr.net/">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+<link rel="stylesheet" id="soc-style-css" href="./ヒューズ選定手順_files/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="google-font-css" href="./ヒューズ選定手順_files/css" type="text/css" media="all">
+<link rel="stylesheet" id="soc-theme-style-css" href="./ヒューズ選定手順_files/style(1).css" type="text/css" media="all">
+<link rel="stylesheet" id="slick-style-css" href="./ヒューズ選定手順_files/slick.css" type="text/css" media="all">
+<link rel="stylesheet" id="slick-theme-style-css" href="./ヒューズ選定手順_files/slick-theme.css" type="text/css" media="all">
+<script type="text/javascript" src="./ヒューズ選定手順_files/jquery.min.js.ダウンロード"></script>
+<script type="text/javascript" src="./ヒューズ選定手順_files/navigation.js.ダウンロード"></script>
+<script type="text/javascript" src="./ヒューズ選定手順_files/jquery.validate.min.js.ダウンロード"></script>
+<script type="text/javascript" src="./ヒューズ選定手順_files/skip-link-focus-fix.js.ダウンロード"></script>
+<script type="text/javascript" src="./ヒューズ選定手順_files/slick.min.js.ダウンロード"></script>
+<script type="text/javascript" src="./ヒューズ選定手順_files/svg4everybody.min.js.ダウンロード"></script>
+<script type="text/javascript" src="./ヒューズ選定手順_files/jquery.rwdImageMaps.min.js.ダウンロード"></script>
+<script type="text/javascript" src="./ヒューズ選定手順_files/main.js.ダウンロード"></script>
+<link rel="alternate" hreflang="en-US" href="https://www.socfuse.com/technical-info-data/3509/">
+<link rel="alternate" hreflang="ja" href="https://www.socfuse.com/ja/technical-info-data/3509/">
+<!-- User Heat Tag -->
+<script type="text/javascript">
+(function(add, cla){window['UserHeatTag']=cla;window[cla]=window[cla]||function(){(window[cla].q=window[cla].q||[]).push(arguments)},window[cla].l=1*new Date();var ul=document.createElement('script');var tag = document.getElementsByTagName('script')[0];ul.async=1;ul.src=add;tag.parentNode.insertBefore(ul,tag);})('//uh.nakanohito.jp/uhj2/uh.js', '_uhtracker');_uhtracker({id:'uhQ0dUPGEf'});
+</script>
+<!-- End User Heat Tag -->
+
+<meta name="google-site-verification" content="Tl-5DTUE1KoCVWgAROfvp2avdNHVUf5HsTe8uBMN_yw">
+</head>
+<body class="technical_info_data-template technical_info_data-template-custom-technical-info-data-nocover technical_info_data-template-custom-technical-info-data-nocover-php single single-technical_info_data postid-3509 ja">
+  <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-16097882-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+	<div class="wrapper">
+    <div class="fixed-area01">
+            <a href="https://www.socfuse.com/ja/#byIndustry">用途別検索</a>
+          </div>
+    
+    <header class="header">
+      <div class="header-inner">
+        <div class="menu-trigger-wrap">
+          <a class="menu-trigger" href="https://www.socfuse.com/ja/"><span></span><span></span><span></span></a>
+        </div>
+				<p>
+          <a href="https://www.socfuse.com/ja/" class="header-logo">
+          <img src="./ヒューズ選定手順_files/img_logo01.png" alt="SOC">
+        </a>
+				</p>
+        <nav class="header-nav nav">
+          <ul id="menu-%e3%83%98%e3%83%83%e3%83%80%e3%83%bc%e3%83%a1%e3%83%8b%e3%83%a5%e3%83%bc" class="nav-menu"><li id="menu-item-457" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-457"><a href="https://www.socfuse.com/ja/products/">製品情報</a></li>
+<li id="menu-item-459" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-459"><a href="https://www.socfuse.com/ja/technical-info/">技術情報</a></li>
+<li id="menu-item-897" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-897"><a href="https://www.socfuse.com/ja/news/">ニュース</a></li>
+<li id="menu-item-463" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-463"><a href="https://www.socfuse.com/ja/about-soc/">企業情報</a></li>
+<li id="menu-item-464" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-464"><a href="https://www.socfuse.com/ja/recruit/">採用情報</a></li>
+</ul>          
+  
+
+        </nav>
+        <nav class="header-nav-sp nav overlay">
+          <div class="nav-wrap">
+            <ul><li><a href="https://www.socfuse.com/ja/">Home</a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-457"><a href="https://www.socfuse.com/ja/products/">製品情報</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-459"><a href="https://www.socfuse.com/ja/technical-info/">技術情報</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-897"><a href="https://www.socfuse.com/ja/news/">ニュース</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-463"><a href="https://www.socfuse.com/ja/about-soc/">企業情報</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-464"><a href="https://www.socfuse.com/ja/recruit/">採用情報</a></li>
+</ul>            <ul>
+
+            
+
+
+
+              <li><a href="https://www.socfuse.com/ja/about-soc/location/">
+              <img src="./ヒューズ選定手順_files/img_phone01.png" alt="Phone">
+                お電話での<br>お問合せ</a></li>
+              <li><a href="https://www.socfuse.com/ja/contact/">
+              <img src="./ヒューズ選定手順_files/img_mail01.png" alt="Mail">
+                メールでの<br>お問合せ</a></li>
+                                  <li><a href="https://www.socfuse.com/technical-info-data/3509/">
+                  <img src="./ヒューズ選定手順_files/img_lang01.png" alt="Language">
+                    English</a></li>
+                  
+              </ul>
+          </div>
+        </nav>
+        <div class="header-btn">
+          <ul>
+                          <li>
+              <a href="https://www.socfuse.com/technical-info-data/3509/">
+                <span>
+                <img src="./ヒューズ選定手順_files/img_lang01.png" alt="Language">
+                <span>English</span>
+                </span>
+              </a>
+            </li>
+            
+            <li>
+              <a href="https://www.socfuse.com/ja/about-soc/location/">
+                <span>
+                <img src="./ヒューズ選定手順_files/img_phone01.png" alt="Phone">
+                  <span>お電話での<br>お問合せ</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.socfuse.com/ja/contact/">
+                <span>
+                <img src="./ヒューズ選定手順_files/img_mail01.png" alt="Mail">
+                  <span>メールでの<br>お問合せ</span>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+		</header>
+    <main>
+<article id="post-3509" class="page-container post-3509 technical_info_data type-technical_info_data status-publish has-post-thumbnail hentry technical_info_cat_ja-technical_paper ja">
+	<header class="page-header">
+		<div class="inner">
+			<p>技術情報</p>
+		</div>
+	</header>
+	
+<nav class="breadcrumbs">
+	<ol>
+		<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb"><a itemprop="url" href="https://www.socfuse.com/ja/">ホーム</a></li><li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb"><a itemprop="url" href="https://www.socfuse.com/ja/technical-info/">技術情報</a></li><li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb"><span itemprop="title">ヒューズ選定手順</span></li>
+	</ol>
+</nav>
+	<section class="page-section entry-content single page-type01">
+						<div class="section-header-file">
+			<p class="taR"><a target="_blank" href="https://www.socfuse.com/wordpress/wp-content/uploads/J_fuse_selection_process_201811.pdf">ヒューズ選定手順（PDF）</a></p>
+		</div>
+				<div class="section-header">
+			<h1 class="h-title">ヒューズ選定手順</h1>
+					<p class="h-subtitle">技術ペーパー</p>
+				</div>
+
+		<div class="section-main">
+			<h2>ヒューズ選定にあたって</h2>
+<p>正しく選定されたヒューズは、電子回路に異常電流が流されたときに電流を遮断し事故を防ぐことができますが、ヒューズの選定を誤ると、不要溶断が起きたり、異常電流が流れ続け、発煙、発火などが発生する危険性があります。</p>
+<h2>ヒューズ選定上のご注意</h2>
+<p>■ヒューズを入れる回路の電圧は、何ボルトですか ?</p>
+<p style="text-align: center;"><span style="color: #ff0000;">ヒューズを入れる回路の電圧より高い定格電圧を持つヒューズを選定してください。</span></p>
+<p style="padding-left: 30px;">ヒューズの定格電圧は、ヒューズが異常電流を安全に遮断できる最大電圧を示しています。回路電圧がヒューズの定格電圧より高い場合、以下のようにヒューズが破壊する危険性があり、注意が必要です。</p>
+<p><img class="aligncenter wp-image-3513 size-full" src="./ヒューズ選定手順_files/J_fuse_selection_process_01-e1545804851676.png" alt="" width="640" height="184" srcset="/wordpress/wp-content/uploads/J_fuse_selection_process_01-e1545804851676.png 640w, /wordpress/wp-content/uploads/J_fuse_selection_process_01-e1545804851676-300x86.png 300w" sizes="(max-width: 640px) 100vw, 640px"></p>
+<p>■ヒューズを入れる回路の電圧は、交流 (AC) 回路ですか ? 直流 (DC) 回路ですか ?</p>
+<p style="text-align: center;"><span style="color: #ff0000;">ヒューズを入れる回路の電圧 (AC/DC) と同じ種類 (AC/DC) のヒューズを選定してください。</span></p>
+<p style="padding-left: 30px;">交流 (AC) 回路では【図 1】のように、電源電圧のゼロクロス近傍でアーク放電が消滅する傾向がありますが、直流 (DC) 回路では電源電圧側がゼロにならないため、アーク放電が続きヒューズが破壊する危険があり、注意が必要です。</p>
+<p style="padding-left: 30px;">従って、交流 (AC) 回路用ヒューズと直流 (DC) 回路用ヒューズではその遮断能力が異なるため、交流 (AC) 回路用と直流 (DC) 回路用ヒューズを取り違えてご使用になられますと、事故につながる危険性があります。</p>
+<p><img class="aligncenter wp-image-3514 size-full" src="./ヒューズ選定手順_files/J_fuse_selection_process_02-e1545804880185.png" alt="" width="639" height="271" srcset="/wordpress/wp-content/uploads/J_fuse_selection_process_02-e1545804880185.png 639w, /wordpress/wp-content/uploads/J_fuse_selection_process_02-e1545804880185-300x127.png 300w" sizes="(max-width: 639px) 100vw, 639px"></p>
+<p>■ ヒューズを入れる回路の力率 / 時定数は、いくつですか ?</p>
+<p style="padding-left: 30px;">回路の力率あるいは時定数は、回路のインダクタンスの大きさに関係します。インダクタンスの大きい回路で異常電流をヒューズが遮断する場合、電源電圧より高いアーク電圧が発生し、ヒューズが安全に電流を遮断できない場合があります。</p>
+<p style="padding-left: 30px;"><span style="color: #ff0000;">ヒューズの選定にあたってはご使用になる実際の機器にてヒューズが安全に異常電流を遮断できることをご確認ください。</span></p>
+<p>■ヒューズをどのような方法で取り付けますか ?</p>
+<p style="padding-left: 30px;">(1) 基板に実装する方法</p>
+<p style="padding-left: 60px;">a) 表面実装タイプ</p>
+<p style="padding-left: 90px;"><img class="alignnone size-full wp-image-3570" src="./ヒューズ選定手順_files/J_fuse_selection_process_03-e1542685970628.png" alt="" width="200" height="163"></p>
+<p style="padding-left: 60px;">b) 基板の孔に端子を通す方法−ピン端子、リード線端子、その他</p>
+<p style="padding-left: 90px;"><img class="alignnone size-full wp-image-3584" src="./ヒューズ選定手順_files/J_fuse_selection_process_04-e1542686396823.png" alt="" width="300" height="165"></p>
+<p style="padding-left: 30px;">(2) ヒューズホルダー ( クリップ ) に装着する方法</p>
+<p style="padding-left: 90px;"><img class="alignnone size-full wp-image-3589" src="./ヒューズ選定手順_files/J_fuse_selection_process_05-e1542686496383.png" alt="" width="300" height="47"></p>
+<p style="padding-left: 30px;">(3) ボルト・ナットで回路に直接取り付ける方法</p>
+<p style="padding-left: 90px;"><img class="alignnone size-full wp-image-3594" src="./ヒューズ選定手順_files/J_fuse_selection_process_06-e1542686579542.png" alt="" width="300" height="70"></p>
+<p style="text-align: center;"><span style="color: #ff0000;">お客様のご要望に応じた形状と寸法のヒューズを設計開発いたします。お気軽にご相談ください。</span></p>
+<p>■ ヒューズを入れる回路には、何アンペアが流れますか ?</p>
+<p style="padding-left: 30px;">ヒューズには定格電流が定められており、その値はヒューズに表示されています。ヒューズが不要溶断を起こすことなく、異常電流を確実に遮断できるよう適切なヒューズの定格電流および定格遮断電流 <span style="color: #ff0000;">*1</span> を選定するには、ご使用になる回路の下記の電流 ( 電流波形を含む ) の把握が大切です。<br>
+・定常電流<br>
+・突入電流<br>
+・異常電流</p>
+<p style="padding-left: 30px;"><span style="font-size: 10pt;"><span style="color: #ff0000;">*1</span> IEC 60127 ( ミニチュアヒューズ ) シリーズでは rated breaking capacity、UL/CSA 248 ( 低電圧ヒューズ ) シリーズでは interrupting rating、JIS C 6575 ( ミニチュアヒューズ ) シリーズでは定格遮断容量という用語が使用されていますが、定格遮断容量は定格遮断電流と同じ電流です。本カタログではこれを定格遮断電流と呼びます。</span></p>
+<p style="padding-left: 30px;">(1) 定常電流の評価について</p>
+<p style="padding-left: 60px;">長期使用でヒューズが不要溶断を起こすことなく、ヒューズの溶断時間−電流特性 <span style="color: #ff0000;">*2</span> が、ヒューズを挿入する回路の定常電流 ( 実効値 ) に対して十分なマージン ( 例【図 2】の塗りつぶし部分 ) を持つようにヒューズを選定してください。必要なマージンはご使用状況によって異なりますので、実機にてご評価頂く必要があります。</p>
+<p><img class="aligncenter wp-image-3618 size-full" src="./ヒューズ選定手順_files/J_fuse_selection_process_07-e1545804920612.png" alt="" width="640" height="357" srcset="/wordpress/wp-content/uploads/J_fuse_selection_process_07-e1545804920612.png 640w, /wordpress/wp-content/uploads/J_fuse_selection_process_07-e1545804920612-300x167.png 300w" sizes="(max-width: 640px) 100vw, 640px"></p>
+<p style="padding-left: 60px;"><span style="color: #ff0000;">*2</span> 溶断時間−電流特性について<br>
+溶断時間−電流特性は、【図 3】のようにいくつかの一定の電流に対する溶断時間の平均値から作成したものであり、ヒューズの特性を保証するものではありません。この電流は、無視できるほど小さいインピーダンスの導体でヒューズを置き換えたときに回路に流れる電流(固有電流)です。</p>
+<p><img class="aligncenter wp-image-3623 size-full" src="./ヒューズ選定手順_files/J_fuse_selection_process_08-e1545804942337.png" alt="" width="641" height="310" srcset="/wordpress/wp-content/uploads/J_fuse_selection_process_08-e1545804942337.png 641w, /wordpress/wp-content/uploads/J_fuse_selection_process_08-e1545804942337-300x145.png 300w" sizes="(max-width: 641px) 100vw, 641px"></p>
+<p style="padding-left: 30px;">(2) 突入電流の評価について</p>
+<p style="padding-left: 60px;">突入電流は、一般的に電流の変化が複雑で、溶断時間−電流特性で評価することは困難です。そのため放熱の影響が少ない短時間領域においては、回路のジュール積分 (<em>I </em><sub>m</sub><sup>2</sup><em> t</em> 、回路に流れる電流瞬時値<em> i </em><sub>m</sub>(<em>t </em>) の 2 乗のある時間に対する積分値 ) と、ヒューズの溶断ジュール積分 <span style="color: #ff0000;">*3</span> (<em>I</em><sub> f</sub><sup>2</sup><em> t</em> ) を比較することにより、不要溶断が起きるかどうかの評価が行えます。</p>
+<p style="padding-left: 60px;"><span style="color: #ff0000; font-size: 10pt;">*3 ヒューズに流れる電流瞬時値 <em>i</em> <sub>f</sub> の 2 乗の溶断時間に対する積分値</span></p>
+<p><img class="alignright wp-image-3633 size-full" src="./ヒューズ選定手順_files/J_fuse_selection_process_09-e1545804970180.png" alt="" width="400" height="1082" srcset="/wordpress/wp-content/uploads/J_fuse_selection_process_09-e1545804970180.png 400w, /wordpress/wp-content/uploads/J_fuse_selection_process_09-e1545804970180-177x480.png 177w, /wordpress/wp-content/uploads/J_fuse_selection_process_09-e1545804970180-67x180.png 67w" sizes="(max-width: 400px) 100vw, 400px"></p>
+<p style="padding-left: 60px;">評価手順<br>
+[1] 機器の電源投入時 ( 突入電流 ) から定常状態に至るまでの回路の電流波形を繰り返し測定します。<br>
+[2] 回路にあるコンデンサーの残留電荷を放電させ、サーミスターのように温度により抵抗値が変化する素子がある場合にはその抵抗値が最小となる条件で、電流波形を測定します。<br>
+[3] 測定した電流波形からそれぞれの時間に対する回路のジュール積分 (<em>I</em> <sub>m</sub><sup>2</sup> <em>t</em> ) を求めます。例えば、0.01 秒に対するジュール積分であれば、回路に流れる電流の瞬時値を <em>i</em> <sub>m</sub> (<em>t</em> )、サンプリング間隔⊿ <em>t</em> を 0.001 秒とすれば、回路のジュール積分は次式で表されます。実際にはもっと短い間隔でサンプリングしますが、手順を説明するため大きな値にしています。0.01 秒 /0.001 秒= 10なので</p>
+<p style="padding-left: 60px;"><img class="size-full wp-image-3667 alignleft" src="./ヒューズ選定手順_files/J_fuse_selection_process_10-e1542689391214.png" alt="" width="350" height="44" srcset="/wordpress/wp-content/uploads/J_fuse_selection_process_10-e1542689391214.png 350w, /wordpress/wp-content/uploads/J_fuse_selection_process_10-e1542689391214-300x38.png 300w" sizes="(max-width: 350px) 100vw, 350px"></p>
+<p>&nbsp;</p>
+<p style="padding-left: 60px;">[4] それぞれの時間に対してジュール積分を求め、【図4】のようにプロットします。<br>
+[5] 最大の回路のジュール積分とヒューズの溶断ジュール積分を時間の関数として、【図 5】のように描きます。ヒューズが溶断しないためには常に、( 最大の回路のジュール積分 ) &lt; ( ヒューズの溶断ジュール積分 ) の関係が必要で、経年変化による不要溶断が起きないためには、十分なマージン ( 例 :【図 5】の塗りつぶし部分 ) を持つようにヒューズを選定する必要があります。必要なマージンはご使用状況によって異なりますので、実機によりご評価いただく必要があります。</p>
+<p style="padding-left: 30px;">(3) 異常電流の評価について</p>
+<p style="padding-left: 60px;">起こり得る最大の異常電流を測定し、その異常電流を遮断できる定格遮断電流を持つヒューズを選定してください。また一般的には起こり得る最小の異常電流を測定し、比較的短時間領域では、( ヒューズの溶断ジュール積分 ) ≦ ( 最小の異常電流が流れた時の回路のジュール積分 ) であり、且つ、比較的長時間領域ではヒューズの最小溶断電流≦異常電流である関係が必要です。このような関係にあるかどうかは、異常電流をどの時点、どの時間で遮断するかという保護条件に影響されるので、その判断は保護条件によっては極めて困難です。そのため実機にてヒューズが異常電流を安全に遮断できることをご確認いただくことが必要であり、重要です。</p>
+<p><span style="color: #ff0000;">ヒューズを決定される前には、必ず選定したヒューズを実際にご使用になる機器に取り付け、確実にご要求を満たしているかご確認ください。ヒューズの選定でお困りの際は、当社営業へご相談ください。</span></p>
+<p>■ 定格電流についての説明</p>
+<p style="padding-left: 30px;">同じ定格電流のヒューズであっても規格により、要求事項が異なり、定格電流 (<em>I</em> <sub>N</sub> ) の倍数に対する溶断 ( 動作 )時間が規定されています。つまり、同じ定格電流であっても、規格によって溶断時間−電流特性は異なります。</p>
+<p><img class="aligncenter wp-image-3684 size-full" src="./ヒューズ選定手順_files/J_fuse_selection_process_11-e1545805000690.png" alt="" width="640" height="325" srcset="/wordpress/wp-content/uploads/J_fuse_selection_process_11-e1545805000690.png 640w, /wordpress/wp-content/uploads/J_fuse_selection_process_11-e1545805000690-300x152.png 300w" sizes="(max-width: 640px) 100vw, 640px"></p>
+<p style="padding-left: 30px;">電気用品の技術上の基準を定める省令は平成 25 年 7 月 1 日に全部が改正され ( 平成 26 年 1 月 1 日より施行 )、性能規定化が行われました。改正前のこの省令別表第三 ( 以下「従前の技術基準」という ) は、省令の解釈で性能規定を満たす基準として現在も使用されています。従前の技術基準の小型ヒューズに関する規定は IEC60127 シリーズとの整合を考慮し、一部変更して JIS C 6575 ( ミニチュアヒューズ ) の規格群に取り入れられています。</p>
+<p style="padding-left: 30px;">JIS C 6575 の規格群で、スタンダードシート番号に J の付くものは、従前の技術基準に基づくもので、アラビア数字のみのものは IEC 規格に基づくものですが、JIS 規格に採用されるまでに少々時間がかかり、版遅れが生じることがあります。</p>
+<p style="padding-left: 30px;">【表 2-1】、【表 2-2】、【表 2-3】で、規格別に規定される溶断電流の最小値と溶断時間を例として紹介します。</p>
+<p><img class="aligncenter wp-image-3685 size-full" src="./ヒューズ選定手順_files/J_fuse_selection_process_12-e1545805057768.png" alt="" width="641" height="161" srcset="/wordpress/wp-content/uploads/J_fuse_selection_process_12-e1545805057768.png 641w, /wordpress/wp-content/uploads/J_fuse_selection_process_12-e1545805057768-300x75.png 300w" sizes="(max-width: 641px) 100vw, 641px"></p>
+<p><img class="aligncenter wp-image-3686 size-full" src="./ヒューズ選定手順_files/J_fuse_selection_process_13-e1545805082185.png" alt="" width="639" height="169" srcset="/wordpress/wp-content/uploads/J_fuse_selection_process_13-e1545805082185.png 639w, /wordpress/wp-content/uploads/J_fuse_selection_process_13-e1545805082185-300x79.png 300w" sizes="(max-width: 639px) 100vw, 639px"></p>
+<p><img class="aligncenter wp-image-3687 size-full" src="./ヒューズ選定手順_files/J_fuse_selection_process_14-e1545805107317.png" alt="" width="640" height="450" srcset="/wordpress/wp-content/uploads/J_fuse_selection_process_14-e1545805107317.png 640w, /wordpress/wp-content/uploads/J_fuse_selection_process_14-e1545805107317-256x180.png 256w" sizes="(max-width: 640px) 100vw, 640px"></p>
+<p><a id="characteristic"></a>■ 溶断特性</p>
+<p style="padding-left: 30px;">同じ定格電流であっても、【図 7】のように溶断時間−電流特性の異なる溶断特性のヒューズを設計することが可能です。突入電流でヒューズが溶断する場合や、より早く異常電流の遮断を必要とする場合など、お困りの際は、お気軽にご相談ください。</p>
+<p><img class="aligncenter wp-image-3689 size-full" src="./ヒューズ選定手順_files/J_fuse_selection_process_15-e1545805131201.png" alt="" width="641" height="310" srcset="/wordpress/wp-content/uploads/J_fuse_selection_process_15-e1545805131201.png 641w, /wordpress/wp-content/uploads/J_fuse_selection_process_15-e1545805131201-300x145.png 300w" sizes="(max-width: 641px) 100vw, 641px"></p>
+<p>■ 定格遮断電流 ( 容量 )</p>
+<p style="padding-left: 30px;">定格遮断電流は、規格 ( 基準)等に規定される試験条件でヒューズが安全に遮断することができる電流の上限値( 固有電流)です。通常、遮断試験はヒューズの定格電圧の 1 ~ 1.05 倍の電圧の回路で実施されます。定格遮断電流の値は【表 4-1】や【表 4-2】のように、規格によって異なります。なお、ヒューズが安全に遮断することができる電流の下限値を最小遮断電流と呼びます。最小遮断電流&gt;最小溶断電流の関係があるヒューズにおいては、最小溶断電流から最小遮断電流までの過電流に対して保護できないことがありますので注意が必要です。</p>
+<p><img class="aligncenter wp-image-3695 size-full" src="./ヒューズ選定手順_files/J_fuse_selection_process_16-e1545805156501.png" alt="" width="640" height="881" srcset="/wordpress/wp-content/uploads/J_fuse_selection_process_16-e1545805156501.png 640w, /wordpress/wp-content/uploads/J_fuse_selection_process_16-e1545805156501-349x480.png 349w, /wordpress/wp-content/uploads/J_fuse_selection_process_16-e1545805156501-131x180.png 131w" sizes="(max-width: 640px) 100vw, 640px"></p>
+<p>■ ヒューズの周囲温度は ?</p>
+<p style="padding-left: 30px;">ヒューズは過電流により生じたジュール熱でヒューズエレメントの温度がエレメントを構成する金属の融点を超えたときに溶断します。ヒューズエレメントの温度は放熱に大きく影響を受けます。【図 8】から想像できるように、放熱はヒューズホルダー、配線などの周囲の熱伝導、更に周囲の温度条件によっても変化します。例えば周囲の温度条件の違いによって、ヒューズの溶断時間−電流特性は、【図 9】のように変化しますので、ヒューズを実際の機械的・電気的・環境条件を負荷した最終機器でテスト頂き、満足する結果とご希望の信頼性が得られるかを、ご確認いただくことが重要となります。なお、周囲温度条件による溶断時間−電流特性の変化率は【図10】の温度リレーティングでご確認いただけますので、当社営業にお問い合わせください。</p>
+<p><img class="aligncenter wp-image-3727 size-full" src="./ヒューズ選定手順_files/J_fuse_selection_process_17-e1545805189901.png" alt="" width="400" height="743" srcset="/wordpress/wp-content/uploads/J_fuse_selection_process_17-e1545805189901.png 400w, /wordpress/wp-content/uploads/J_fuse_selection_process_17-e1545805189901-258x480.png 258w, /wordpress/wp-content/uploads/J_fuse_selection_process_17-e1545805189901-97x180.png 97w" sizes="(max-width: 400px) 100vw, 400px"></p>
+<p>&nbsp;</p>
+		</div>
+	</section>
+		<div class="pager">
+		<a class="prev" href="https://www.socfuse.com/ja/technical-info/">技術情報へ戻る</a>
+	</div>
+
+	</article>
+	<div class="page-footer">
+		
+<nav class="breadcrumbs">
+	<ol>
+		<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb"><a itemprop="url" href="https://www.socfuse.com/ja/">ホーム</a></li><li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb"><a itemprop="url" href="https://www.socfuse.com/ja/technical-info/">技術情報</a></li><li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb"><span itemprop="title">ヒューズ選定手順</span></li>
+	</ol>
+</nav>
+	</div>
+    </main>
+		<footer class="footer">
+			<div class="footer-inner">
+				<ul class="footer-nav">
+					<li><a href="https://www.socfuse.com/ja/privacy-policy/">プライバシーポリシー</a></li>
+					<li><a href="https://www.socfuse.com/ja/disclaimer/">ウェブサイトご利用条件</a></li>
+					<li><a href="https://www.socfuse.com/ja/sitemap/">サイトマップ</a></li>
+				</ul>
+			</div>
+			<p class="copyright">© 2021 SOC Corporation. All Rights Reserved.</p>
+		</footer>
+		</div>
+    <script>svg4everybody();</script>
+		
+
+</body></html>
