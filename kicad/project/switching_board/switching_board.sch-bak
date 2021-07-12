@@ -375,7 +375,7 @@ Wire Wire Line
 	4500 1250 4500 1750
 Wire Notes Line
 	550  1000 5700 1000
-Text Notes 3000 3650 0    50   ~ 0
+Text Notes 2300 3650 0    50   ~ 0
 Power supply to modules
 Wire Notes Line
 	550  3550 550  6300

@@ -1,0 +1,385 @@
+// リサイズ関連
+var timer = false;
+var hHeader = 0;
+var w = window.innerWidth;
+hHeader = headerHight(w);
+$(window).resize(function() {
+  // リサイズ中の処理
+  scrollbarwidth();
+  if (timer !== false) {
+      clearTimeout(timer);
+  }
+  timer = setTimeout(function() {
+    // リサイズ後の処理
+    w = window.innerWidth;
+    hHeader = headerHight(w);
+      if(hHeader > 0) {
+        if($('table.product-list-table').length) {
+          $('table.product-list-table').floatThead('destroy');
+        }
+      } else {
+        myFloatThead('table.product-list-table');
+      }
+  }, 200);
+});
+
+$(document).ready(function(){
+
+  //SPメニュー制御
+  $('.header-inner .menu-trigger').on('click', function(){
+    $(this).toggleClass('active');
+    $(".header-nav-sp.overlay").fadeToggle();
+    return false;
+  });
+  //SPメニューアイコン制御
+  $('.js-toggle-btn').on('click', function(){
+    $(this).parents('.js-toggle').toggleClass('is-active');
+    return false;
+  });
+
+  $('.js-lang-trigger').on('click', function(){
+    $(this).toggleClass('active');
+    var toggleArea = $(this).data('target');
+    $(toggleArea).slideToggle();
+    if ( $(this).hasClass('active') ) {
+      $('.nav-wrap').delay(100).animate({
+        scrollTop: 210
+        });
+    }
+    return false;
+  });
+
+  $('.js-close').on('click', function(){
+    var toggleArea = $(this).data('target');
+    $(toggleArea).fadeToggle();
+    return false;
+  });
+
+  // スムーズスクロール
+  var urlHash = location.hash;
+  var speed = 600;
+  if(urlHash && hHeader > 0) {
+      $('body,html').stop().scrollTop(0);
+      setTimeout(function(){
+          var target = $(urlHash);
+          var position = target.offset().top - hHeader;
+          $('body,html').stop().animate({scrollTop:position}, speed, 'swing');
+      }, 100);
+  }
+  $('.fixed-area01 a[href^="#"],.page-section a[href^="#"],#nav-local a[href^="#"]').click(function() {
+     // アンカーの値取得
+     var href= $(this).attr("href");
+     // 移動先を取得
+     var target = $(href == "#" || href == "" ? 'html' : href);
+     // 移動先を数値で取得
+     var position = target.offset().top - hHeader;
+     // スムーススクロール
+     $('body,html').animate({scrollTop:position}, speed, 'swing');
+     return false;
+  });
+
+  scrollbarwidth();
+  if(isTouchDevice()) {
+    $('body').addClass('touchDevice');
+  }
+
+  myFloatThead('table.product-list-table');
+
+
+
+
+  //サムネイル付きスライダー
+  var slider = "#slider"; // スライダー要素指定
+  var thumbnailItem = "#thumbnail-list .thumbnail-item"; // サムネイル画像アイテム
+
+  // サムネイル画像アイテムに data-index でindex番号を付与
+  $(thumbnailItem).each(function(){
+   var index = $(thumbnailItem).index(this);
+   $(this).attr("data-index",index);
+  });
+
+  // スライダー初期化後、カレントのサムネイル画像にクラス「thumbnail-current」を付ける
+  $(slider).on('init',function(slick){
+   var index = $(".slide-item.slick-slide.slick-current").attr("data-slick-index");
+   $(thumbnailItem+'[data-index="'+index+'"]').addClass("thumbnail-current");
+  });
+
+  //slickスライダー初期化
+  $(slider).slick({
+    autoplay: false,
+    arrows: false,
+    fade: true,
+    infinite: false
+  });
+  //サムネイル画像アイテムをクリックしたときにスライダー切り替え
+  $(thumbnailItem).on('click',function(){
+    var index = $(this).attr("data-index");
+    $(slider).slick("slickGoTo",index,false);
+  });
+
+  //サムネイル画像のカレントを切り替え
+  $(slider).on('beforeChange',function(event,slick, currentSlide,nextSlide){
+    $(thumbnailItem).each(function(){
+      $(this).removeClass("thumbnail-current");
+    });
+    $(thumbnailItem+'[data-index="'+nextSlide+'"]').addClass("thumbnail-current");
+  });
+
+
+	$('.js-any-none, .js-any-none-label').click(function(){
+	    var items = $(this).closest('.col').find('input').not('.js-any-none');
+	    if($('.js-any-none').is(':checked')) {
+				$(items).prop('checked', false);
+				$(items).prop('disabled', true);
+	    } else {
+				$(items).prop('disabled', false);
+	    }
+	});
+
+});
+
+
+// 技術情報カテゴリータブ制御
+function scrollbarwidth() {
+  if($('.category-list').length) {
+    var li_w = 0;
+    $('.category-list li').each(function(index) {
+      li_w = li_w + Number($(this).outerWidth(true)) + 1;
+    });
+    if(880 > window.outerWidth) {
+      $('.category-list ul').css('width',li_w+'px')
+    } else {
+      $('.category-list ul').css('width','auto')
+    }
+  } else {
+    return false;
+  }
+}
+
+// タッチデバイス判定
+function isTouchDevice() {
+    return (('ontouchstart' in document) && ('orientation' in window));
+}
+
+// ヘッダーの高さ取得
+function headerHight(w2) {
+  if(typeof w2 === 'undefined') w2 = 0;
+  var h = w2 < 880 ? 65 : 0;
+  return h;
+}
+
+// テーブルヘッダー固定
+function myFloatThead(fixed) {
+  if(typeof fixed === 'undefined') fixed = 'table.product-list-table';
+  var fixed = $(fixed);
+  var this_closest = '.table-scroll';
+  if(fixed.length) {
+    if(hHeader === 0) {
+      fixed.floatThead({
+        top: hHeader,
+        responsiveContainer: function(fixed){
+          return fixed.closest(this_closest);
+        }
+      });
+    }
+  }
+}
+
+// 問い合わせ画面用JavaScript
+// Contact Us logic start.
+(function ($, window, document, undefined) {
+var isSending = 0;
+var app = (function () {
+  var module = {};
+
+  module.api = (function () {
+    var self = {};
+
+    /**
+     * @return deferred
+     */
+    self.call = function (url, opt_params, opt_type, opt_dataType) {
+      return $.ajax({
+        'dataType': opt_dataType || 'json',
+        'type': opt_type || 'GET',
+        'data': opt_params || {},
+        'url': url
+      });
+    };
+
+    return self;
+  })();
+
+  module.event = (function () {
+    var self = {};
+
+    self.showInput = function () {
+      $('#INPUT, #CONFIRM').hide().filter('#INPUT').fadeIn();
+      $(window).scrollLeft(0).scrollTop(0);
+//      ga('send', 'pageview', './');
+    };
+
+    self.doValidate = function () {
+      $('#CONTACTFORM').trigger('submit');
+    };
+
+    self.showConfirm = function () {
+      var $input = $('#INPUT');
+      var $confirm = $('#CONFIRM');
+      $confirm.find('.in_name').text($input.find('[name="name"]').val());
+      $confirm.find('.in_company').text($input.find('[name="company"]').val());
+      $confirm.find('.in_country').text($input.find('[name="country"]').val());
+      $confirm.find('.in_phone').text($input.find('[name="phone"]').val());
+      $confirm.find('.in_email').text($input.find('[name="email"]').val());
+      $confirm.find('.in_textarea01').text($input.find('[name="textarea01"]').val());
+      $confirm.find('.in_application').text($input.find('[name="application"]').val());
+      $confirm.find('.in_ac_dc').text($input.find('[name="ac_dc"]').val());
+      $confirm.find('.in_circuit_voltage').text($input.find('[name="circuit_voltage"]').val());
+      $confirm.find('.in_inrush_current').text($input.find('[name="inrush_current"]').val());
+      $confirm.find('.in_steady_state_current').text($input.find('[name="steady_state_current"]').val());
+      $confirm.find('.in_abnormal_current').text($input.find('[name="abnormal_current"]').val());
+      $confirm.find('.in_operating_temperature').text($input.find('[name="operating_temperature"]').val());
+      $confirm.find('.in_shape').text($input.find('[name="shape"]').val());
+      $confirm.find('.in_size').text($input.find('[name="size"]').val());
+      $confirm.find('.in_certification').text($input.find('[name="certification"]').val());
+      $confirm.find('.in_other').text($input.find('[name="other"]').val());
+
+      $('[name="log_params"]').val(
+          'textarea01:' + $input.find('[name="textarea01"]').val()
+        + ', application:' + $input.find('[name="application"]').val()
+        + ', ac_dc:' + $input.find('[name="ac_dc"]').val()
+        + ', circuit_voltage:' + $input.find('[name="circuit_voltage"]').val()
+        + ', inrush_current:' + $input.find('[name="inrush_current"]').val()
+        + ', steady_state_current:' + $input.find('[name="steady_state_current"]').val()
+        + ', abnormal_current:' + $input.find('[name="abnormal_current"]').val()
+        + ', operating_temperature:' + $input.find('[name="operating_temperature"]').val()
+        + ', shape:' + $input.find('[name="shape"]').val()
+        + ', size:' + $input.find('[name="size"]').val()
+        + ', certification:' + $input.find('[name="certification"]').val()
+        + ', other:' + $input.find('[name="other"]').val()
+      );
+
+      $('#INPUT, #CONFIRM').hide().filter('#CONFIRM').fadeIn();
+      $(window).scrollLeft(0).scrollTop(0);
+      // ga('send', 'pageview', './confirm.html');
+    };
+
+    self.sendData = function () {
+      if (isSending) {
+        return;
+      }
+      isSending = 1;
+      module.api.call(
+        '/api/contact/send',
+        $('#CONTACTFORM').serialize(),
+        'POST'
+      ).done(function (data) {
+        isSending = 0;
+        if (data.hasError !== '0') {
+          module.event.showInput();
+          window.alert('500 Internal Server Error');
+          return;
+        }
+        location.href = 'complete/index.html';
+      }).fail(function (data) {
+        isSending = 0;
+        module.event.showInput();
+        window.alert('500 Internal Server Error');
+      }).always(function (data) {
+      });
+    };
+
+    self.init = function () {
+      // お問い合わせ画面以外は初期化処理を行わない。
+      if (! $('#CONTACTFORM').length) {
+        return;
+      }
+
+      $('#INPUT').show();
+      $('#INPUT, #CONFIRM').not('#INPUT').hide();
+
+      $(document).on('click', '[type="button"]', function () {
+        var funcName = this.value;
+        if (app.event[funcName] && typeof app.event[funcName] === 'function') {
+          app.event[funcName]();
+        }
+      });
+
+      $('#CONTACTFORM').submit(function (ev) {
+        ev.preventDefault();
+      }).validate({
+        rules: {
+          'name': {
+            required: true,
+            maxlength: 1000
+          },
+          'company': {
+            required: true,
+            maxlength: 1000
+          },
+          'country': {
+            required: true,
+            maxlength: 1000
+          },
+          'phone': {
+            maxlength: 1000
+          },
+          'email': {
+            required: true,
+            email: true,
+            maxlength: 1000
+          },
+          'textarea01': {
+            required: true,
+            maxlength: 8000
+          },
+          'application': {
+            maxlength: 8000
+          },
+          'ac_dc': {
+            maxlength: 1000
+          },
+          'circuit_voltage': {
+            maxlength: 1000
+          },
+          'inrush_current': {
+            maxlength: 1000
+          },
+          'steady_state_current': {
+            maxlength: 1000
+          },
+          'abnormal_current': {
+            maxlength: 1000
+          },
+          'operating_temperature': {
+            maxlength: 1000
+          },
+          'shape': {
+            maxlength: 1000
+          },
+          'size': {
+            maxlength: 1000
+          },
+          'certification': {
+            maxlength: 1000
+          },
+          'other': {
+            maxlength: 8000
+          },
+
+        },
+        submitHandler: function(form) {
+          app.event.showConfirm();
+        },
+        errorElement: "span"
+      });
+    };
+
+    return self;
+  })();
+
+  return module;
+})();
+
+$(app.event.init);
+})(jQuery, this, this.document);// Contact Us logic end.
